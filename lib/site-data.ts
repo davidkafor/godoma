@@ -19,51 +19,51 @@ export type NavItem = { label: string; href: string; external?: boolean }
 export type NavGroup = { label: string; href: string; items?: NavItem[] }
 
 export const navigation: NavGroup[] = [
-  { label: 'Home', href: '#top' },
+  { label: 'Home', href: '/' },
   {
     label: 'About Us',
-    href: '#about',
+    href: '/about',
     items: [
-      { label: 'Vision, Mission & Core Values', href: '#about' },
-      { label: 'Brief History', href: '#history' },
-      { label: 'Governance', href: `${OFFICIAL_SITE}/governance.html`, external: true },
-      { label: 'Administration', href: `${OFFICIAL_SITE}/administration.html`, external: true },
+      { label: 'Vision, Mission & Core Values', href: '/about' },
+      { label: 'Brief History', href: '/about#history' },
+      { label: 'Governance', href: '/governance' },
+      { label: 'Administration', href: '/administration' },
     ],
   },
   {
     label: 'Admissions',
-    href: '#admissions',
+    href: '/admissions',
     items: [
-      { label: 'Entry Requirements', href: '#admissions' },
-      { label: 'HELB TVET Loans', href: '#news' },
-      { label: 'Accommodation', href: '#facilities' },
-      { label: 'Contact Admissions', href: '#contact' },
+      { label: 'Entry Requirements', href: '/admissions' },
+      { label: 'HELB TVET Loans', href: '/admissions#funding' },
+      { label: 'Accommodation', href: '/admissions#accommodation' },
+      { label: 'Contact Admissions', href: '/contact' },
     ],
   },
   {
     label: 'Academics',
-    href: '#departments',
+    href: '/departments',
     items: [
-      { label: 'Electrical & Electronics', href: '#departments' },
-      { label: 'Building & Civil', href: '#departments' },
-      { label: 'ICT', href: '#departments' },
-      { label: 'Hospitality & Tourism', href: '#departments' },
-      { label: 'Business', href: '#departments' },
+      { label: 'Electrical', href: '/departments/electrical' },
+      { label: 'Building & Civil', href: '/departments/building' },
+      { label: 'ICT', href: '/departments/ict' },
+      { label: 'Hospitality', href: '/departments/hospitality' },
+      { label: 'Business', href: '/departments/business' },
     ],
   },
   {
     label: 'Trainees',
-    href: '#facilities',
+    href: '/trainees',
     items: [
-      { label: 'Students Portal', href: OFFICIAL_SITE, external: true },
-      { label: 'E-Learning', href: OFFICIAL_SITE, external: true },
-      { label: 'Students Downloads', href: `${OFFICIAL_SITE}/students%20downloads.html`, external: true },
-      { label: 'Aids Control Unit', href: `${OFFICIAL_SITE}/aids-control-unit.html`, external: true },
-      { label: 'Events Calendar', href: `${OFFICIAL_SITE}/calendar.html`, external: true },
+      { label: 'Students Portal', href: '/trainees#portal' },
+      { label: 'E-Learning', href: '/trainees#elearning' },
+      { label: 'Students Downloads', href: '/trainees#downloads' },
+      { label: 'Aids Control Unit', href: '/trainees#aids-control' },
+      { label: 'Events Calendar', href: '/trainees#events' },
     ],
   },
-  { label: 'Library', href: '#facilities' },
-  { label: 'Contact Us', href: '#contact' },
+  { label: 'Library', href: '/library' },
+  { label: 'Contact Us', href: '/contact' },
 ]
 
 export const heroSlides = [

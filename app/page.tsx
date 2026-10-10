@@ -4,6 +4,7 @@ import { HeroSlider } from '@/components/site/hero-slider'
 import { NewsTicker } from '@/components/site/news-ticker'
 import { NewsSection } from '@/components/site/news-section'
 import { AboutSection } from '@/components/site/about-section'
+import { PrincipalMessage } from '@/components/site/principal-message'
 import { DepartmentsSection } from '@/components/site/departments-section'
 import { AdmissionsSection } from '@/components/site/admissions-section'
 import { FacilitiesSection } from '@/components/site/facilities-section'
@@ -22,6 +23,7 @@ export default function Page() {
         <NewsTicker />
         <NewsSection />
         <AboutSection />
+        <PrincipalMessage />
         <StatsSection />
         <DepartmentsSection />
         <AdmissionsSection />
