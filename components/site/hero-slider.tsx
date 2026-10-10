@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import Image from 'next/image'
-import { ChevronLeft, ChevronRight, CalendarDays } from 'lucide-react'
+import { ChevronLeft, ChevronRight, CalendarDays, Pause, Play } from 'lucide-react'
 import { heroSlides } from '@/lib/site-data'
 import { buttonVariants } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
@@ -102,6 +102,15 @@ export function HeroSlider() {
               className="flex size-10 items-center justify-center rounded-full border border-primary-foreground/40 text-primary-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
             >
               <ChevronRight className="size-5" aria-hidden="true" />
+            </button>
+            <button
+              type="button"
+              onClick={() => setPaused((value) => !value)}
+              aria-label={paused ? 'Resume automatic slideshow' : 'Pause automatic slideshow'}
+              aria-pressed={paused}
+              className="flex size-10 items-center justify-center rounded-full border border-primary-foreground/40 text-primary-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
+            >
+              {paused ? <Play className="size-4" aria-hidden="true" /> : <Pause className="size-4" aria-hidden="true" />}
             </button>
             <div className="ml-3 flex gap-2">
               {heroSlides.map((s, i) => (
