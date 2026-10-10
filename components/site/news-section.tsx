@@ -25,7 +25,7 @@ export function NewsSection() {
         <ul className="grid gap-8 md:grid-cols-3">
           {news.map((item) => (
             <li key={item.title}>
-              <article className="group flex h-full flex-col overflow-hidden rounded-lg border bg-card shadow-sm transition-shadow hover:shadow-lg">
+              <article className="group flex h-full flex-col overflow-hidden rounded-lg border bg-card shadow-sm outline-offset-4 transition-all hover:-translate-y-1 hover:shadow-xl focus-within:ring-2 focus-within:ring-ring">
                 <div className="relative aspect-[4/3] overflow-hidden bg-muted">
                   <Image
                     src={item.image}

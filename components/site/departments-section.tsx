@@ -28,7 +28,7 @@ export function DepartmentsSection() {
               <Link
                 href={`/departments/${d.id}`}
                 className={cn(
-                  'group relative flex h-64 w-full flex-col justify-end overflow-hidden rounded-lg text-left shadow-md outline-offset-4 transition-all',
+                  'group relative flex h-64 w-full flex-col justify-end overflow-hidden rounded-lg text-left shadow-md outline-offset-4 transition-all hover:-translate-y-1 hover:shadow-xl focus-visible:ring-2 focus-visible:ring-ring',
                   d.id === activeId && 'ring-4 ring-accent',
                 )}
               >

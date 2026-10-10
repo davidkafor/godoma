@@ -19,7 +19,7 @@ export function ContactForm() {
   }
 
   return (
-    <div className="rounded-lg border bg-card p-6 sm:p-8">
+    <div className="rounded-lg border bg-card p-6 shadow-sm transition-shadow hover:shadow-lg sm:p-8">
       <div className="mb-6">
         <p className="text-sm font-bold uppercase tracking-[0.2em] text-accent">Send an enquiry</p>
         <h2 className="mt-2 text-2xl font-extrabold text-primary">Contact the institute</h2>
