@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import { Eye, Target, CheckCircle2, MapPin } from 'lucide-react'
-import { coreValues, mandate, leadership } from '@/lib/site-data'
+import { coreValues, mandate } from '@/lib/site-data'
 import { SectionHeading } from './section-heading'
 
 export function AboutSection() {
@@ -104,33 +104,6 @@ export function AboutSection() {
           </div>
         </div>
 
-        <div className="mt-6 rounded-lg bg-card p-8 shadow-sm">
-          <h3 className="text-xl font-bold text-primary">Governance & Leadership</h3>
-          <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-            The institute is headed by a Board of Management (BOM) operating under the Education Act. The Principal
-            is the Chief Executive of the Institute and Secretary to the Board.
-          </p>
-          <ul className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {leadership.map((p) => (
-              <li key={p.name} className="flex items-center gap-3 rounded-md border p-4">
-                <span
-                  className="flex size-11 shrink-0 items-center justify-center rounded-full bg-secondary text-sm font-bold text-primary"
-                  aria-hidden="true"
-                >
-                  {p.name
-                    .replace(/^(Mrs?|Miss|Madam|Dr|Prof)\.?\s/, '')
-                    .split(' ')
-                    .map((n) => n[0])
-                    .join('')}
-                </span>
-                <div>
-                  <p className="text-sm font-bold text-foreground">{p.name}</p>
-                  <p className="text-xs text-muted-foreground">{p.role}</p>
-                </div>
-              </li>
-            ))}
-          </ul>
-        </div>
       </div>
     </section>
   )
