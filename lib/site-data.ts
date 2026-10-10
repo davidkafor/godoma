@@ -107,7 +107,7 @@ export const news = [
     image: '/images/tvet-flier.jpg',
     excerpt:
       'HELB finances TVET students in over 200 technical institutes. Get up to Kshs. 40,000 per year, upkeep money inclusive, for Diploma and Certificate courses.',
-    href: 'https://www.helb.co.ke',
+    href: '/notice-board#helb-tvet-loans',
   },
   {
     title: 'Motivational Talk: The Bridge Between Goals and Accomplishment is Discipline',
@@ -115,7 +115,7 @@ export const news = [
     image: '/images/motivational-talk.jpg',
     excerpt:
       'The Office of the Dean of Students invites all staff and students to a talk on Corona Virus, HIV/AIDS, drugs, mental health and discipline at GTTI Phase II.',
-    href: `${OFFICIAL_SITE}/news.html`,
+    href: '/notice-board#motivational-talk',
   },
   {
     title: 'Godoma TTI Service Charter',
@@ -123,7 +123,7 @@ export const news = [
     image: '/images/service-charter-en.jpg',
     excerpt:
       'Read our service charter (English & Kiswahili) outlining the services we offer, our commitments, and the standards our customers can expect.',
-    href: `${OFFICIAL_SITE}/news.html`,
+    href: '/notice-board#service-charter',
   },
 ]
 

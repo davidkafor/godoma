@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import { ArrowRight, CalendarDays } from 'lucide-react'
-import { news, OFFICIAL_SITE } from '@/lib/site-data'
+import { news } from '@/lib/site-data'
 import { SectionHeading } from './section-heading'
 
 export function NewsSection() {
@@ -15,9 +15,7 @@ export function NewsSection() {
             align="left"
           />
           <a
-            href={`${OFFICIAL_SITE}/news.html`}
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/notice-board"
             className="mb-12 inline-flex items-center gap-2 text-sm font-bold text-primary hover:text-accent"
           >
             View all notices
@@ -46,8 +44,6 @@ export function NewsSection() {
                   <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">{item.excerpt}</p>
                   <a
                     href={item.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
                     className="mt-5 inline-flex items-center gap-2 text-sm font-bold text-primary hover:text-accent"
                   >
                     Read more
