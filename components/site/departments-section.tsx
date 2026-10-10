@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 import { ArrowRight, Clock, GraduationCap, User } from 'lucide-react'
 import { departments, OFFICIAL_SITE } from '@/lib/site-data'
 import { SectionHeading } from './section-heading'
@@ -24,14 +25,8 @@ export function DepartmentsSection() {
         <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
           {departments.map((d) => (
             <li key={d.id}>
-              <button
-                type="button"
-                onClick={() => {
-                  setActiveId(d.id)
-                  document.getElementById('department-details')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
-                }}
-                aria-controls="department-details"
-                aria-pressed={d.id === activeId}
+              <Link
+                href={`/departments/${d.id}`}
                 className={cn(
                   'group relative flex h-64 w-full flex-col justify-end overflow-hidden rounded-lg text-left shadow-md outline-offset-4 transition-all',
                   d.id === activeId && 'ring-4 ring-accent',
@@ -55,7 +50,7 @@ export function DepartmentsSection() {
                     <ArrowRight className="size-4" aria-hidden="true" />
                   </span>
                 </span>
-              </button>
+              </Link>
             </li>
           ))}
         </ul>
