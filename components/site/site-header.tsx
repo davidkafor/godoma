@@ -46,7 +46,7 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 border-b bg-background/95 shadow-sm backdrop-blur supports-[backdrop-filter]:bg-background/85">
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3">
-        <a href="#top" className="shrink-0" aria-label="Godoma Technical Training Institute home">
+        <a href="/" className="shrink-0" aria-label="Godoma Technical Training Institute home">
           <Image
             src="/images/boh.png"
             alt="Godoma Technical Training Institute"
@@ -115,7 +115,7 @@ export function SiteHeader() {
 
         <div className="flex items-center gap-2">
           <a
-            href="#admissions"
+            href="/admissions"
             className={cn(buttonVariants(), 'h-10 bg-accent px-4 font-bold text-accent-foreground hover:bg-accent/90')}
           >
             Apply Now!
