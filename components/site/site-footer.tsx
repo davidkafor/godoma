@@ -1,24 +1,25 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import { Mail, MapPin, Phone } from 'lucide-react'
 import { contact, OFFICIAL_SITE } from '@/lib/site-data'
 import { SocialIcons } from './social-icons'
 import { NewsletterForm } from './newsletter-form'
 
 const quickLinks = [
-  { label: 'About Us', href: '#about' },
-  { label: 'Admissions', href: '#admissions' },
-  { label: 'Academic Departments', href: '#departments' },
-  { label: 'Facilities & Library', href: '#facilities' },
-  { label: 'Notice Board', href: '#news' },
+  { label: 'About Us', href: '/about' },
+  { label: 'Admissions', href: '/admissions' },
+  { label: 'Academic Departments', href: '/departments' },
+  { label: 'Library', href: '/library' },
+  { label: 'Notice Board', href: '/#news' },
 ]
 
 const importantPages = [
-  { label: 'Students Portal', href: OFFICIAL_SITE },
-  { label: 'E-Learning', href: OFFICIAL_SITE },
-  { label: 'Governance', href: `${OFFICIAL_SITE}/governance.html` },
-  { label: 'Administration', href: `${OFFICIAL_SITE}/administration.html` },
-  { label: 'Events Calendar', href: `${OFFICIAL_SITE}/calendar.html` },
-  { label: 'Tenders & Careers', href: OFFICIAL_SITE },
+  { label: 'Students Portal', href: '/trainees#portal' },
+  { label: 'E-Learning', href: '/trainees#elearning' },
+  { label: 'Governance', href: '/governance' },
+  { label: 'Administration', href: '/administration' },
+  { label: 'Events Calendar', href: '/trainees#events' },
+  { label: 'Contact Us', href: '/contact' },
 ]
 
 export function SiteFooter() {
@@ -43,9 +44,9 @@ export function SiteFooter() {
           <ul className="mt-5 space-y-2.5 text-sm">
             {quickLinks.map((l) => (
               <li key={l.label}>
-                <a href={l.href} className="text-primary-foreground/75 transition-colors hover:text-accent">
+                <Link href={l.href} className="text-primary-foreground/75 transition-colors hover:text-accent">
                   {l.label}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
@@ -59,14 +60,9 @@ export function SiteFooter() {
           <ul className="mt-5 space-y-2.5 text-sm">
             {importantPages.map((l) => (
               <li key={l.label}>
-                <a
-                  href={l.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-primary-foreground/75 transition-colors hover:text-accent"
-                >
+                <Link href={l.href} className="text-primary-foreground/75 transition-colors hover:text-accent">
                   {l.label}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
