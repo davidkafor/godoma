@@ -32,15 +32,22 @@ export function AboutSection() {
               align="left"
             />
             <div className="-mt-6 space-y-4 leading-relaxed text-muted-foreground">
+              <h3 className="text-xl font-bold text-primary">Brief History</h3>
               <p>
                 Godoma Technical Training Institute is the first public sub-county technical training institute,
-                located in Vitengeni. The institute was commissioned in November 2016 and is a major pillar in the
-                realization of Vision 2030 by providing skilled manpower to the growing economy of the Republic.
+                located in Vitengeni near Kilifi County. The institute was commissioned in November 2016 and is a
+                major pillar in the realization of Vision 2030 by providing skilled manpower to the growing economy
+                of the Republic.
               </p>
               <p>
-                GTTI is a leading technical institute in the vast Kilifi County, located in the serene suburbs of
-                Kilifi town bordering the famous Dida forest. The hospitality of the locals is welcoming and makes
-                GTTI a haven for learners, promoting peaceful coexistence.
+                GTTI is a leading technical institute in Kilifi County, located in the serene suburbs of Kilifi town
+                bordering the famous Dida Forest. The hospitality of the local community makes GTTI a welcoming haven
+                for learners and promotes peaceful coexistence.
+              </p>
+              <p>
+                The institute boasts sufficient resources for quality learning and research, including modern
+                workshops, modern ICT laboratories, and dedicated teaching and non-teaching staff who foster learning
+                and innovation.
               </p>
             </div>
             <p className="mt-5 flex items-center gap-2 text-sm font-semibold text-primary">
