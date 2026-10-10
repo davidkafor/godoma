@@ -21,9 +21,9 @@ export default function Page() {
       <main id="top">
         <HeroSlider />
         <NewsTicker />
+        <PrincipalMessage />
         <NewsSection />
         <AboutSection />
-        <PrincipalMessage />
         <StatsSection />
         <DepartmentsSection />
         <AdmissionsSection />

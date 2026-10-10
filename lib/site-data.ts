@@ -27,7 +27,17 @@ export const navigation: NavGroup[] = [
       { label: 'Vision, Mission & Core Values', href: '/about' },
       { label: 'Brief History', href: '/about#history' },
       { label: 'Governance', href: '/governance' },
-      { label: 'Administration', href: '/administration' },
+    ],
+  },
+  {
+    label: 'Administration',
+    href: '/administration',
+    items: [
+      { label: 'Council/BOG Chairperson', href: '/council-bog-chairperson' },
+      { label: 'Principal Office', href: '/principal-office' },
+      { label: 'Deputy Principal Office', href: '/deputy-principal-office' },
+      { label: 'Dean of Students', href: '/dean-of-students' },
+      { label: 'Registrar Office', href: '/registrar-office' },
     ],
   },
   {
