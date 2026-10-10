@@ -20,9 +20,9 @@ export default function Page() {
       <SiteHeader />
       <main id="top">
         <HeroSlider />
-        <PrincipalMessage />
         <NewsTicker />
         <NewsSection />
+        <PrincipalMessage />
         <AboutSection />
         <StatsSection />
         <DepartmentsSection />
