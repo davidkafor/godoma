@@ -27,10 +27,6 @@ export function HeroSlider() {
       aria-roledescription="carousel"
       aria-label="Highlights"
       className="relative isolate h-[560px] overflow-hidden bg-primary sm:h-[620px]"
-      onMouseEnter={() => setPaused(true)}
-      onMouseLeave={() => setPaused(false)}
-      onFocus={() => setPaused(true)}
-      onBlur={() => setPaused(false)}
     >
       {heroSlides.map((slide, i) => (
         <div
