@@ -86,25 +86,25 @@ export const navigation: NavGroup[] = [
 
 export const heroSlides = [
   {
-    image: '/images/hero-campus.png',
-    alt: 'Godoma TTI campus buildings surrounded by palm trees',
+image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DSC_0613.JPG-OsK9A7PdgKL3JPkDBT1fLsLbtUViNY.jpeg',
+  alt: 'Godoma Technical Training Institute main building and entrance',
     eyebrow: 'Welcome to Godoma TTI',
     title: 'A Centre of Excellence in Technical Training',
     text: 'The first public sub-county technical training institute in Kilifi County, producing quality technical and entrepreneurial skills since 2016.',
   },
   {
-    image: '/images/hero-workshop.png',
-    alt: 'Trainees doing practical wiring in the electrical workshop',
-    eyebrow: 'Practical, Hands-on Training',
-    title: 'Modern Workshops. Real Skills.',
-    text: 'Train in equipped electrical workshops, an electronics laboratory and modern ICT labs, guided by able teaching staff.',
+    image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DSC_1569.JPG-YxH4RpTX6K9eatec8DIZbaWzMmmqxw.jpeg',
+    alt: 'Godoma TTI football team pictured with the Principal outside the institute entrance',
+    eyebrow: 'Sports & Student Life',
+    title: 'Godoma TTI Football Team with the Principal',
+    text: 'Our football team celebrates teamwork, discipline and school spirit alongside the Principal at Godoma Technical Training Institute.',
   },
   {
-    image: '/images/hero-graduation.png',
-    alt: 'Graduates celebrating at a graduation ceremony',
-    eyebrow: 'KNEC Examined Programmes',
-    title: 'Diploma, Craft & Artisan Courses',
-    text: 'Join competency-based programmes and short courses across eight academic departments, building practical skills for the economy.',
+    image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DSC_0615.JPG-mjBl21SjEsybAzy2qy2NveYGm08xne.jpeg',
+    alt: 'Godoma TTI campus courtyard with landscaped grounds and mature trees',
+    eyebrow: 'A Conducive Campus Environment',
+    title: 'Study, Learn and Stay Inspired.',
+    text: 'Enjoy a peaceful and welcoming campus with landscaped grounds, open spaces and a supportive environment for study, growth and residence.',
   },
 ]
 
@@ -239,7 +239,7 @@ export const departments: Department[] = [
     id: 'hospitality',
     name: 'Tourism & Hospitality',
     short: 'Hospitality',
-    image: '/images/dept-hospitality.png',
+    image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DSC_1710.JPG-I03Bj24bYd1hKe8qBaUxQDgRSFCwk4.jpeg',
     head: 'Department of Hospitality',
     summary:
       "Prepares trainees for Kenya's coastal hospitality and tourism industry through food & beverage production, tour guiding and travel operations programmes.",

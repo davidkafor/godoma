@@ -11,8 +11,8 @@ export function AboutSection() {
           <div className="relative">
             <div className="relative aspect-[4/3] overflow-hidden rounded-lg shadow-xl">
               <Image
-                src="/images/hero-campus.png"
-                alt="Godoma TTI campus in Vitengeni, Kilifi"
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DSC_0629.JPG-soKPoC81P7sfduc2B6eygNXs4Fh8Ki.jpeg"
+                alt="Godoma TTI campus building and Konza Digital Skills Lab in Vitengeni, Kilifi"
                 fill
                 sizes="(min-width: 1024px) 50vw, 100vw"
                 className="object-cover"
