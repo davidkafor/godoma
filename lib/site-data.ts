@@ -93,11 +93,11 @@ image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DSC_0613.JPG-OsK
     text: 'The first public sub-county technical training institute in Kilifi County, producing quality technical and entrepreneurial skills since 2016.',
   },
   {
-    image: '/images/hero-workshop.png',
-    alt: 'Trainees doing practical wiring in the electrical workshop',
-    eyebrow: 'Practical, Hands-on Training',
-    title: 'Modern Workshops. Real Skills.',
-    text: 'Train in equipped electrical workshops, an electronics laboratory and modern ICT labs, guided by able teaching staff.',
+    image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DSC_1569.JPG-YxH4RpTX6K9eatec8DIZbaWzMmmqxw.jpeg',
+    alt: 'Godoma TTI trainees and staff gathered outside the institute entrance',
+    eyebrow: 'Life at Godoma TTI',
+    title: 'Learning, Teamwork & Belonging',
+    text: 'Our trainees build confidence, friendships and practical skills together as part of the Godoma Technical Training Institute community.',
   },
   {
     image: '/images/hero-graduation.png',
