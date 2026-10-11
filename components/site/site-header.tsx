@@ -73,7 +73,7 @@ export function SiteHeader() {
                       aria-expanded={openMenu === group.label}
                       aria-haspopup="true"
                       onClick={() => setOpenMenu((m) => (m === group.label ? null : group.label))}
-                      className="flex h-10 items-center gap-1 whitespace-nowrap rounded-md px-2 text-xs font-semibold text-foreground transition-colors hover:text-primary"
+                      className="flex h-10 items-center gap-1 whitespace-nowrap rounded-md px-2 text-sm font-semibold text-foreground transition-colors hover:text-primary"
                     >
                       {group.label}
                       <ChevronDown
