@@ -28,7 +28,7 @@ export function AboutSection() {
             <SectionHeading
               id="about-heading"
               eyebrow="About Godoma TTI"
-              title="A Pillar of Vision 2030 in Kilifi County"
+              title="A Centre of Excellence in Technological Training"
               align="left"
             />
             <div className="-mt-6 space-y-4 leading-relaxed text-muted-foreground">

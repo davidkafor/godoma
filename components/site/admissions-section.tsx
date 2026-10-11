@@ -4,10 +4,10 @@ import { cn } from '@/lib/utils'
 import { contact, OFFICIAL_SITE } from '@/lib/site-data'
 
 const levels = [
-  { level: 'Diploma', requirement: 'KCSE C- (minus)', duration: '3 Years' },
-  { level: 'Craft Certificate', requirement: 'KCSE D (plain)', duration: '2 Years' },
-  { level: 'Artisan Certificate', requirement: 'Open entry', duration: '1 Year' },
-  { level: 'Short Course (Computer Packages)', requirement: 'Open entry', duration: '3 Months' },
+  { level: 'CBET Level 6', requirement: 'KCSE C- (minus)', duration: 'As prescribed' },
+  { level: 'CBET Level 5', requirement: 'KCSE D (plain)', duration: 'As prescribed' },
+  { level: 'CBET Level 4', requirement: 'Open entry', duration: 'As prescribed' },
+  { level: 'Short Courses', requirement: 'Open entry', duration: '6 Months' },
 ]
 
 export function AdmissionsSection() {
@@ -24,9 +24,10 @@ export function AdmissionsSection() {
             Start Your Technical Career at Godoma TTI
           </h2>
           <div className="mt-4 h-1 w-16 rounded-full bg-accent" aria-hidden="true" />
-          <p className="mt-5 leading-relaxed text-primary-foreground/80">
-            Admissions are ongoing. Choose your programme, confirm you meet the minimum entry requirement, then contact
-            the admissions office or download your admission letter from the students downloads page.
+            <p className="mt-5 leading-relaxed text-primary-foreground/80">
+            Applications are accepted online and offline for the January, May and September intakes. Submit photocopies
+            of your National ID, birth certificate, KCSE and KCPE result slips, and leaving certificate addressed to
+            the Principal, Godoma Technical Training Institute.
           </p>
 
           <ul className="mt-8 space-y-4">

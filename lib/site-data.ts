@@ -1,9 +1,12 @@
 export const OFFICIAL_SITE = 'https://godomatti.ac.ke'
 
 export const contact = {
-  phones: ['+254 702 363 304', '+254 720 755 952'],
-  email: 'info@godomatti.ac.ke',
-  address: 'Matanomane, Vitengeni Rd, Kilifi County, Kenya',
+  phones: ['+254 743 661 423'],
+  email: 'godomatti.gtti@gmail.com',
+  secondaryEmail: 'info@godomatti.ac.ke',
+  address: 'Matanomanne Market, Vitengeni Road, Ganze Sub-county, Kilifi County, Kenya',
+  postalAddress: 'P.O. Box 1808–80108, Kilifi',
+  locationNote: '30 km from Kilifi town along Vitengeni Road, adjacent to Arabuko Sokoke Forest and next to Vitengeni Baptist Secondary School.',
   mapEmbed:
     'https://www.google.com/maps?q=Godoma+Technical+Training+Institute,+Vitengeni,+Kilifi&output=embed',
 }
@@ -58,7 +61,11 @@ export const navigation: NavGroup[] = [
       { label: 'Building & Civil', href: '/departments/building' },
       { label: 'ICT', href: '/departments/ict' },
       { label: 'Hospitality', href: '/departments/hospitality' },
-      { label: 'Business', href: '/departments/business' },
+      { label: 'Tourism & Hospitality', href: '/departments/hospitality' },
+      { label: 'Mechanical Engineering', href: '/departments/mechanical' },
+      { label: 'Fashion & Cosmetology', href: '/departments/fashion' },
+      { label: 'Agriculture', href: '/departments/agriculture' },
+      { label: 'Business & Liberal Studies', href: '/departments/business' },
     ],
   },
   {
@@ -97,7 +104,7 @@ export const heroSlides = [
     alt: 'Graduates celebrating at a graduation ceremony',
     eyebrow: 'KNEC Examined Programmes',
     title: 'Diploma, Craft & Artisan Courses',
-    text: 'Join 32 nationally examined programmes across five academic departments and build a career the economy needs.',
+    text: 'Join competency-based programmes and short courses across eight academic departments, building practical skills for the economy.',
   },
 ]
 
@@ -136,6 +143,18 @@ export const tickerItems = [
   'Plans underway to become a NITA Exam Centre',
 ]
 
+export const instituteProfile = {
+  motto: 'Quality learning for academic and technological excellence.',
+  vision: 'A centre of excellence in technological training.',
+  mission: 'To become a world class TVET institution in training for economic development.',
+  intake: 'January, May and September',
+  landSize: '26 acres',
+  accommodation: 'Modern leased hostels for male and female trainees on a first-come, first-served basis.',
+  activities: 'Sports and games, drama, music, and participation in TVET fairs and shows.',
+  affirmativeAction: 'We encourage female trainees to undertake Science, Engineering and Technical (SET) courses.',
+  fee: 'KSh 22,396 tuition fee',
+}
+
 export const coreValues = ['Respect', 'Quality', 'Excellence', 'Integrity', 'Discipline', 'Equity', 'Team-work']
 
 export const mandate = [
@@ -173,11 +192,11 @@ export const departments: Department[] = [
     summary:
       'Established in 2016 to train manpower in both the Power and Instrumentation & Control options, with two equipped modern workshops — Electrical workshops and an Electronics laboratory.',
     courses: [
-      c('Diploma in Electrical & Electronics Engineering (Power Option)', 'KCSE C-', '3 Years'),
-      c('Diploma in Electrical & Electronics Engineering (Instrumentation & Control)', 'KCSE C-', '3 Years'),
-      c('Certificate in Electrical & Electronics Engineering (Power Option)', 'KCSE D', '2 Years'),
-      c('Certificate in Electrical & Electronics Engineering (Instrumentation & Control)', 'KCSE D', '2 Years'),
-      c('Artisan Certificate in Electrical Installation', 'Open', '1 Year'),
+      c('Solar PV Installation (Level 4)', 'KCSE D', '6 Months', 'CDACC'),
+      c('Electronics Engineering (Level 5 & 4)', 'KCSE D', '2 Years', 'CDACC'),
+      c('Electrical Engineering (Level 6, 5 & 4)', 'KCSE C-', '3 Years', 'CDACC'),
+      c('Electrical Installation Technology (Level 4)', 'KCSE D', '6 Months', 'CDACC'),
+      c('Electrical Installation', 'Open', '6 Months', 'CDACC / NITA'),
     ],
   },
   {
@@ -189,13 +208,16 @@ export const departments: Department[] = [
     summary:
       'One of the largest departments in the Institute, with well-equipped workshops. Graduates work in construction, real estate, the Ministry of Works, KeNHA and the SGR project.',
     courses: [
-      c('Diploma in Building & Construction Technology', 'KCSE C-', '3 Years'),
-      c('Certificate in Building & Construction Engineering', 'KCSE D', '2 Years'),
-      c('Artisan Certificate in Welding & Fabrication', 'Open', '1 Year'),
-      c('Artisan Certificate in Masonry', 'Open', '1 Year'),
-      c('Artisan Certificate in Plumbing', 'Open', '1 Year'),
-      c('Artisan Certificate in Carpentry & Joinery', 'Open', '1 Year'),
-      c('Artisan Certificate in Painting & Decorations', 'Open', '1 Year'),
+      c('Land Survey (Level 5)', 'KCSE D', '2 Years', 'CDACC'),
+      c('Masonry (Level 4)', 'KCSE D', '6 Months', 'CDACC'),
+      c('Plumbing (Level 5 & 4)', 'KCSE D', '2 Years', 'CDACC'),
+      c('Civil Engineering (Level 6 & 5)', 'KCSE C-', '3 Years', 'CDACC'),
+      c('Building Technology (Level 6 & 5)', 'KCSE C-', '3 Years', 'CDACC'),
+      c('Carpentry & Joinery (Level 4)', 'KCSE D', '6 Months', 'CDACC'),
+      c('Masonry', 'Open', '6 Months', 'CDACC / NITA'),
+      c('Plumbing and Pipe Fitting', 'Open', '6 Months', 'CDACC / NITA'),
+      c('Carpentry', 'Open', '6 Months', 'CDACC / NITA'),
+      c('Welding', 'Open', '6 Months', 'CDACC / NITA'),
     ],
   },
   {
@@ -207,48 +229,82 @@ export const departments: Department[] = [
     summary:
       'Provides holistic training in ICT & Computer Studies from a state-of-the-art computer lab, with campus-wide Wi-Fi, student and staff portals, and E-Learning.',
     courses: [
-      c('Diploma in Information & Communication Technology (ICT)', 'KCSE C-', '3 Years'),
-      c('Diploma in Computer Studies', 'KCSE C-', '3 Years'),
-      c('Certificate in Computer Studies', 'KCSE D', '2 Years'),
-      c('Certificate in Information & Communication Technology (ICT)', 'KCSE D', '2 Years'),
+      c('ICT (Level 6, 5 & 4)', 'KCSE C-', '3 Years', 'CDACC'),
+      c('Cyber Security (Level 4)', 'KCSE D', '6 Months', 'CDACC'),
+      c('Computer Science (Level 6)', 'KCSE C-', '3 Years', 'CDACC'),
       c('Computer Packages', 'Open', '3 Months', 'GTTI'),
     ],
   },
   {
     id: 'hospitality',
-    name: 'Hospitality & Tourism',
+    name: 'Tourism & Hospitality',
     short: 'Hospitality',
     image: '/images/dept-hospitality.png',
     head: 'Department of Hospitality',
     summary:
       "Prepares trainees for Kenya's coastal hospitality and tourism industry through food & beverage production, tour guiding and travel operations programmes.",
     courses: [
-      c('Diploma in Food & Beverage Production, Sales and Services', 'KCSE C-', '3 Years'),
-      c('Diploma in Tourism Management', 'KCSE C-', '3 Years'),
-      c('Certificate in Food & Beverage Production, Sales and Services', 'KCSE D', '2 Years'),
-      c('Certificate in Tour Guiding & Travel Operations', 'KCSE D', '2 Years'),
-      c('Artisan Certificate in Food & Beverage Production, Sales and Services', 'Open', '1 Year'),
+      c('Catering & Accommodation (Level 5 & 4)', 'KCSE D', '2 Years', 'CDACC'),
+      c('Tourism & Travel Management (Level 6 & 5)', 'KCSE C-', '3 Years', 'CDACC'),
+      c('Food & Beverages — Culinary Arts (Level 6, 5 & 4)', 'KCSE C-', '3 Years', 'CDACC'),
+      c('House Keeping & Accommodation (Level 5 & 4)', 'KCSE D', '2 Years', 'CDACC'),
+      c('Food and Beverage Production', 'Open', '6 Months', 'CDACC / NITA'),
+    ],
+  },
+  {
+    id: 'mechanical',
+    name: 'Mechanical Engineering',
+    short: 'Mechanical',
+    image: '/images/dept-building.png',
+    head: 'Department of Mechanical Engineering',
+    summary: 'Practical training for the automotive and fabrication industries through competency-based programmes.',
+    courses: [
+      c('Automotive Technology (Level 5 & 4)', 'KCSE D', '2 Years', 'CDACC'),
+      c('Welding & Fabrication (Level 5 & 4)', 'KCSE D', '2 Years', 'CDACC'),
+      c('Motorcycle', 'Open', '6 Months', 'CDACC / NITA'),
+      c('Motor Vehicle Mechanics', 'Open', '6 Months', 'CDACC / NITA'),
+    ],
+  },
+  {
+    id: 'fashion',
+    name: 'Fashion & Cosmetology',
+    short: 'Fashion',
+    image: '/images/dept-hospitality.png',
+    head: 'Department of Fashion & Cosmetology',
+    summary: 'Creative and practical training in fashion design, hairdressing and beauty therapy.',
+    courses: [
+      c('Fashion & Design (Level 5 & 4)', 'KCSE D', '2 Years', 'CDACC'),
+      c('Cosmetology (Level 5 & 4)', 'KCSE D', '2 Years', 'CDACC'),
+      c('Hairdressing', 'Open', '6 Months', 'CDACC / NITA'),
+      c('Beauty Therapy', 'Open', '6 Months', 'CDACC / NITA'),
+      c('Dress Making', 'Open', '6 Months', 'CDACC / NITA'),
+    ],
+  },
+  {
+    id: 'agriculture',
+    name: 'Agricultural Studies',
+    short: 'Agriculture',
+    image: '/images/dept-building.png',
+    head: 'Agricultural Department',
+    summary: 'Entrepreneurial agricultural training that equips trainees with practical skills for economic development.',
+    courses: [
+      c('Agri-preneurship (Level 5 & 4)', 'KCSE D', '2 Years', 'CDACC'),
+      c('Agri-preneurship', 'Open', '6 Months', 'CDACC / NITA'),
     ],
   },
   {
     id: 'business',
-    name: 'Business Studies',
+    name: 'Business & Liberal Studies',
     short: 'Business',
     image: '/images/dept-business.png',
     head: 'Miss Caroline Muthuani',
     summary:
       'Offers diploma and craft programmes in management, marketing, supply chain, human resources and social work for the growing private and public sector.',
     courses: [
-      c('Diploma in Business Management', 'KCSE C-', '3 Years'),
-      c('Diploma in Sales & Marketing', 'KCSE C-', '3 Years'),
-      c('Diploma in Supply Chain Management', 'KCSE C-', '3 Years'),
-      c('Diploma in Human Resource Management', 'KCSE C-', '3 Years'),
-      c('Diploma in Social Work & Community Development', 'KCSE C-', '3 Years'),
-      c('Craft Certificate in Business Management', 'KCSE D', '2 Years'),
-      c('Craft Certificate in Sales & Marketing', 'KCSE D', '2 Years'),
-      c('Craft Certificate in Supply Chain Management', 'KCSE D', '2 Years'),
-      c('Craft Certificate in Human Resource Management', 'KCSE D', '2 Years'),
-      c('Craft Certificate in Social Work & Community Development', 'KCSE D', '2 Years'),
+      c('Supply Chain Management (Level 6 & 5)', 'KCSE C-', '3 Years', 'CDACC'),
+      c('Human Resource Management (Level 6 & 5)', 'KCSE C-', '3 Years', 'CDACC'),
+      c('Business Management (Level 6 & 5)', 'KCSE C-', '3 Years', 'CDACC'),
+      c('Social Work & Community Development (Level 6 & 5)', 'KCSE C-', '3 Years', 'CDACC'),
     ],
   },
 ]

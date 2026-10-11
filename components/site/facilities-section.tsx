@@ -6,7 +6,7 @@ const facilities = [
   {
     icon: Wrench,
     title: 'Modern Workshops',
-    text: 'Equipped electrical workshops, an electronics laboratory and building & civil workshops for hands-on practicals.',
+    text: 'The 26-acre institute has two electrical engineering workshops, four building technology labs and four fully equipped building technology workshops.',
   },
   {
     icon: Cpu,
