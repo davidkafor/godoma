@@ -86,8 +86,8 @@ export const navigation: NavGroup[] = [
 
 export const heroSlides = [
   {
-    image: '/images/hero-campus.png',
-    alt: 'Godoma TTI campus buildings surrounded by palm trees',
+image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DSC_0613.JPG-OsK9A7PdgKL3JPkDBT1fLsLbtUViNY.jpeg',
+  alt: 'Godoma Technical Training Institute main building and entrance',
     eyebrow: 'Welcome to Godoma TTI',
     title: 'A Centre of Excellence in Technical Training',
     text: 'The first public sub-county technical training institute in Kilifi County, producing quality technical and entrepreneurial skills since 2016.',
