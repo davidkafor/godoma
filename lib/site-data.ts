@@ -1,9 +1,12 @@
 export const OFFICIAL_SITE = 'https://godomatti.ac.ke'
 
 export const contact = {
-  phones: ['+254 702 363 304', '+254 720 755 952'],
-  email: 'info@godomatti.ac.ke',
-  address: 'Matanomane, Vitengeni Rd, Kilifi County, Kenya',
+  phones: ['+254 743 661 423'],
+  email: 'godomatti.gtti@gmail.com',
+  secondaryEmail: 'info@godomatti.ac.ke',
+  address: 'Matanomanne Market, Vitengeni Road, Ganze Sub-county, Kilifi County, Kenya',
+  postalAddress: 'P.O. Box 1808–80108, Kilifi',
+  locationNote: '30 km from Kilifi town along Vitengeni Road, adjacent to Arabuko Sokoke Forest and next to Vitengeni Baptist Secondary School.',
   mapEmbed:
     'https://www.google.com/maps?q=Godoma+Technical+Training+Institute,+Vitengeni,+Kilifi&output=embed',
 }
@@ -135,6 +138,18 @@ export const tickerItems = [
   'Computer Packages short course — 3 months, open entry',
   'Plans underway to become a NITA Exam Centre',
 ]
+
+export const instituteProfile = {
+  motto: 'Quality learning for academic and technological excellence.',
+  vision: 'A centre of excellence in technological training.',
+  mission: 'To become a world class TVET institution in training for economic development.',
+  intake: 'January, May and September',
+  landSize: '26 acres',
+  accommodation: 'Modern leased hostels for male and female trainees on a first-come, first-served basis.',
+  activities: 'Sports and games, drama, music, and participation in TVET fairs and shows.',
+  affirmativeAction: 'We encourage female trainees to undertake Science, Engineering and Technical (SET) courses.',
+  fee: 'KSh 22,396 tuition fee',
+}
 
 export const coreValues = ['Respect', 'Quality', 'Excellence', 'Integrity', 'Discipline', 'Equity', 'Team-work']
 
