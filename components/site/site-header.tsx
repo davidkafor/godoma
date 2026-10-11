@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
 import { ChevronDown, Menu, X } from 'lucide-react'
 import { navigation, type NavItem } from '@/lib/site-data'
-import { Button, buttonVariants } from '@/components/ui/button'
+import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
 
 function NavLink({ item, className, onClick }: { item: NavItem; className?: string; onClick?: () => void }) {
@@ -73,7 +73,7 @@ export function SiteHeader() {
                       aria-expanded={openMenu === group.label}
                       aria-haspopup="true"
                       onClick={() => setOpenMenu((m) => (m === group.label ? null : group.label))}
-                      className="flex h-10 items-center gap-1 whitespace-nowrap rounded-md px-2 text-xs font-semibold text-foreground transition-colors hover:text-primary"
+                      className="flex h-10 items-center gap-1 whitespace-nowrap rounded-md px-2 text-sm font-semibold text-foreground transition-colors hover:text-primary"
                     >
                       {group.label}
                       <ChevronDown
@@ -114,12 +114,6 @@ export function SiteHeader() {
         </nav>
 
         <div className="flex items-center gap-2">
-          <a
-            href="/admissions"
-            className={cn(buttonVariants(), 'h-10 shrink-0 whitespace-nowrap bg-accent px-3 text-sm font-bold text-accent-foreground hover:bg-accent/90')}
-          >
-            Apply Now!
-          </a>
           <Button
             variant="outline"
             size="icon"

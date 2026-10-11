@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import Image from 'next/image'
-import { ChevronLeft, ChevronRight, CalendarDays, Pause, Play } from 'lucide-react'
+import { ChevronLeft, ChevronRight, Pause, Play } from 'lucide-react'
 import { heroSlides } from '@/lib/site-data'
 import { buttonVariants } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
@@ -127,15 +127,6 @@ export function HeroSlider() {
             </div>
           </div>
 
-          <div className="hidden max-w-xs rounded-lg border-l-4 border-accent bg-background/95 p-4 shadow-xl md:block">
-            <p className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-accent">
-              <CalendarDays className="size-4" aria-hidden="true" />
-              Intake Now Open
-            </p>
-            <p className="mt-1 text-sm font-semibold text-foreground">
-              Admissions ongoing for Diploma, Craft & Artisan courses. HELB TVET loans available.
-            </p>
-          </div>
         </div>
       </div>
     </section>
