@@ -53,7 +53,7 @@ export function SiteHeader() {
             width={707}
             height={200}
             priority
-            className="h-16 w-auto sm:h-20"
+            className="h-[4.5rem] w-auto sm:h-[5.5rem]"
           />
         </a>
 
