@@ -239,7 +239,7 @@ export const departments: Department[] = [
     id: 'hospitality',
     name: 'Tourism & Hospitality',
     short: 'Hospitality',
-    image: '/images/dept-hospitality.png',
+    image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DSC_1710.JPG-I03Bj24bYd1hKe8qBaUxQDgRSFCwk4.jpeg',
     head: 'Department of Hospitality',
     summary:
       "Prepares trainees for Kenya's coastal hospitality and tourism industry through food & beverage production, tour guiding and travel operations programmes.",
