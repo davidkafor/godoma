@@ -57,8 +57,8 @@ export function SiteHeader() {
           />
         </a>
 
-        <nav ref={navRef} aria-label="Main" className="hidden lg:block">
-          <ul className="flex items-center gap-1">
+        <nav ref={navRef} aria-label="Main" className="hidden min-w-0 flex-1 lg:block">
+          <ul className="flex items-center justify-center gap-1">
             {navigation.map((group) => (
               <li
                 key={group.label}
@@ -73,7 +73,7 @@ export function SiteHeader() {
                       aria-expanded={openMenu === group.label}
                       aria-haspopup="true"
                       onClick={() => setOpenMenu((m) => (m === group.label ? null : group.label))}
-                      className="flex items-center gap-1 rounded-md px-3 py-2 text-sm font-semibold text-foreground transition-colors hover:text-primary"
+                      className="flex h-10 items-center gap-1 whitespace-nowrap rounded-md px-3 text-sm font-semibold text-foreground transition-colors hover:text-primary"
                     >
                       {group.label}
                       <ChevronDown
@@ -103,7 +103,7 @@ export function SiteHeader() {
                 ) : (
                   <a
                     href={group.href}
-                    className="block rounded-md px-3 py-2 text-sm font-semibold text-foreground transition-colors hover:text-primary"
+                    className="flex h-10 items-center whitespace-nowrap rounded-md px-3 text-sm font-semibold text-foreground transition-colors hover:text-primary"
                   >
                     {group.label}
                   </a>
@@ -116,7 +116,7 @@ export function SiteHeader() {
         <div className="flex items-center gap-2">
           <a
             href="/admissions"
-            className={cn(buttonVariants(), 'h-10 bg-accent px-4 font-bold text-accent-foreground hover:bg-accent/90')}
+            className={cn(buttonVariants(), 'h-10 shrink-0 whitespace-nowrap bg-accent px-4 font-bold text-accent-foreground hover:bg-accent/90')}
           >
             Apply Now!
           </a>
