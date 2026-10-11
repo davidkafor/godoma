@@ -13,11 +13,13 @@ export function HeroSlider() {
   const count = heroSlides.length
 
   useEffect(() => {
-    if (paused) return
-    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-    if (reduce) return
-    const id = setInterval(() => setIndex((i) => (i + 1) % count), 6000)
-    return () => clearInterval(id)
+    if (paused || count < 2) return
+
+    const id = window.setInterval(() => {
+      setIndex((currentIndex) => (currentIndex + 1) % count)
+    }, 6000)
+
+    return () => window.clearInterval(id)
   }, [paused, count])
 
   const go = (dir: number) => setIndex((i) => (i + dir + count) % count)
