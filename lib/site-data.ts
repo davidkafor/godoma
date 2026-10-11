@@ -100,11 +100,11 @@ image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DSC_0613.JPG-OsK
     text: 'Our football team celebrates teamwork, discipline and school spirit alongside the Principal at Godoma Technical Training Institute.',
   },
   {
-    image: '/images/hero-graduation.png',
-    alt: 'Graduates celebrating at a graduation ceremony',
-    eyebrow: 'KNEC Examined Programmes',
-    title: 'Diploma, Craft & Artisan Courses',
-    text: 'Join competency-based programmes and short courses across eight academic departments, building practical skills for the economy.',
+    image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DSC_0615.JPG-mjBl21SjEsybAzy2qy2NveYGm08xne.jpeg',
+    alt: 'Godoma TTI campus courtyard with landscaped grounds and mature trees',
+    eyebrow: 'A Conducive Campus Environment',
+    title: 'Study, Learn and Stay Inspired.',
+    text: 'Enjoy a peaceful and welcoming campus with landscaped grounds, open spaces and a supportive environment for study, growth and residence.',
   },
 ]
 
