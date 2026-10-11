@@ -94,10 +94,10 @@ image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DSC_0613.JPG-OsK
   },
   {
     image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DSC_1569.JPG-YxH4RpTX6K9eatec8DIZbaWzMmmqxw.jpeg',
-    alt: 'Godoma TTI trainees and staff gathered outside the institute entrance',
-    eyebrow: 'Life at Godoma TTI',
-    title: 'Learning, Teamwork & Belonging',
-    text: 'Our trainees build confidence, friendships and practical skills together as part of the Godoma Technical Training Institute community.',
+    alt: 'Godoma TTI football team pictured with the Principal outside the institute entrance',
+    eyebrow: 'Sports & Student Life',
+    title: 'Godoma TTI Football Team with the Principal',
+    text: 'Our football team celebrates teamwork, discipline and school spirit alongside the Principal at Godoma Technical Training Institute.',
   },
   {
     image: '/images/hero-graduation.png',
