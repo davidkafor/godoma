@@ -45,7 +45,7 @@ export function SiteHeader() {
 
   return (
     <header className="sticky top-0 z-50 border-b bg-background/95 shadow-sm backdrop-blur supports-[backdrop-filter]:bg-background/85">
-      <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3">
+      <div className="mx-auto flex max-w-7xl items-center justify-between gap-5 px-4 py-5">
         <a href="/" className="shrink-0" aria-label="Godoma Technical Training Institute home">
           <Image
             src="/images/godoma-institute-logo.png"
@@ -53,7 +53,7 @@ export function SiteHeader() {
             width={707}
             height={200}
             priority
-            className="h-12 w-auto sm:h-14"
+            className="h-16 w-auto sm:h-20"
           />
         </a>
 
@@ -73,7 +73,7 @@ export function SiteHeader() {
                       aria-expanded={openMenu === group.label}
                       aria-haspopup="true"
                       onClick={() => setOpenMenu((m) => (m === group.label ? null : group.label))}
-                      className="flex h-10 items-center gap-1 whitespace-nowrap rounded-md px-3 text-sm font-semibold text-foreground transition-colors hover:text-primary"
+                      className="flex h-10 items-center gap-1 whitespace-nowrap rounded-md px-2 text-xs font-semibold text-foreground transition-colors hover:text-primary"
                     >
                       {group.label}
                       <ChevronDown
@@ -116,7 +116,7 @@ export function SiteHeader() {
         <div className="flex items-center gap-2">
           <a
             href="/admissions"
-            className={cn(buttonVariants(), 'h-10 shrink-0 whitespace-nowrap bg-accent px-4 font-bold text-accent-foreground hover:bg-accent/90')}
+            className={cn(buttonVariants(), 'h-10 shrink-0 whitespace-nowrap bg-accent px-3 text-sm font-bold text-accent-foreground hover:bg-accent/90')}
           >
             Apply Now!
           </a>
