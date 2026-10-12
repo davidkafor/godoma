@@ -8,7 +8,7 @@ export function PrincipalMessage() {
       <div className="mx-auto grid max-w-7xl gap-10 px-4 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
         <div className="relative mx-auto w-full max-w-sm overflow-hidden rounded-lg bg-primary p-3 shadow-xl">
           <Image src="/images/principal-portrait.png" alt="Principal of Godoma Technical Training Institute" width={640} height={800} className="aspect-[4/5] w-full object-cover" />
-          <div className="px-3 py-4 text-primary-foreground"><p className="text-lg font-bold">Mrs. Hafsa Seif</p><p className="text-sm text-primary-foreground/75">Principal / Board Secretary</p></div>
+          <div className="px-3 py-4 text-primary-foreground"><p className="text-lg font-bold">Caroline Musyimi</p><p className="text-sm text-primary-foreground/75">Principal</p></div>
         </div>
         <div>
           <p className="text-sm font-bold uppercase tracking-[0.2em] text-accent-foreground">A message from the principal</p>
