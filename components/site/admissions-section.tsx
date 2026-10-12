@@ -1,7 +1,7 @@
 import { FileText, Phone, Wallet } from 'lucide-react'
 import { buttonVariants } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
-import { contact, OFFICIAL_SITE } from '@/lib/site-data'
+import { contact } from '@/lib/site-data'
 
 const levels = [
   { level: 'Diploma', requirement: 'KCSE C- (minus)', duration: '3 Years' },
@@ -15,7 +15,7 @@ export function AdmissionsSection() {
     <section
       id="admissions"
       aria-labelledby="admissions-heading"
-      className="relative overflow-hidden bg-[oklch(0.25_0.09_260)] py-20 text-primary-foreground"
+      className="relative overflow-hidden bg-brand-deep py-20 text-primary-foreground"
     >
       <div className="mx-auto grid max-w-7xl gap-12 px-4 lg:grid-cols-2">
         <div>
@@ -35,9 +35,7 @@ export function AdmissionsSection() {
               <div>
                 <p className="font-bold">Admission letters & forms</p>
                 <a
-                  href={`${OFFICIAL_SITE}/students%20downloads.html`}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="/trainees/downloads"
                   className="text-sm text-primary-foreground/80 underline underline-offset-4 hover:text-accent"
                 >
                   Visit Students Downloads
@@ -72,9 +70,7 @@ export function AdmissionsSection() {
               Apply Now!
             </a>
             <a
-              href={OFFICIAL_SITE}
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/trainees/portal"
               className={cn(buttonVariants({ variant: 'outline' }), 'h-12 border-primary-foreground/50 bg-transparent px-6 text-base font-semibold text-primary-foreground hover:bg-primary-foreground hover:text-primary')}
             >
               Students Portal

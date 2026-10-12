@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import Image from 'next/image'
 import { ArrowRight, Clock, GraduationCap, User } from 'lucide-react'
-import { departments, OFFICIAL_SITE } from '@/lib/site-data'
+import { departments } from '@/lib/site-data'
 import { SectionHeading } from './section-heading'
 import { cn } from '@/lib/utils'
 
@@ -44,7 +44,7 @@ export function DepartmentsSection() {
                   sizes="(min-width: 1024px) 20vw, (min-width: 640px) 50vw, 100vw"
                   className="object-cover transition-transform duration-500 group-hover:scale-110"
                 />
-                <span className="absolute inset-0 bg-gradient-to-t from-[oklch(0.2_0.08_260)] via-[oklch(0.2_0.08_260)]/50 to-transparent" />
+                <span className="absolute inset-0 bg-gradient-to-t from-brand-deep via-brand-deep/50 to-transparent" />
                 <span className="relative p-5 text-primary-foreground">
                   <span className="block text-xs font-bold uppercase tracking-wider text-accent">
                     {d.courses.length} courses
@@ -126,7 +126,7 @@ export function DepartmentsSection() {
                     </td>
                     <td className="px-6 py-4 font-medium text-muted-foreground">{course.examiner}</td>
                     <td className="px-6 py-4 text-right">
-                      <a href="#admissions" className="font-bold text-primary hover:text-accent">
+                      <a href="/admissions" className="font-bold text-primary hover:text-accent">
                         Apply
                         <span className="sr-only"> for {course.name}</span>
                       </a>
@@ -138,9 +138,7 @@ export function DepartmentsSection() {
           </div>
           <div className="border-t p-4 text-right">
             <a
-              href={`${OFFICIAL_SITE}/${active.id}.html`}
-              target="_blank"
-              rel="noopener noreferrer"
+              href={`/academics/${active.id}`}
               className="inline-flex items-center gap-2 text-sm font-bold text-primary hover:text-accent"
             >
               Full department profile

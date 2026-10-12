@@ -19,52 +19,133 @@ export type NavItem = { label: string; href: string; external?: boolean }
 export type NavGroup = { label: string; href: string; items?: NavItem[] }
 
 export const navigation: NavGroup[] = [
-  { label: 'Home', href: '#top' },
+  { label: 'Home', href: '/' },
   {
     label: 'About Us',
-    href: '#about',
+    href: '/about',
     items: [
-      { label: 'Vision, Mission & Core Values', href: '#about' },
-      { label: 'Brief History', href: '#history' },
-      { label: 'Governance', href: `${OFFICIAL_SITE}/governance.html`, external: true },
-      { label: 'Administration', href: `${OFFICIAL_SITE}/administration.html`, external: true },
+      { label: 'Vision, Mission & Core Values', href: '/about' },
+      { label: 'Brief History', href: '/about/history' },
+      { label: 'Governance', href: '/about/governance' },
+      { label: 'Administration', href: '/about/administration' },
     ],
   },
   {
     label: 'Admissions',
-    href: '#admissions',
+    href: '/admissions',
     items: [
-      { label: 'Entry Requirements', href: '#admissions' },
-      { label: 'HELB TVET Loans', href: '#news' },
-      { label: 'Accommodation', href: '#facilities' },
-      { label: 'Contact Admissions', href: '#contact' },
+      { label: 'Entry Requirements', href: '/admissions' },
+      { label: 'HELB TVET Loans', href: '/admissions/helb-loans' },
+      { label: 'Accommodation', href: '/admissions/accommodation' },
+      { label: 'Contact Admissions', href: '/admissions/contact' },
     ],
   },
   {
     label: 'Academics',
-    href: '#departments',
+    href: '/academics',
     items: [
-      { label: 'Electrical & Electronics', href: '#departments' },
-      { label: 'Building & Civil', href: '#departments' },
-      { label: 'ICT', href: '#departments' },
-      { label: 'Hospitality & Tourism', href: '#departments' },
-      { label: 'Business', href: '#departments' },
+      { label: 'Electrical & Electronics', href: '/academics/electrical' },
+      { label: 'Building & Civil', href: '/academics/building' },
+      { label: 'ICT', href: '/academics/ict' },
+      { label: 'Hospitality & Tourism', href: '/academics/hospitality' },
+      { label: 'Business', href: '/academics/business' },
     ],
   },
   {
     label: 'Trainees',
-    href: '#facilities',
+    href: '/trainees',
     items: [
-      { label: 'Students Portal', href: OFFICIAL_SITE, external: true },
-      { label: 'E-Learning', href: OFFICIAL_SITE, external: true },
-      { label: 'Students Downloads', href: `${OFFICIAL_SITE}/students%20downloads.html`, external: true },
-      { label: 'Aids Control Unit', href: `${OFFICIAL_SITE}/aids-control-unit.html`, external: true },
-      { label: 'Events Calendar', href: `${OFFICIAL_SITE}/calendar.html`, external: true },
+      { label: 'Students Portal', href: '/trainees/portal' },
+      { label: 'E-Learning', href: '/trainees/e-learning' },
+      { label: 'Students Downloads', href: '/trainees/downloads' },
+      { label: 'Aids Control Unit', href: '/trainees/aids-control-unit' },
+      { label: 'Events Calendar', href: '/trainees/events' },
     ],
   },
-  { label: 'Library', href: '#facilities' },
-  { label: 'Contact Us', href: '#contact' },
+  { label: 'Library', href: '/library' },
+  { label: 'Contact Us', href: '/contact' },
 ]
+
+export const boardMembers = [
+  { name: 'Mrs. Christine Katana', role: 'Board Chair' },
+  { name: 'Mrs. Hafsa Seif', role: 'Principal / Board Secretary' },
+  { name: 'Mr. Mohammed Omar', role: 'Board Deputy Chair' },
+  { name: 'Mr. Charles Ndegwa', role: 'TVET Director / Board Member' },
+  { name: 'Mrs. Saadu Hashim', role: 'Board Member' },
+  { name: 'Mr. Shumaa Mwangome', role: 'Board Member' },
+  { name: 'Dr. Khalander Khan', role: 'Board Member' },
+  { name: 'Mr. Peter Okwaro', role: 'Board Member' },
+  { name: 'Prof. Gabriel Katana', role: 'Board Member' },
+]
+
+export const managementTeam = [
+  { name: 'Mrs. Hafsa Seif', role: 'Principal' },
+  { name: 'Mr. Festus Mugogo', role: 'Deputy Principal / PC Co-ordinator' },
+  { name: 'Mr. Franco Mwangala', role: 'Dean of Students' },
+  { name: 'Miss Phednike Mwambori', role: 'Academic Registrar / HOD ICT' },
+  { name: 'Mr. John Baraka', role: 'Head of Finance' },
+  { name: 'Miss Caroline Muthuani', role: 'HOD Business / Exams' },
+  { name: 'Mr. Leornard Nyamawi', role: 'Head of Procurement' },
+  { name: 'Mr. Bernard Mganga', role: 'HOD Building Department' },
+  { name: 'Mr. Amos Chirchir', role: 'HOD Electrical Department' },
+  { name: 'Mr. Chigamba Beja', role: 'Integrity Officer' },
+]
+
+export const departmentDetails: Record<
+  string,
+  { intro: string; objectives?: string[]; staff?: { name: string; section: string; designation: string }[] }
+> = {
+  electrical: {
+    intro:
+      'Innovation is one way to make the world a better place, and even the smallest innovation can improve life in many ways. Our business is to train the innovators. The department develops competent Electrical & Electronics Engineering graduates who are locally and internationally recognised, in line with Kenya Vision 2030. It has two main sections — Power, and Instrumentation & Control — with two equipped modern workshops. Plans are underway to become a NITA Exam Centre.',
+    objectives: [
+      'Promote high standards in training, teaching, research and scholarship.',
+      'Provide manpower for Kenya and other countries through technical education in Electrical & Electronics.',
+      'Produce engineers who are professionally recognised in their areas of specialisation.',
+    ],
+    staff: [
+      { name: 'Mr. Amos Chirchir', section: 'Electronics', designation: 'HOD / Trainer' },
+      { name: 'Mr. Franco Mwangala', section: 'Instrumentation & Control', designation: 'Dean of Students / Trainer' },
+      { name: 'Mr. Chigamba Beja', section: 'Electronics', designation: 'Trainer' },
+      { name: 'Mr. Rogders Sanga', section: 'Power', designation: 'Trainer' },
+      { name: 'Madam Harriet Mosomi', section: 'Power', designation: 'Trainer' },
+      { name: 'Mr. Abimaitha Maitha', section: 'Power', designation: 'Trainer' },
+      { name: 'Mr. Fred', section: 'Electrical', designation: 'Technician' },
+    ],
+  },
+  building: {
+    intro:
+      'Our primary strength lies in our students, faculty and staff. The diploma programmes continue to attract many suitable candidates, making this one of the largest departments in the Institute. Courses and teaching methods are continuously revised to meet the needs of the developing economy. Graduates are employed by real estate developers, construction companies, the Ministry of Works, KeNHA and the Standard Gauge Railway project, or further their studies in higher institutions.',
+    staff: [
+      { name: 'Mr. Bernard Mganga', section: 'Building', designation: 'HOD / Trainer' },
+      { name: 'Mr. Phanuel Menza', section: 'Building', designation: 'Trainer' },
+    ],
+  },
+  ict: {
+    intro:
+      'The department provides quality holistic training in ICT & Computer Studies, develops the Institution’s ICT infrastructure, and offers essential ICT training and technical support to all departments. A state-of-the-art computer lab and campus-wide wireless internet support learning, while students access results and fee statements on the student portal and the recently introduced E-Learning platform.',
+    objectives: [
+      'To be ICT compliant.',
+      'To equip staff and students with the necessary ICT skills.',
+      'To offer learning opportunities through Open and Distance Learning.',
+      'To develop ICT instructional materials.',
+    ],
+    staff: [
+      { name: 'Madam Phednike Mwambori', section: 'ICT', designation: 'HOD / Registrar' },
+      { name: 'Mr. Festus Mugogo', section: 'ICT', designation: 'Deputy Principal / Trainer' },
+      { name: 'Madam Prinscillah Neema', section: 'ICT', designation: 'Trainer' },
+      { name: 'Mr. Hassan', section: 'ICT', designation: 'Technician' },
+    ],
+  },
+  hospitality: {
+    intro:
+      'Located on Kenya’s coast, Godoma TTI prepares trainees for the hotel, restaurant and tourism industry. Programmes combine kitchen and service practicals with tour guiding and travel operations, examined by KNEC at Diploma, Certificate and Artisan levels.',
+  },
+  business: {
+    intro:
+      'The Business department offers Diploma and Craft Certificate programmes in Business Management, Sales & Marketing, Supply Chain, Human Resource Management and Social Work & Community Development — equipping trainees for the private sector, public service and self-employment.',
+  },
+}
 
 export const heroSlides = [
   {

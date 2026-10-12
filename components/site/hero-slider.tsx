@@ -49,7 +49,7 @@ export function HeroSlider() {
             sizes="100vw"
             className={cn('object-cover transition-transform duration-[7000ms]', i === index && 'scale-105')}
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[oklch(0.2_0.08_260)]/95 via-[oklch(0.25_0.09_260)]/70 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-brand-deep/95 via-brand-deep/70 to-transparent" />
           <div className="relative mx-auto flex h-full max-w-7xl items-center px-4">
             <div className="max-w-2xl text-primary-foreground">
               <p className="mb-3 inline-block rounded-sm bg-accent px-3 py-1 text-xs font-bold uppercase tracking-wider text-accent-foreground">
@@ -63,14 +63,14 @@ export function HeroSlider() {
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <a
-                  href="#admissions"
+                  href="/admissions"
                   tabIndex={i === index ? 0 : -1}
                   className={cn(buttonVariants(), 'h-12 bg-accent px-6 text-base font-bold text-accent-foreground hover:bg-accent/90')}
                 >
                   Apply Now
                 </a>
                 <a
-                  href="#departments"
+                  href="/academics"
                   tabIndex={i === index ? 0 : -1}
                   className={cn(buttonVariants({ variant: 'outline' }), 'h-12 border-primary-foreground/60 bg-transparent px-6 text-base font-semibold text-primary-foreground hover:bg-primary-foreground hover:text-primary')}
                 >

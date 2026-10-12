@@ -1,29 +1,29 @@
 import Image from 'next/image'
 import { Mail, MapPin, Phone } from 'lucide-react'
-import { contact, OFFICIAL_SITE } from '@/lib/site-data'
+import { contact } from '@/lib/site-data'
 import { SocialIcons } from './social-icons'
 import { NewsletterForm } from './newsletter-form'
 
 const quickLinks = [
-  { label: 'About Us', href: '#about' },
-  { label: 'Admissions', href: '#admissions' },
-  { label: 'Academic Departments', href: '#departments' },
-  { label: 'Facilities & Library', href: '#facilities' },
-  { label: 'Notice Board', href: '#news' },
+  { label: 'About Us', href: '/about' },
+  { label: 'Admissions', href: '/admissions' },
+  { label: 'Academic Departments', href: '/academics' },
+  { label: 'Library', href: '/library' },
+  { label: 'Contact Us', href: '/contact' },
 ]
 
 const importantPages = [
-  { label: 'Students Portal', href: OFFICIAL_SITE },
-  { label: 'E-Learning', href: OFFICIAL_SITE },
-  { label: 'Governance', href: `${OFFICIAL_SITE}/governance.html` },
-  { label: 'Administration', href: `${OFFICIAL_SITE}/administration.html` },
-  { label: 'Events Calendar', href: `${OFFICIAL_SITE}/calendar.html` },
-  { label: 'Tenders & Careers', href: OFFICIAL_SITE },
+  { label: 'Students Portal', href: '/trainees/portal' },
+  { label: 'E-Learning', href: '/trainees/e-learning' },
+  { label: 'Governance', href: '/about/governance' },
+  { label: 'Administration', href: '/about/administration' },
+  { label: 'Events Calendar', href: '/trainees/events' },
+  { label: 'HELB TVET Loans', href: '/admissions/helb-loans' },
 ]
 
 export function SiteFooter() {
   return (
-    <footer id="contact" className="bg-[oklch(0.2_0.07_260)] text-primary-foreground">
+    <footer className="bg-brand-deep text-primary-foreground">
       <div className="mx-auto grid max-w-7xl gap-10 px-4 py-16 sm:grid-cols-2 lg:grid-cols-4">
         <div>
           <div className="inline-block rounded-md bg-background p-2">
@@ -61,8 +61,6 @@ export function SiteFooter() {
               <li key={l.label}>
                 <a
                   href={l.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
                   className="text-primary-foreground/75 transition-colors hover:text-accent"
                 >
                   {l.label}

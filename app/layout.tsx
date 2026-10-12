@@ -1,6 +1,9 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
 import { Plus_Jakarta_Sans } from 'next/font/google'
+import { TopBar } from '@/components/site/top-bar'
+import { SiteHeader } from '@/components/site/site-header'
+import { SiteFooter } from '@/components/site/site-footer'
 import './globals.css'
 
 const jakarta = Plus_Jakarta_Sans({ subsets: ['latin'], variable: '--font-jakarta', display: 'swap' })
@@ -18,7 +21,7 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   colorScheme: 'light',
-  themeColor: '#1b3a7a',
+  themeColor: '#1f6b3a',
 }
 
 export default function RootLayout({
@@ -29,7 +32,10 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${jakarta.variable} bg-background`}>
       <body className="antialiased">
-        {children}
+        <TopBar />
+        <SiteHeader />
+        <main id="top">{children}</main>
+        <SiteFooter />
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
     </html>
