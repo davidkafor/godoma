@@ -4,7 +4,7 @@ import { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowRight, Clock, GraduationCap, User } from 'lucide-react'
-import { departments, OFFICIAL_SITE } from '@/lib/site-data'
+import { departments } from '@/lib/site-data'
 import { SectionHeading } from './section-heading'
 import { cn } from '@/lib/utils'
 
@@ -133,9 +133,7 @@ export function DepartmentsSection() {
           </div>
           <div className="border-t p-4 text-right">
             <a
-              href={`${OFFICIAL_SITE}/${active.id}.html`}
-              target="_blank"
-              rel="noopener noreferrer"
+              href={`/departments/${active.id}`}
               className="inline-flex items-center gap-2 text-sm font-bold text-primary hover:text-accent"
             >
               Full department profile

@@ -1,5 +1,5 @@
 import { Mail, Phone, Download } from 'lucide-react'
-import { contact, OFFICIAL_SITE } from '@/lib/site-data'
+import { contact } from '@/lib/site-data'
 import { SocialIcons } from './social-icons'
 
 export function TopBar() {
@@ -24,9 +24,7 @@ export function TopBar() {
         </div>
         <div className="flex items-center gap-4">
           <a
-            href={`${OFFICIAL_SITE}/students%20downloads.html`}
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/downloads"
             className="hidden items-center gap-1.5 hover:text-accent md:flex"
           >
             <Download className="size-3.5 text-accent" aria-hidden="true" />

@@ -5,7 +5,7 @@ import { ChevronLeft, ChevronRight, Quote } from 'lucide-react'
 import { SectionHeading } from './section-heading'
 import { cn } from '@/lib/utils'
 
-// Sample stories — godomatti.ac.ke does not publish testimonials; replace with real alumni quotes.
+// Sample stories — replace with verified alumni quotes when available.
 const testimonials = [
   {
     quote:

@@ -1,7 +1,7 @@
 import { FileText, Phone, Wallet } from 'lucide-react'
 import { buttonVariants } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
-import { contact, OFFICIAL_SITE } from '@/lib/site-data'
+import { contact } from '@/lib/site-data'
 
 const levels = [
   { level: 'CBET Level 6', requirement: 'KCSE C- (minus)', duration: 'As prescribed' },
@@ -36,9 +36,7 @@ export function AdmissionsSection() {
               <div>
                 <p className="font-bold">Admission letters & forms</p>
                 <a
-                  href={`${OFFICIAL_SITE}/students%20downloads.html`}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="/downloads"
                   className="text-sm text-primary-foreground/80 underline underline-offset-4 hover:text-accent"
                 >
                   Visit Students Downloads
@@ -73,9 +71,7 @@ export function AdmissionsSection() {
               Apply Now!
             </a>
             <a
-              href={OFFICIAL_SITE}
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/trainees#portal"
               className={cn(buttonVariants({ variant: 'outline' }), 'h-12 border-primary-foreground/50 bg-transparent px-6 text-base font-semibold text-primary-foreground hover:bg-primary-foreground hover:text-primary')}
             >
               Students Portal
