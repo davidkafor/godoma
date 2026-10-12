@@ -14,7 +14,7 @@ export function PrincipalMessage() {
           <p className="text-sm font-bold uppercase tracking-[0.2em] text-accent-foreground">A message from the principal</p>
           <h2 id="principal-message-heading" className="mt-3 text-balance text-3xl font-extrabold text-primary sm:text-4xl">Welcome to Godoma TTI</h2>
           <Quote className="mt-6 size-10 text-accent" aria-hidden="true" />
-          <p className="mt-4 text-pretty text-lg leading-relaxed text-muted-foreground">At Godoma Technical Training Institute, we believe that practical skills, discipline and innovation give every young person the confidence to build a meaningful future. Our dedicated staff work with industry and the community to deliver training that is relevant, inclusive and focused on excellence.</p>
+          <p className="mt-4 text-pretty text-lg leading-relaxed text-muted-foreground">It is my great pleasure to welcome you to Godoma Technical Training Institute (GTTI), an institution committed to providing quality technical and vocational education and training that empowers individuals with the knowledge, practical skills, and competencies needed to succeed in today&apos;s dynamic world.</p>
           <p className="mt-4 text-pretty leading-relaxed text-muted-foreground">Whether you are beginning your technical journey or advancing your skills, you are welcome to learn, create and grow with us.</p>
           <Link href="/about" className="mt-7 inline-flex items-center gap-2 font-bold text-primary hover:text-accent">Read about Godoma TTI <ArrowRight className="size-4" aria-hidden="true" /></Link>
         </div>
