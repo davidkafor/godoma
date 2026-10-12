@@ -14,7 +14,7 @@ export function ContactForm() {
     const subject = String(form.get('subject') ?? 'General enquiry')
     const message = String(form.get('message') ?? '')
     const body = `Name: ${name}\nEmail: ${email}\n\n${message}`
-    window.location.href = `mailto:info@godomatti.ac.ke?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
+    window.location.href = `mailto:godomatti.gtti@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
     setSubmitted(true)
   }
 

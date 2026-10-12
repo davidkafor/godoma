@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { Mail, MapPin, Phone } from 'lucide-react'
-import { contact, OFFICIAL_SITE } from '@/lib/site-data'
+import { contact } from '@/lib/site-data'
 import { SocialIcons } from './social-icons'
 import { NewsletterForm } from './newsletter-form'
 

@@ -1,9 +1,6 @@
-export const OFFICIAL_SITE = 'https://godomatti.ac.ke'
-
 export const contact = {
   phones: ['+254 743 661 423'],
   email: 'godomatti.gtti@gmail.com',
-  secondaryEmail: 'info@godomatti.ac.ke',
   address: 'Matanomanne Market, Vitengeni Road, Ganze Sub-county, Kilifi County, Kenya',
   postalAddress: 'P.O. Box 1808–80108, Kilifi',
   locationNote: '30 km from Kilifi town along Vitengeni Road, adjacent to Arabuko Sokoke Forest and next to Vitengeni Baptist Secondary School.',
@@ -11,7 +8,6 @@ export const contact = {
     'https://www.google.com/maps?q=Godoma+Technical+Training+Institute,+Vitengeni,+Kilifi&output=embed',
 }
 
-// godomatti.ac.ke does not publish social handles; these point to platform searches until official URLs are confirmed.
 export const socials = [
   { name: 'Facebook', href: 'https://www.facebook.com/search/top?q=Godoma%20Technical%20Training%20Institute' },
   { name: 'X', href: 'https://x.com/search?q=Godoma%20TTI' },
