@@ -87,7 +87,7 @@ export function SiteHeader() {
                         openMenu === group.label ? 'visible opacity-100' : 'invisible -translate-y-1 opacity-0',
                       )}
                     >
-                      <ul className="min-w-60 overflow-hidden rounded-md border-t-4 border-accent bg-background py-2 shadow-xl">
+                      <ul className="grid min-w-[34rem] grid-cols-2 overflow-hidden rounded-md border-t-4 border-accent bg-background py-2 shadow-xl">
                         {group.items.map((item) => (
                           <li key={item.label}>
                             <NavLink
