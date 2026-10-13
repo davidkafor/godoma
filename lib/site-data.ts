@@ -311,10 +311,9 @@ export const leadership = [
 ]
 
 export const partners = [
-  { acronym: 'MoE', name: 'Ministry of Education — State Department for TVET' },
-  { acronym: 'TVETA', name: 'Technical & Vocational Education and Training Authority' },
-  { acronym: 'KNEC', name: 'Kenya National Examinations Council' },
-  { acronym: 'HELB', name: 'Higher Education Loans Board' },
-  { acronym: 'NITA', name: 'National Industrial Training Authority' },
-  { acronym: 'KUCCPS', name: 'Kenya Universities & Colleges Central Placement Service' },
-]
+  { acronym: 'TVETA', name: 'Technical & Vocational Education and Training Authority', logo: '/images/partners/tveta.png' },
+  { acronym: 'KNEC', name: 'Kenya National Examinations Council', logo: '/images/partners/knec.jpeg' },
+  { acronym: 'HELB', name: 'Higher Education Loans Board', logo: '/images/partners/helb.png' },
+  { acronym: 'NITA', name: 'National Industrial Training Authority', logo: '/images/partners/nita.png' },
+  { acronym: 'KUCCPS', name: 'Kenya Universities & Colleges Central Placement Service', logo: '/images/partners/kuccps.jpeg' },
+  ]
