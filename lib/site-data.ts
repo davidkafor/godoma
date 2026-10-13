@@ -310,8 +310,8 @@ export const totalCourses = departments.reduce((sum, d) => sum + d.courses.lengt
 export const leadership = [
   { name: 'Mrs. Christine Katana', role: 'Board Chair' },
   { name: 'Mrs. Hafsa Seif', role: 'Principal / Board Secretary' },
-  { name: 'Mr. Festus Mugogo', role: 'Deputy Principal' },
-  { name: 'Mr. Franco Mwangala', role: 'Dean of Students' },
+  { name: 'Festus Mugogo', role: 'Deputy Principal — Administration' },
+  { name: 'Franco Mwadzo Mwangala', role: 'Deputy Principal — Academics / Training' },
 ]
 
 export const partners = [
