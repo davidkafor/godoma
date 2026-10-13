@@ -14,17 +14,17 @@ const quickLinks = [
 ]
 
 const importantPages = [
-  { label: 'Students Portal', href: '/trainees#portal' },
-  { label: 'E-Learning', href: '/trainees#elearning' },
-  { label: 'Governance', href: '/governance' },
   { label: 'Administration', href: '/administration' },
+  { label: 'Student Funding', href: '/funding' },
+  { label: 'Recognition of Prior Learning', href: '/recognition-of-prior-learning' },
+  { label: 'Industrial Liaison Office', href: '/industrial-liaison-office' },
   { label: 'Events Calendar', href: '/trainees#events' },
   { label: 'Contact Us', href: '/contact' },
 ]
 
 export function SiteFooter() {
   return (
-    <footer id="contact" className="bg-[oklch(0.2_0.07_260)] text-primary-foreground">
+    <footer id="contact" className="bg-primary text-primary-foreground">
       <div className="mx-auto grid max-w-7xl gap-10 px-4 py-16 sm:grid-cols-2 lg:grid-cols-4">
         <div>
           <div className="inline-block rounded-md bg-background p-2">
@@ -74,8 +74,10 @@ export function SiteFooter() {
           <address className="mt-5 space-y-3 text-sm not-italic text-primary-foreground/75">
             <p className="flex gap-3">
               <MapPin className="mt-0.5 size-4 shrink-0 text-accent" aria-hidden="true" />
-              {contact.address}
+              <span>{contact.address}</span>
             </p>
+            <p className="pl-7">{contact.postalAddress}</p>
+            <p className="pl-7 text-xs leading-relaxed text-primary-foreground/60">{contact.locationNote}</p>
             {contact.phones.map((phone) => (
               <p key={phone} className="flex gap-3">
                 <Phone className="mt-0.5 size-4 shrink-0 text-accent" aria-hidden="true" />
@@ -95,7 +97,7 @@ export function SiteFooter() {
       </div>
 
       <div className="mx-auto grid max-w-7xl gap-8 px-4 pb-16 lg:grid-cols-2">
-        <div className="overflow-hidden rounded-lg border border-primary-foreground/10">
+        <div className="overflow-hidden rounded-lg border border-primary-foreground/10 bg-background">
           <iframe
             title="Map showing Godoma Technical Training Institute in Vitengeni, Kilifi"
             src={contact.mapEmbed}
