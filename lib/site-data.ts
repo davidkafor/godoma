@@ -44,7 +44,7 @@ export const navigation: NavGroup[] = [
     href: '/admissions',
     items: [
       { label: 'Entry Requirements', href: '/admissions' },
-      { label: 'HELB TVET Loans', href: '/admissions#funding' },
+      { label: 'Student Funding', href: '/funding' },
       { label: 'Accommodation', href: '/admissions#accommodation' },
       { label: 'Contact Admissions', href: '/contact' },
     ],
