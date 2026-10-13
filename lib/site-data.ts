@@ -213,14 +213,14 @@ export const departments: Department[] = [
   },
   {
     id: 'ict',
-    name: 'Information & Communication Technology',
-    short: 'ICT',
+name: 'Computing and Informatics',
+  short: 'Computing and Informatics',
     image: '/images/dept-ict.png',
     head: 'Madam Phednike Mwambori',
     summary:
-      'Provides holistic training in ICT & Computer Studies from a state-of-the-art computer lab, with campus-wide Wi-Fi, student and staff portals, and E-Learning.',
+      'Provides practical, industry-focused training in computing, software, cybersecurity, digital applications, and informatics through modern computer-based learning.',
     courses: [
-      c('ICT (Level 6, 5 & 4)', 'KCSE C-', '3 Years', 'CDACC'),
+      c('Computing and Informatics (Level 6, 5 & 4)', 'KCSE C-', '3 Years', 'CDACC'),
       c('Cyber Security (Level 4)', 'KCSE D', '6 Months', 'CDACC'),
       c('Computer Science (Level 6)', 'KCSE C-', '3 Years', 'CDACC'),
       c('Computer Packages', 'Open', '3 Months', 'GTTI'),
