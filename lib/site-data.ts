@@ -56,8 +56,6 @@ export const navigation: NavGroup[] = [
       { label: 'Electrical and Electronics Engineering', href: '/departments/electrical' },
       { label: 'Building and Civil Engineering', href: '/departments/building' },
       { label: 'Computing and Informatics', href: '/departments/ict' },
-      { label: 'Hospitality', href: '/departments/hospitality' },
-      { label: 'Tourism & Hospitality', href: '/departments/hospitality' },
       { label: 'Automotive and Mechanical Engineering', href: '/departments/mechanical' },
       { label: 'Fashion & Cosmetology', href: '/departments/fashion' },
       { label: 'Agricultural Studies', href: '/departments/agriculture' },
