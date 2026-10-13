@@ -9,8 +9,9 @@ import { SectionHeading } from './section-heading'
 import { cn } from '@/lib/utils'
 
 export function DepartmentsSection() {
-  const [activeId, setActiveId] = useState(departments[0].id)
-  const active = departments.find((d) => d.id === activeId) ?? departments[0]
+  const homeDepartments = departments.filter((department) => department.id !== 'electrical')
+  const [activeId, setActiveId] = useState(homeDepartments[0].id)
+  const active = homeDepartments.find((d) => d.id === activeId) ?? homeDepartments[0]
 
   return (
     <section id="departments" aria-labelledby="departments-heading" className="bg-background py-20">
@@ -23,7 +24,7 @@ export function DepartmentsSection() {
         />
 
         <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
-          {departments.map((d) => (
+          {homeDepartments.map((d) => (
             <li key={d.id}>
               <Link
                 href={`/departments/${d.id}`}
