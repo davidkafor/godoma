@@ -44,36 +44,30 @@ export const navigation: NavGroup[] = [
     href: '/admissions',
     items: [
       { label: 'Entry Requirements', href: '/admissions' },
-      { label: 'HELB TVET Loans', href: '/admissions#funding' },
-      { label: 'Accommodation', href: '/admissions#accommodation' },
-      { label: 'Contact Admissions', href: '/contact' },
+      { label: 'Student Funding', href: '/funding' },
+          { label: 'Contact Admissions', href: '/contact' },
     ],
   },
   {
     label: 'Academics',
     href: '/departments',
     items: [
-      { label: 'Electrical', href: '/departments/electrical' },
-      { label: 'Building & Civil', href: '/departments/building' },
-      { label: 'ICT', href: '/departments/ict' },
-      { label: 'Hospitality', href: '/departments/hospitality' },
-      { label: 'Tourism & Hospitality', href: '/departments/hospitality' },
-      { label: 'Mechanical Engineering', href: '/departments/mechanical' },
+      { label: 'Electrical and Electronics Engineering', href: '/departments/electrical' },
+      { label: 'Building and Civil Engineering', href: '/departments/building' },
+      { label: 'Computing and Informatics', href: '/departments/ict' },
+      { label: 'Automotive and Mechanical Engineering', href: '/departments/mechanical' },
       { label: 'Fashion & Cosmetology', href: '/departments/fashion' },
-      { label: 'Agriculture', href: '/departments/agriculture' },
+      { label: 'Agricultural Studies', href: '/departments/agriculture' },
       { label: 'Business & Liberal Studies', href: '/departments/business' },
     ],
   },
   {
     label: 'Trainees',
     href: '/trainees',
-    items: [
-      { label: 'Students Portal', href: '/trainees#portal' },
-      { label: 'E-Learning', href: '/trainees#elearning' },
-      { label: 'Students Downloads', href: '/trainees#downloads' },
-      { label: 'Aids Control Unit', href: '/trainees#aids-control' },
-      { label: 'Events Calendar', href: '/trainees#events' },
-    ],
+  items: [
+    { label: 'Students Downloads', href: '/trainees#downloads' },
+    { label: 'Events Calendar', href: '/trainees#events' },
+  ],
   },
   { label: 'Library', href: '/library' },
   { label: 'Downloads', href: '/downloads' },
@@ -184,7 +178,7 @@ export const departments: Department[] = [
     name: 'Electrical & Electronics Engineering',
     short: 'Electrical',
     image: '/images/dept-electrical.png',
-    head: 'Mr. Amos Chirchir',
+    head: 'Mia Mulinge Kelvin',
     summary:
       'Established in 2016 to train manpower in both the Power and Instrumentation & Control options, with two equipped modern workshops — Electrical workshops and an Electronics laboratory.',
     courses: [
@@ -218,14 +212,14 @@ export const departments: Department[] = [
   },
   {
     id: 'ict',
-    name: 'Information & Communication Technology',
-    short: 'ICT',
+name: 'Computing and Informatics',
+  short: 'Computing and Informatics',
     image: '/images/dept-ict.png',
     head: 'Madam Phednike Mwambori',
     summary:
-      'Provides holistic training in ICT & Computer Studies from a state-of-the-art computer lab, with campus-wide Wi-Fi, student and staff portals, and E-Learning.',
+      'Provides practical, industry-focused training in computing, software, cybersecurity, digital applications, and informatics through modern computer-based learning.',
     courses: [
-      c('ICT (Level 6, 5 & 4)', 'KCSE C-', '3 Years', 'CDACC'),
+      c('Computing and Informatics (Level 6, 5 & 4)', 'KCSE C-', '3 Years', 'CDACC'),
       c('Cyber Security (Level 4)', 'KCSE D', '6 Months', 'CDACC'),
       c('Computer Science (Level 6)', 'KCSE C-', '3 Years', 'CDACC'),
       c('Computer Packages', 'Open', '3 Months', 'GTTI'),
@@ -252,7 +246,7 @@ export const departments: Department[] = [
     name: 'Mechanical Engineering',
     short: 'Mechanical',
     image: '/images/dept-building.png',
-    head: 'Department of Mechanical Engineering',
+    head: 'Conrad Ibala',
     summary: 'Practical training for the automotive and fabrication industries through competency-based programmes.',
     courses: [
       c('Automotive Technology (Level 5 & 4)', 'KCSE D', '2 Years', 'CDACC'),
@@ -281,7 +275,7 @@ export const departments: Department[] = [
     name: 'Agricultural Studies',
     short: 'Agriculture',
     image: '/images/dept-building.png',
-    head: 'Agricultural Department',
+    head: 'Emmanuel Kipkorir',
     summary: 'Entrepreneurial agricultural training that equips trainees with practical skills for economic development.',
     courses: [
       c('Agri-preneurship (Level 5 & 4)', 'KCSE D', '2 Years', 'CDACC'),
@@ -310,8 +304,8 @@ export const totalCourses = departments.reduce((sum, d) => sum + d.courses.lengt
 export const leadership = [
   { name: 'Mrs. Christine Katana', role: 'Board Chair' },
   { name: 'Mrs. Hafsa Seif', role: 'Principal / Board Secretary' },
-  { name: 'Mr. Festus Mugogo', role: 'Deputy Principal' },
-  { name: 'Mr. Franco Mwangala', role: 'Dean of Students' },
+  { name: 'Festus Mugogo', role: 'Deputy Principal — Administration' },
+  { name: 'Franco Mwadzo Mwangala', role: 'Deputy Principal — Academics / Training' },
 ]
 
 export const partners = [
