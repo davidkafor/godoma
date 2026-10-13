@@ -67,13 +67,10 @@ export const navigation: NavGroup[] = [
   {
     label: 'Trainees',
     href: '/trainees',
-    items: [
-      { label: 'Students Portal', href: '/trainees#portal' },
-      { label: 'E-Learning', href: '/trainees#elearning' },
-      { label: 'Students Downloads', href: '/trainees#downloads' },
-      { label: 'Aids Control Unit', href: '/trainees#aids-control' },
-      { label: 'Events Calendar', href: '/trainees#events' },
-    ],
+  items: [
+    { label: 'Students Downloads', href: '/trainees#downloads' },
+    { label: 'Events Calendar', href: '/trainees#events' },
+  ],
   },
   { label: 'Library', href: '/library' },
   { label: 'Downloads', href: '/downloads' },
