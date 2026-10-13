@@ -252,7 +252,7 @@ export const departments: Department[] = [
     name: 'Mechanical Engineering',
     short: 'Mechanical',
     image: '/images/dept-building.png',
-    head: 'Department of Mechanical Engineering',
+    head: 'Conrad Ibala',
     summary: 'Practical training for the automotive and fabrication industries through competency-based programmes.',
     courses: [
       c('Automotive Technology (Level 5 & 4)', 'KCSE D', '2 Years', 'CDACC'),
