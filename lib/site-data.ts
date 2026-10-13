@@ -35,8 +35,10 @@ export const navigation: NavGroup[] = [
       { label: 'Council/BOG Chairperson', href: '/council-bog-chairperson' },
       { label: 'Principal Office', href: '/principal-office' },
       { label: 'Deputy Principal Office', href: '/deputy-principal-office' },
-      { label: 'Dean of Students', href: '/dean-of-students' },
-      { label: 'Registrar Office', href: '/registrar-office' },
+  { label: 'Dean of Students', href: '/dean-of-students' },
+  { label: 'Recognition of Prior Learning (RPL)', href: '/recognition-of-prior-learning' },
+  { label: 'Industrial Liaison Office', href: '/industrial-liaison-office' },
+  { label: 'Registrar Office', href: '/registrar-office' },
     ],
   },
   {
