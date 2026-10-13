@@ -281,7 +281,7 @@ export const departments: Department[] = [
     name: 'Agricultural Studies',
     short: 'Agriculture',
     image: '/images/dept-building.png',
-    head: 'Agricultural Department',
+    head: 'Emmanuel Kipkorir',
     summary: 'Entrepreneurial agricultural training that equips trainees with practical skills for economic development.',
     courses: [
       c('Agri-preneurship (Level 5 & 4)', 'KCSE D', '2 Years', 'CDACC'),
