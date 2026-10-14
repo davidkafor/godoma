@@ -180,8 +180,8 @@ export const departments: Department[] = [
     id: 'electrical',
     name: 'Electrical & Electronics Engineering',
     short: 'Electrical',
-    image: '/images/dept-electrical.png',
-    head: 'Mia Mulinge Kelvin',
+  image: '/images/hod-electrical.jpg',
+  head: 'Mia Mulinge Kevin',
     summary:
       'Established in 2016 to train manpower in both the Power and Instrumentation & Control options, with two equipped modern workshops — Electrical workshops and an Electronics laboratory.',
     courses: [
