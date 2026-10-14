@@ -22,6 +22,7 @@ export default function Page() {
         <HeroSlider />
         <NewsTicker />
         <PrincipalMessage />
+        <section className="border-t bg-background py-12"><div className="mx-auto max-w-5xl px-4"><div className="rounded-lg border bg-card p-6 shadow-sm sm:p-8"><p className="text-sm font-bold uppercase tracking-[0.2em] text-accent">Introduction video</p><h2 className="mt-2 text-2xl font-extrabold text-primary">Welcome to Godoma TTI</h2><div className="mt-6 aspect-video overflow-hidden rounded-md bg-muted"><iframe className="h-full w-full" src="https://www.youtube.com/embed/99wCSA5pWp8" title="Introduction video for Godoma Technical Training Institute" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen /></div></div></div></section>
         <NewsSection />
         <AboutSection />
         <StatsSection />
