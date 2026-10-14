@@ -118,7 +118,7 @@ export function SiteFooter() {
       <div className="border-t border-primary-foreground/10">
         <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-2 px-4 py-5 text-xs text-primary-foreground/60">
           <p>{`© ${new Date().getFullYear()} Godoma Technical Training Institute. All Rights Reserved.`}</p>
-          <p>Examined by KNEC · Regulated by TVETA</p>
+          <p>Regulated by TVETA</p>
         </div>
       </div>
     </footer>
