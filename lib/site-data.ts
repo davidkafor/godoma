@@ -290,7 +290,7 @@ image: '/images/dept-mechanical.jpg',
     name: 'Business & Liberal Studies',
     short: 'Business',
     image: '/images/dept-business.png',
-    head: 'Miss Caroline Muthuani',
+    head: 'Leonard Nyamawi',
     summary:
       'Offers diploma and craft programmes in management, marketing, supply chain, human resources and social work for the growing private and public sector.',
     courses: [
