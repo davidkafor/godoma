@@ -79,7 +79,7 @@ export function AdmissionsSection() {
           </div>
         </div>
 
-        <div className="rounded-lg bg-background p-6 text-foreground shadow-2xl sm:p-8">
+        <div id="entry-requirements" className="scroll-mt-24 rounded-lg bg-background p-6 text-foreground shadow-2xl sm:p-8">
           <h3 className="text-xl font-bold text-primary">Entry Requirements</h3>
           <p className="mt-1 text-sm text-muted-foreground">Current minimum entry requirements for Godoma TTI programmes.</p>
           <div className="mt-6 grid grid-cols-[1fr_auto] gap-x-4 border-b pb-2 text-xs font-bold uppercase tracking-wider text-muted-foreground">
