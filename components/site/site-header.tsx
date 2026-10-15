@@ -94,7 +94,7 @@ export function SiteHeader() {
                         )}
                       >
                         {group.items.map((item) => (
-                          <li key={item.label}>
+                          <li key={item.label} className="mx-2 border-b last:border-0">
                             <NavLink
                               item={item}
                               onClick={() => setOpenMenu(null)}
@@ -146,7 +146,7 @@ export function SiteHeader() {
                     </summary>
                     <ul className="pb-3 pl-3">
                       {group.items.map((item) => (
-                        <li key={item.label}>
+                        <li key={item.label} className="border-b last:border-0">
                           <NavLink
                             item={item}
                             onClick={() => setMobileOpen(false)}

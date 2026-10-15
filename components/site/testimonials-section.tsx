@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { ChevronLeft, ChevronRight, Quote } from 'lucide-react'
 import { SectionHeading } from './section-heading'
 import { cn } from '@/lib/utils'
@@ -36,6 +36,14 @@ const testimonials = [
 export function TestimonialsSection() {
   const [index, setIndex] = useState(0)
   const go = (dir: number) => setIndex((i) => (i + dir + testimonials.length) % testimonials.length)
+
+  useEffect(() => {
+    const timer = window.setInterval(() => {
+      setIndex((i) => (i + 1) % testimonials.length)
+    }, 5000)
+    return () => window.clearInterval(timer)
+  }, [])
+
   const visible = [testimonials[index], testimonials[(index + 1) % testimonials.length]]
 
   return (

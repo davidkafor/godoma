@@ -46,7 +46,7 @@ export const navigation: NavGroup[] = [
   label: 'Admissions',
     href: '/admissions',
   items: [
-  { label: 'Entry Requirements', href: '/admissions' },
+  { label: 'Entry Requirements', href: '/admissions#entry-requirements' },
   { label: 'Registrar Office', href: '/registrar-office' },
       { label: 'Student Funding', href: '/funding' },
           { label: 'Contact Admissions', href: '/contact' },
@@ -72,7 +72,7 @@ export const navigation: NavGroup[] = [
   items: [
   { label: 'Students Downloads', href: '/trainees#downloads' },
   { label: 'Guidance and Counselling', href: '/guidance-counselling' },
-  { label: 'Events Calendar', href: '/trainees#events' },
+  { label: 'Events Calendar', href: '/events' },
   ],
   },
   { label: 'Library', href: '/library' },
