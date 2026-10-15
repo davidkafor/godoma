@@ -40,7 +40,7 @@ export const navigation: NavGroup[] = [
   { label: 'Industrial Liaison Office', href: '/industrial-liaison-office' },
   { label: 'IQA (Internal Quality Assurance Office)', href: '/iqa' },
   { label: 'Assessment Office', href: '/assessment-office' },
-  { label: 'Registrar Office', href: '/registrar-office' },
+  { label: 'Admissions Office', href: '/registrar-office' },
     ],
   },
   {
