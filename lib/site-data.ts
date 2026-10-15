@@ -46,7 +46,7 @@ export const navigation: NavGroup[] = [
   label: 'Admissions',
     href: '/admissions',
   items: [
-  { label: 'Entry Requirements', href: '/#entry-requirements' },
+  { label: 'Entry Requirements', href: '/admissions#entry-requirements' },
   { label: 'Registrar Office', href: '/registrar-office' },
       { label: 'Student Funding', href: '/funding' },
           { label: 'Contact Admissions', href: '/contact' },
