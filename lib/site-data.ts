@@ -40,14 +40,14 @@ export const navigation: NavGroup[] = [
   { label: 'Industrial Liaison Office', href: '/industrial-liaison-office' },
   { label: 'IQA (Internal Quality Assurance Office)', href: '/iqa' },
   { label: 'Assessment Office', href: '/assessment-office' },
-  { label: 'Registrar Office', href: '/registrar-office' },
-    ],
+  ],
   },
   {
-    label: 'Admissions',
+  label: 'Admissions',
     href: '/admissions',
-    items: [
-      { label: 'Entry Requirements', href: '/admissions' },
+  items: [
+  { label: 'Entry Requirements', href: '/admissions' },
+  { label: 'Registrar Office', href: '/registrar-office' },
       { label: 'Student Funding', href: '/funding' },
           { label: 'Contact Admissions', href: '/contact' },
     ],
