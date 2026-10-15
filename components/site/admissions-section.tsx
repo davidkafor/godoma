@@ -81,20 +81,25 @@ export function AdmissionsSection() {
 
         <div className="rounded-lg bg-background p-6 text-foreground shadow-2xl sm:p-8">
           <h3 className="text-xl font-bold text-primary">Entry Requirements</h3>
-          <p className="mt-1 text-sm text-muted-foreground">Examined by KNEC unless stated otherwise.</p>
-          <ul className="mt-6 divide-y">
+          <p className="mt-1 text-sm text-muted-foreground">Current minimum entry requirements for Godoma TTI programmes.</p>
+          <div className="mt-6 grid grid-cols-[1fr_auto] gap-x-4 border-b pb-2 text-xs font-bold uppercase tracking-wider text-muted-foreground">
+            <span>Programme level</span>
+            <span>Minimum requirement</span>
+          </div>
+          <ul className="divide-y">
             {levels.map((l) => (
-              <li key={l.level} className="flex flex-wrap items-center justify-between gap-2 py-4">
+              <li key={l.level} className="grid grid-cols-[1fr_auto] items-center gap-x-4 gap-y-1 py-4">
                 <div>
                   <p className="font-bold text-foreground">{l.level}</p>
-                  <p className="text-sm text-muted-foreground">{l.duration}</p>
+                  <p className="text-sm text-muted-foreground">Duration: {l.duration}</p>
                 </div>
-                <span className="rounded-full bg-accent/15 px-3 py-1 text-sm font-bold text-accent-foreground">
+                <span className="rounded-full bg-accent/15 px-3 py-1 text-right text-sm font-bold text-accent-foreground">
                   {l.requirement}
                 </span>
               </li>
             ))}
           </ul>
+          <p className="mt-5 text-xs leading-relaxed text-muted-foreground">Applicants should also submit the required identification and academic documents listed on this page.</p>
         </div>
       </div>
     </section>
