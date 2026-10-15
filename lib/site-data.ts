@@ -39,6 +39,7 @@ export const navigation: NavGroup[] = [
   { label: 'Recognition of Prior Learning (RPL)', href: '/recognition-of-prior-learning' },
   { label: 'Industrial Liaison Office', href: '/industrial-liaison-office' },
   { label: 'IQA (Internal Quality Assurance Office)', href: '/iqa' },
+  { label: 'Assessment Office', href: '/assessment-office' },
   { label: 'Registrar Office', href: '/registrar-office' },
     ],
   },
