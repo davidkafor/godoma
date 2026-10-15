@@ -38,14 +38,16 @@ export const navigation: NavGroup[] = [
   { label: 'Dean of Students', href: '/dean-of-students' },
   { label: 'Recognition of Prior Learning (RPL)', href: '/recognition-of-prior-learning' },
   { label: 'Industrial Liaison Office', href: '/industrial-liaison-office' },
-  { label: 'Registrar Office', href: '/registrar-office' },
-    ],
+  { label: 'IQA (Internal Quality Assurance Office)', href: '/iqa' },
+  { label: 'Assessment Office', href: '/assessment-office' },
+  ],
   },
   {
-    label: 'Admissions',
+  label: 'Admissions',
     href: '/admissions',
-    items: [
-      { label: 'Entry Requirements', href: '/admissions' },
+  items: [
+  { label: 'Entry Requirements', href: '/admissions' },
+  { label: 'Registrar Office', href: '/registrar-office' },
       { label: 'Student Funding', href: '/funding' },
           { label: 'Contact Admissions', href: '/contact' },
     ],
@@ -56,8 +58,9 @@ export const navigation: NavGroup[] = [
     items: [
       { label: 'Electrical and Electronics Engineering', href: '/departments/electrical' },
       { label: 'Building and Civil Engineering', href: '/departments/building' },
-      { label: 'Computing and Informatics', href: '/departments/ict' },
-      { label: 'Automotive and Mechanical Engineering', href: '/departments/mechanical' },
+  { label: 'Computing and Informatics', href: '/departments/ict' },
+  { label: 'Tourism & Hospitality', href: '/departments/hospitality' },
+  { label: 'Automotive and Mechanical Engineering', href: '/departments/mechanical' },
       { label: 'Fashion & Cosmetology', href: '/departments/fashion' },
       { label: 'Agricultural Studies', href: '/departments/agriculture' },
       { label: 'Business & Liberal Studies', href: '/departments/business' },
@@ -67,8 +70,9 @@ export const navigation: NavGroup[] = [
     label: 'Trainees',
     href: '/trainees',
   items: [
-    { label: 'Students Downloads', href: '/trainees#downloads' },
-    { label: 'Events Calendar', href: '/trainees#events' },
+  { label: 'Students Downloads', href: '/trainees#downloads' },
+  { label: 'Guidance and Counselling', href: '/guidance-counselling' },
+  { label: 'Events Calendar', href: '/trainees#events' },
   ],
   },
   { label: 'Library', href: '/library' },
@@ -179,8 +183,8 @@ export const departments: Department[] = [
     id: 'electrical',
     name: 'Electrical & Electronics Engineering',
     short: 'Electrical',
-    image: '/images/dept-electrical.png',
-    head: 'Mia Mulinge Kelvin',
+  image: '/images/hod-electrical.jpg',
+  head: 'Mia Mulinge Kevin',
     summary:
       'Established in 2016 to train manpower in both the Power and Instrumentation & Control options, with two equipped modern workshops — Electrical workshops and an Electronics laboratory.',
     courses: [
@@ -216,8 +220,8 @@ export const departments: Department[] = [
     id: 'ict',
 name: 'Computing and Informatics',
   short: 'Computing and Informatics',
-    image: '/images/dept-ict.png',
-    head: 'Madam Phednike Mwambori',
+  image: '/images/hod-computing.jpg',
+  head: 'Priscillar Neema',
     summary:
       'Provides practical, industry-focused training in computing, software, cybersecurity, digital applications, and informatics through modern computer-based learning.',
     courses: [
@@ -231,8 +235,8 @@ name: 'Computing and Informatics',
     id: 'hospitality',
     name: 'Tourism & Hospitality',
     short: 'Hospitality',
-    image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DSC_1710.JPG-I03Bj24bYd1hKe8qBaUxQDgRSFCwk4.jpeg',
-    head: 'Department of Hospitality',
+  image: '/images/hod-hospitality.jpg',
+  head: 'Imelda Nyoka',
     summary:
       "Prepares trainees for Kenya's coastal hospitality and tourism industry through food & beverage production, tour guiding and travel operations programmes.",
     courses: [
@@ -289,7 +293,7 @@ image: '/images/dept-mechanical.jpg',
     name: 'Business & Liberal Studies',
     short: 'Business',
     image: '/images/dept-business.png',
-    head: 'Miss Caroline Muthuani',
+    head: 'Leonard Nyamawi',
     summary:
       'Offers diploma and craft programmes in management, marketing, supply chain, human resources and social work for the growing private and public sector.',
     courses: [
