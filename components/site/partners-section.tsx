@@ -14,10 +14,10 @@ export function PartnersSection() {
           {partners.map((p) => (
             <li
               key={p.acronym}
-              className="flex flex-col items-center justify-center rounded-lg border bg-card px-4 py-6 text-center grayscale transition-all hover:-translate-y-0.5 hover:shadow-md hover:grayscale-0"
+              className="group flex min-h-36 flex-col items-center justify-center rounded-lg border bg-card px-4 py-6 text-center shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg"
             >
-              <span className="text-2xl font-extrabold tracking-tight text-primary">{p.acronym}</span>
-              <span className="mt-1 text-xs leading-snug text-muted-foreground">{p.name}</span>
+              <div className="flex h-24 w-full items-center justify-center transition group-hover:scale-105"><img src={p.logo} alt={`${p.name} logo`} className="max-h-20 max-w-36 object-contain" /></div>
+              <span className="mt-3 text-xs leading-snug text-muted-foreground">{p.name}</span>
             </li>
           ))}
         </ul>

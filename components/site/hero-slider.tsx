@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import Image from 'next/image'
-import { ChevronLeft, ChevronRight, CalendarDays } from 'lucide-react'
+import { ChevronLeft, ChevronRight, Pause, Play } from 'lucide-react'
 import { heroSlides } from '@/lib/site-data'
 import { buttonVariants } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
@@ -13,11 +13,13 @@ export function HeroSlider() {
   const count = heroSlides.length
 
   useEffect(() => {
-    if (paused) return
-    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-    if (reduce) return
-    const id = setInterval(() => setIndex((i) => (i + 1) % count), 6000)
-    return () => clearInterval(id)
+    if (paused || count < 2) return
+
+    const id = window.setInterval(() => {
+      setIndex((currentIndex) => (currentIndex + 1) % count)
+    }, 6000)
+
+    return () => window.clearInterval(id)
   }, [paused, count])
 
   const go = (dir: number) => setIndex((i) => (i + dir + count) % count)
@@ -27,10 +29,6 @@ export function HeroSlider() {
       aria-roledescription="carousel"
       aria-label="Highlights"
       className="relative isolate h-[560px] overflow-hidden bg-primary sm:h-[620px]"
-      onMouseEnter={() => setPaused(true)}
-      onMouseLeave={() => setPaused(false)}
-      onFocus={() => setPaused(true)}
-      onBlur={() => setPaused(false)}
     >
       {heroSlides.map((slide, i) => (
         <div
@@ -103,6 +101,15 @@ export function HeroSlider() {
             >
               <ChevronRight className="size-5" aria-hidden="true" />
             </button>
+            <button
+              type="button"
+              onClick={() => setPaused((value) => !value)}
+              aria-label={paused ? 'Resume automatic slideshow' : 'Pause automatic slideshow'}
+              aria-pressed={paused}
+              className="flex size-10 items-center justify-center rounded-full border border-primary-foreground/40 text-primary-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
+            >
+              {paused ? <Play className="size-4" aria-hidden="true" /> : <Pause className="size-4" aria-hidden="true" />}
+            </button>
             <div className="ml-3 flex gap-2">
               {heroSlides.map((s, i) => (
                 <button
@@ -120,15 +127,6 @@ export function HeroSlider() {
             </div>
           </div>
 
-          <div className="hidden max-w-xs rounded-lg border-l-4 border-accent bg-background/95 p-4 shadow-xl md:block">
-            <p className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-accent">
-              <CalendarDays className="size-4" aria-hidden="true" />
-              Intake Now Open
-            </p>
-            <p className="mt-1 text-sm font-semibold text-foreground">
-              Admissions ongoing for Diploma, Craft & Artisan courses. HELB TVET loans available.
-            </p>
-          </div>
         </div>
       </div>
     </section>

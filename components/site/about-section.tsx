@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import { Eye, Target, CheckCircle2, MapPin } from 'lucide-react'
-import { coreValues, mandate, leadership } from '@/lib/site-data'
+import { coreValues, mandate } from '@/lib/site-data'
 import { SectionHeading } from './section-heading'
 
 export function AboutSection() {
@@ -11,8 +11,8 @@ export function AboutSection() {
           <div className="relative">
             <div className="relative aspect-[4/3] overflow-hidden rounded-lg shadow-xl">
               <Image
-                src="/images/hero-campus.png"
-                alt="Godoma TTI campus in Vitengeni, Kilifi"
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DSC_0629.JPG-soKPoC81P7sfduc2B6eygNXs4Fh8Ki.jpeg"
+                alt="Godoma TTI campus building and Konza Digital Skills Lab in Vitengeni, Kilifi"
                 fill
                 sizes="(min-width: 1024px) 50vw, 100vw"
                 className="object-cover"
@@ -28,19 +28,26 @@ export function AboutSection() {
             <SectionHeading
               id="about-heading"
               eyebrow="About Godoma TTI"
-              title="A Pillar of Vision 2030 in Kilifi County"
+              title="A Centre of Excellence in Technological Training"
               align="left"
             />
             <div className="-mt-6 space-y-4 leading-relaxed text-muted-foreground">
+              <h3 className="text-xl font-bold text-primary">Brief History</h3>
               <p>
                 Godoma Technical Training Institute is the first public sub-county technical training institute,
-                located in Vitengeni. The institute was commissioned in November 2016 and is a major pillar in the
-                realization of Vision 2030 by providing skilled manpower to the growing economy of the Republic.
+                located in Vitengeni near Kilifi County. The institute was commissioned in November 2016 and is a
+                major pillar in the realization of Vision 2030 by providing skilled manpower to the growing economy
+                of the Republic.
               </p>
               <p>
-                GTTI is a leading technical institute in the vast Kilifi County, located in the serene suburbs of
-                Kilifi town bordering the famous Dida forest. The hospitality of the locals is welcoming and makes
-                GTTI a haven for learners, promoting peaceful coexistence.
+                GTTI is a leading technical institute in Kilifi County, located in the serene suburbs of Kilifi town
+                bordering the famous Dida Forest. The hospitality of the local community makes GTTI a welcoming haven
+                for learners and promotes peaceful coexistence.
+              </p>
+              <p>
+                The institute boasts sufficient resources for quality learning and research, including modern
+                workshops, modern ICT laboratories, and dedicated teaching and non-teaching staff who foster learning
+                and innovation.
               </p>
             </div>
             <p className="mt-5 flex items-center gap-2 text-sm font-semibold text-primary">
@@ -104,33 +111,6 @@ export function AboutSection() {
           </div>
         </div>
 
-        <div className="mt-6 rounded-lg bg-card p-8 shadow-sm">
-          <h3 className="text-xl font-bold text-primary">Governance & Leadership</h3>
-          <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-            The institute is headed by a Board of Management (BOM) operating under the Education Act. The Principal
-            is the Chief Executive of the Institute and Secretary to the Board.
-          </p>
-          <ul className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {leadership.map((p) => (
-              <li key={p.name} className="flex items-center gap-3 rounded-md border p-4">
-                <span
-                  className="flex size-11 shrink-0 items-center justify-center rounded-full bg-secondary text-sm font-bold text-primary"
-                  aria-hidden="true"
-                >
-                  {p.name
-                    .replace(/^(Mrs?|Miss|Madam|Dr|Prof)\.?\s/, '')
-                    .split(' ')
-                    .map((n) => n[0])
-                    .join('')}
-                </span>
-                <div>
-                  <p className="text-sm font-bold text-foreground">{p.name}</p>
-                  <p className="text-xs text-muted-foreground">{p.role}</p>
-                </div>
-              </li>
-            ))}
-          </ul>
-        </div>
       </div>
     </section>
   )

@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import { Mail, MapPin, Phone } from 'lucide-react'
 import { contact } from '@/lib/site-data'
 import { SocialIcons } from './social-icons'
@@ -7,23 +8,23 @@ import { NewsletterForm } from './newsletter-form'
 const quickLinks = [
   { label: 'About Us', href: '/about' },
   { label: 'Admissions', href: '/admissions' },
-  { label: 'Academic Departments', href: '/academics' },
+  { label: 'Academic Departments', href: '/departments' },
   { label: 'Library', href: '/library' },
-  { label: 'Contact Us', href: '/contact' },
+  { label: 'Notice Board', href: '/#news' },
 ]
 
 const importantPages = [
-  { label: 'Students Portal', href: '/trainees/portal' },
-  { label: 'E-Learning', href: '/trainees/e-learning' },
-  { label: 'Governance', href: '/about/governance' },
-  { label: 'Administration', href: '/about/administration' },
-  { label: 'Events Calendar', href: '/trainees/events' },
-  { label: 'HELB TVET Loans', href: '/admissions/helb-loans' },
+  { label: 'Administration', href: '/administration' },
+  { label: 'Student Funding', href: '/funding' },
+  { label: 'Recognition of Prior Learning', href: '/recognition-of-prior-learning' },
+  { label: 'Industrial Liaison Office', href: '/industrial-liaison-office' },
+  { label: 'Events Calendar', href: '/trainees#events' },
+  { label: 'Contact Us', href: '/contact' },
 ]
 
 export function SiteFooter() {
   return (
-    <footer className="bg-brand-deep text-primary-foreground">
+    <footer id="contact" className="bg-primary text-primary-foreground">
       <div className="mx-auto grid max-w-7xl gap-10 px-4 py-16 sm:grid-cols-2 lg:grid-cols-4">
         <div>
           <div className="inline-block rounded-md bg-background p-2">
@@ -43,9 +44,9 @@ export function SiteFooter() {
           <ul className="mt-5 space-y-2.5 text-sm">
             {quickLinks.map((l) => (
               <li key={l.label}>
-                <a href={l.href} className="text-primary-foreground/75 transition-colors hover:text-accent">
+                <Link href={l.href} className="text-primary-foreground/75 transition-colors hover:text-accent">
                   {l.label}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
@@ -59,12 +60,9 @@ export function SiteFooter() {
           <ul className="mt-5 space-y-2.5 text-sm">
             {importantPages.map((l) => (
               <li key={l.label}>
-                <a
-                  href={l.href}
-                  className="text-primary-foreground/75 transition-colors hover:text-accent"
-                >
+                <Link href={l.href} className="text-primary-foreground/75 transition-colors hover:text-accent">
                   {l.label}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
@@ -76,8 +74,10 @@ export function SiteFooter() {
           <address className="mt-5 space-y-3 text-sm not-italic text-primary-foreground/75">
             <p className="flex gap-3">
               <MapPin className="mt-0.5 size-4 shrink-0 text-accent" aria-hidden="true" />
-              {contact.address}
+              <span>{contact.address}</span>
             </p>
+            <p className="pl-7">{contact.postalAddress}</p>
+            <p className="pl-7 text-xs leading-relaxed text-primary-foreground/60">{contact.locationNote}</p>
             {contact.phones.map((phone) => (
               <p key={phone} className="flex gap-3">
                 <Phone className="mt-0.5 size-4 shrink-0 text-accent" aria-hidden="true" />
@@ -97,7 +97,7 @@ export function SiteFooter() {
       </div>
 
       <div className="mx-auto grid max-w-7xl gap-8 px-4 pb-16 lg:grid-cols-2">
-        <div className="overflow-hidden rounded-lg border border-primary-foreground/10">
+        <div className="overflow-hidden rounded-lg border border-primary-foreground/10 bg-background">
           <iframe
             title="Map showing Godoma Technical Training Institute in Vitengeni, Kilifi"
             src={contact.mapEmbed}
@@ -118,7 +118,7 @@ export function SiteFooter() {
       <div className="border-t border-primary-foreground/10">
         <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-2 px-4 py-5 text-xs text-primary-foreground/60">
           <p>{`© ${new Date().getFullYear()} Godoma Technical Training Institute. All Rights Reserved.`}</p>
-          <p>Examined by KNEC · Regulated by TVETA</p>
+          <p>Regulated by TVETA</p>
         </div>
       </div>
     </footer>
