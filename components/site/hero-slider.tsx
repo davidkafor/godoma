@@ -49,7 +49,7 @@ export function HeroSlider() {
           />
           <div className="absolute inset-0 bg-gradient-to-r from-[oklch(0.2_0.08_260)]/95 via-[oklch(0.25_0.09_260)]/70 to-transparent" />
           <div className="relative mx-auto flex h-full max-w-7xl items-center px-4">
-            <div className="max-w-2xl text-primary-foreground">
+            <div className={cn('max-w-2xl text-primary-foreground', i === index && 'animate-reveal-up')}>
               <p className="mb-3 inline-block rounded-sm bg-accent px-3 py-1 text-xs font-bold uppercase tracking-wider text-accent-foreground">
                 {slide.eyebrow}
               </p>
@@ -82,7 +82,7 @@ export function HeroSlider() {
 
       <h1 className="sr-only">Godoma Technical Training Institute</h1>
 
-      <aside className="absolute right-4 top-1/2 z-20 hidden w-72 -translate-y-1/2 rounded-lg border border-border/70 bg-card/95 p-5 text-card-foreground shadow-xl backdrop-blur-sm lg:block" aria-label="College intake information">
+      <aside className="animate-reveal-scale absolute right-4 top-1/2 z-20 hidden w-72 -translate-y-1/2 rounded-lg border border-border/70 bg-card/95 p-5 text-card-foreground shadow-xl backdrop-blur-sm lg:block" aria-label="College intake information">
         <p className="text-xs font-bold uppercase tracking-[0.2em] text-accent">Admissions open</p>
         <h2 className="mt-2 text-2xl font-extrabold text-primary">College intakes</h2>
         <p className="mt-2 text-sm leading-relaxed text-muted-foreground">Start your journey at Godoma Technical Training Institute in any of our three annual intakes.</p>
