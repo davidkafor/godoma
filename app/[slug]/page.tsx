@@ -36,9 +36,9 @@ const boardMembers = [
   { name: 'Moses Kesis', role: 'Member', photo: '/images/board/image3.png', bio: 'Joined the board on 9 July 2025. He holds an MSc in Information Systems and is an ISO 9001:2015 QMS Lead Auditor, with 15 years of administrative and supervisory experience.' },
   { name: 'Esther Njoki Gacheru', role: 'Member', photo: '/images/board/image4.png', bio: 'Joined the board on 9 July 2025. She has over 20 years of experience in lecturing and administration, with master’s and bachelor’s degrees in computer science.' },
   { name: 'Caroline Chilango', role: 'Member', photo: '/images/board/image5.jpeg', bio: 'Joined the board on 9 July 2025. She holds a PhD and master’s degree in business administration from JKUAT and a Bachelor of Business Administration from Kenya Methodist University.' },
-  { name: 'Juliet Mapenzi Rua', role: 'Member', photo: '/images/board/image6.jpeg', bio: 'Joined the board on 9 July 2025. A horticulturalist and PhD candidate, she holds MSc and BSc qualifications in Agriculture and Rural Development.' },
+  { name: 'Juliet Mapenzi Rua', role: 'Member', photo: null, bio: 'Joined the board on 9 July 2025. A horticulturalist and PhD candidate, she holds MSc and BSc qualifications in Agriculture and Rural Development.' },
   { name: 'Mwalawari Sheti', role: 'Member', photo: '/images/board/image7.png', bio: 'Joined the board on 9 July 2025. He is an MSc candidate in Applied Statistics with experience in programming, data management and analysis.' },
-  { name: 'Edith Kwekwe Marafa', role: 'Member', photo: null, bio: 'Joined the board on 9 July 2025. She holds a PhD and master’s degree in business administration from JKUAT and a Bachelor of Business Administration from Kenya Methodist University.' },
+  { name: 'Edith Kwekwe Marafa', role: 'Principal / Board Secretary', photo: '/images/board/image6.jpeg', bio: 'Principal of Godoma Technical Training Institute and Secretary to the Board.' },
 ]
 
 export function generateStaticParams() { return Object.keys(pages).map((slug) => ({ slug })) }
