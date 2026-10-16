@@ -220,7 +220,7 @@ export const departments: Department[] = [
     id: 'ict',
 name: 'Computing and Informatics',
   short: 'Computing and Informatics',
-  image: '/images/hod-computing-updated.jpeg',
+  image: '/images/hod-computing-updated.jpeg?v=2',
   head: 'Priscillar Neema',
     summary:
       'Provides practical, industry-focused training in computing, software, cybersecurity, digital applications, and informatics through modern computer-based learning.',
