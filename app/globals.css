@@ -168,6 +168,7 @@
 @media (prefers-reduced-motion: reduce) {
   .animate-ticker,
   .animate-reveal-up,
-  .animate-reveal-scale { animation: none; }
+  .animate-reveal-scale,
+  .animate-ping { animation: none; }
   html { scroll-behavior: auto; }
 }
