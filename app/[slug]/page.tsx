@@ -32,13 +32,13 @@ const pages = {
 
 const boardMembers = [
   { name: 'Emmanuel Masha', role: 'Chairman of the Board', photo: '/images/board/image1.jpeg', bio: 'Appointed Chairman of the GTTI Board on 9 July 2025. He is pursuing a PhD at JKUAT and holds qualifications in human resource management, business management and arts, with over 12 years of experience.' },
+  { name: 'Caroline Musyimi', role: 'Principal / Board Secretary', photo: '/images/board/image6.jpeg', bio: 'Ms Caroline has served as Deputy Principal of Godoma Technical Training Institute since February 2025. She holds a master’s degree in Educational Technology and previously served as an Assessment Officer and Research Officer at TVET CDACC. She also served as Head of Department for Mechanical Engineering at Coast Institute of Technology. To date, she has 11 years of work experience.' },
   { name: "Patrick King’oina", role: 'Member', photo: '/images/board/image2.png', bio: 'Joined the board on 9 July 2025. He holds a master’s degree in infrastructure planning, a postgraduate diploma in housing studies and a Bachelor of Architecture from the University of Nairobi.' },
   { name: 'Moses Kesis', role: 'Member', photo: '/images/board/image3.png', bio: 'Joined the board on 9 July 2025. He holds an MSc in Information Systems and is an ISO 9001:2015 QMS Lead Auditor, with 15 years of administrative and supervisory experience.' },
   { name: 'Esther Njoki Gacheru', role: 'Member', photo: '/images/board/image4.png', bio: 'Joined the board on 9 July 2025. She has over 20 years of experience in lecturing and administration, with master’s and bachelor’s degrees in computer science.' },
   { name: 'Caroline Chilango', role: 'Member', photo: '/images/board/image5.jpeg', bio: 'Joined the board on 9 July 2025. She holds a PhD and master’s degree in business administration from JKUAT and a Bachelor of Business Administration from Kenya Methodist University.' },
   { name: 'Juliet Mapenzi Rua', role: 'Member', photo: null, bio: 'Joined the board on 9 July 2025. A horticulturalist and PhD candidate, she holds MSc and BSc qualifications in Agriculture and Rural Development.' },
   { name: 'Mwalawari Sheti', role: 'Member', photo: '/images/board/image7.png', bio: 'Joined the board on 9 July 2025. He is an MSc candidate in Applied Statistics with experience in programming, data management and analysis.' },
-  { name: 'Caroline Musyimi', role: 'Principal / Board Secretary', photo: '/images/board/image6.jpeg', bio: 'Ms Caroline has served as Deputy Principal of Godoma Technical Training Institute since February 2025. She holds a master’s degree in Educational Technology and previously served as an Assessment Officer and Research Officer at TVET CDACC. She also served as Head of Department for Mechanical Engineering at Coast Institute of Technology. To date, she has 11 years of work experience.' },
 ]
 
 export function generateStaticParams() { return Object.keys(pages).map((slug) => ({ slug })) }
