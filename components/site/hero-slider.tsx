@@ -82,6 +82,20 @@ export function HeroSlider() {
 
       <h1 className="sr-only">Godoma Technical Training Institute</h1>
 
+      <aside className="absolute right-4 top-1/2 z-20 hidden w-72 -translate-y-1/2 rounded-lg border border-border/70 bg-card/95 p-5 text-card-foreground shadow-xl backdrop-blur-sm lg:block" aria-label="College intake information">
+        <p className="text-xs font-bold uppercase tracking-[0.2em] text-accent">Admissions open</p>
+        <h2 className="mt-2 text-2xl font-extrabold text-primary">College intakes</h2>
+        <p className="mt-2 text-sm leading-relaxed text-muted-foreground">Start your journey at Godoma Technical Training Institute in any of our three annual intakes.</p>
+        <div className="mt-5 grid grid-cols-3 gap-2" aria-label="Annual intake months">
+          {['January', 'May', 'September'].map((month) => (
+            <div key={month} className="rounded-md bg-muted px-2 py-3 text-center">
+              <span className="block text-sm font-bold text-primary">{month}</span>
+            </div>
+          ))}
+        </div>
+        <a href="#admissions" className="mt-5 inline-flex w-full items-center justify-center rounded-md bg-accent px-4 py-3 text-sm font-bold text-accent-foreground transition-colors hover:bg-accent/90">Apply now</a>
+      </aside>
+
       <div className="absolute inset-x-0 bottom-0 z-10">
         <div className="mx-auto flex max-w-7xl items-end justify-between gap-4 px-4 pb-6">
           <div className="flex items-center gap-2">
