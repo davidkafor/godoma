@@ -38,7 +38,7 @@ const boardMembers = [
   { name: 'Caroline Chilango', role: 'Member', photo: '/images/board/image5.jpeg', bio: 'Joined the board on 9 July 2025. She holds a PhD and master’s degree in business administration from JKUAT and a Bachelor of Business Administration from Kenya Methodist University.' },
   { name: 'Juliet Mapenzi Rua', role: 'Member', photo: null, bio: 'Joined the board on 9 July 2025. A horticulturalist and PhD candidate, she holds MSc and BSc qualifications in Agriculture and Rural Development.' },
   { name: 'Mwalawari Sheti', role: 'Member', photo: '/images/board/image7.png', bio: 'Joined the board on 9 July 2025. He is an MSc candidate in Applied Statistics with experience in programming, data management and analysis.' },
-  { name: 'Caroline Musyimi', role: 'Principal / Board Secretary', photo: '/images/board/image6.jpeg', bio: 'Principal of Godoma Technical Training Institute and Secretary to the Board.' },
+  { name: 'Caroline Musyimi', role: 'Principal / Board Secretary', photo: '/images/board/image6.jpeg', bio: 'Ms Caroline has served as Deputy Principal of Godoma Technical Training Institute since February 2025. She holds a master’s degree in Educational Technology and previously served as an Assessment Officer and Research Officer at TVET CDACC. She also served as Head of Department for Mechanical Engineering at Coast Institute of Technology. To date, she has 11 years of work experience.' },
 ]
 
 export function generateStaticParams() { return Object.keys(pages).map((slug) => ({ slug })) }
