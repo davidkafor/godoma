@@ -2,12 +2,27 @@
 
 import { useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
-import { ChevronDown, Menu, X } from 'lucide-react'
+import { BookOpen, BriefcaseBusiness, CalendarDays, ChevronDown, ClipboardCheck, FileText, GraduationCap, Home, Landmark, Menu, Users, X } from 'lucide-react'
 import { navigation, type NavItem } from '@/lib/site-data'
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
 
+function getNavIcon(label: string) {
+  if (label.includes('Principal')) return Landmark
+  if (label.includes('Dean')) return Users
+  if (label.includes('Registry') || label.includes('Admissions')) return ClipboardCheck
+  if (label.includes('Assessment')) return FileText
+  if (label.includes('Student')) return GraduationCap
+  if (label.includes('Department')) return BriefcaseBusiness
+  if (label.includes('Training')) return BookOpen
+  if (label.includes('Events')) return CalendarDays
+  if (label.includes('Home')) return Home
+  return FileText
+}
+
 function NavLink({ item, className, onClick }: { item: NavItem; className?: string; onClick?: () => void }) {
+  const Icon = getNavIcon(item.label)
+
   return (
     <a
       href={item.href}
@@ -15,7 +30,8 @@ function NavLink({ item, className, onClick }: { item: NavItem; className?: stri
       className={className}
       {...(item.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
     >
-      {item.label}
+      <Icon className="size-4 shrink-0 text-accent" aria-hidden="true" />
+      <span>{item.label}</span>
     </a>
   )
 }
@@ -98,7 +114,7 @@ export function SiteHeader() {
                             <NavLink
                               item={item}
                               onClick={() => setOpenMenu(null)}
-                              className="block px-4 py-2 font-sans text-base font-medium text-foreground transition-colors hover:bg-secondary hover:text-primary"
+                              className="flex items-center gap-3 px-4 py-2 font-sans text-base font-medium text-foreground transition-colors hover:bg-secondary hover:text-primary"
                             />
                           </li>
                         ))}
@@ -150,7 +166,7 @@ export function SiteHeader() {
                           <NavLink
                             item={item}
                             onClick={() => setMobileOpen(false)}
-                            className="block py-2 text-sm text-muted-foreground hover:text-primary"
+                            className="flex items-center gap-3 py-2 text-sm text-muted-foreground hover:text-primary"
                           />
                         </li>
                       ))}
