@@ -291,7 +291,7 @@ image: '/images/dept-mechanical.jpg',
     id: 'business',
     name: 'Business & Liberal Studies',
     short: 'Business',
-    image: '/images/dept-business.png',
+    image: '/images/hod-business-updated.jpeg',
     head: 'Leonard Nyamawi',
     summary:
       'Offers diploma and craft programmes in management, marketing, supply chain, human resources and social work for the growing private and public sector.',
