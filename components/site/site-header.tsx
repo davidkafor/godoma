@@ -89,7 +89,7 @@ export function SiteHeader() {
                       aria-expanded={openMenu === group.label}
                       aria-haspopup="true"
                       onClick={() => setOpenMenu((m) => (m === group.label ? null : group.label))}
-                      className="flex h-10 items-center gap-1 whitespace-nowrap rounded-md px-2 text-sm font-semibold text-foreground transition-colors hover:text-primary"
+                      className="flex h-10 items-center gap-1 whitespace-nowrap rounded-md px-2 text-base font-semibold text-foreground transition-colors hover:text-primary"
                     >
                       {group.label}
                       <ChevronDown
@@ -124,7 +124,7 @@ export function SiteHeader() {
                 ) : (
                   <a
                     href={group.href}
-                    className="flex h-10 items-center whitespace-nowrap rounded-md px-3 text-sm font-semibold text-foreground transition-colors hover:text-primary"
+                    className="flex h-10 items-center whitespace-nowrap rounded-md px-3 text-base font-semibold text-foreground transition-colors hover:text-primary"
                   >
                     {group.label}
                   </a>
@@ -156,7 +156,7 @@ export function SiteHeader() {
               <li key={group.label} className="border-b last:border-0">
                 {group.items ? (
                   <details className="group">
-                    <summary className="flex cursor-pointer list-none items-center justify-between py-3 font-semibold [&::-webkit-details-marker]:hidden">
+                    <summary className="flex cursor-pointer list-none items-center justify-between py-3 text-base font-semibold [&::-webkit-details-marker]:hidden">
                       {group.label}
                       <ChevronDown className="size-4 transition-transform group-open:rotate-180" aria-hidden="true" />
                     </summary>
@@ -166,7 +166,7 @@ export function SiteHeader() {
                           <NavLink
                             item={item}
                             onClick={() => setMobileOpen(false)}
-                            className="flex items-center gap-3 py-2 text-sm text-muted-foreground hover:text-primary"
+                            className="flex items-center gap-3 py-2 text-base text-muted-foreground hover:text-primary"
                           />
                         </li>
                       ))}
