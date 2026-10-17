@@ -28,7 +28,7 @@ export function SiteFooter() {
       <div className="mx-auto grid max-w-7xl gap-10 px-4 py-16 sm:grid-cols-2 lg:grid-cols-4">
         <div>
           <div className="inline-block rounded-md bg-background p-2">
-            <Image src="/images/boh.png" alt="Godoma Technical Training Institute" width={307} height={90} className="h-12 w-auto" />
+            <Image src="/images/godoma-main-logo.png" alt="Godoma Technical Training Institute" width={960} height={261} className="h-auto w-full max-w-sm" />
           </div>
           <p className="mt-5 text-sm leading-relaxed text-primary-foreground/75">
             A centre of excellence in technical training, research and business incubation in Kilifi County.
