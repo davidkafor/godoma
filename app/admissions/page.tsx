@@ -5,7 +5,7 @@ import { TopBar } from '@/components/site/top-bar'
 const levels = [
   { level: 'TVET CDACC Level 6', requirement: 'KCSE C- (minus)', duration: 'As prescribed' },
   { level: 'TVET CDACC Level 5', requirement: 'KCSE D (plain)', duration: 'As prescribed' },
-  { level: 'TVET CDACC Level 4', requirement: 'Open entry', duration: 'As prescribed' },
+  { level: 'TVET CDACC Level 4', requirement: 'KCSE D (plain)', duration: 'As prescribed' },
   { level: 'Short Courses', requirement: 'Open entry', duration: '6 Months' },
 ]
 
