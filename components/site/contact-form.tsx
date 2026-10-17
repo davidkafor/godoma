@@ -2,9 +2,12 @@
 
 import { useState } from 'react'
 import { Button } from '@/components/ui/button'
+import { departments } from '@/lib/site-data'
 
 export function ContactForm() {
   const [submitted, setSubmitted] = useState(false)
+  const [selectedDepartment, setSelectedDepartment] = useState('')
+  const selectedDepartmentData = departments.find((department) => department.id === selectedDepartment)
 
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault()
@@ -12,6 +15,7 @@ export function ContactForm() {
     const name = String(form.get('name') ?? '').trim()
     const email = String(form.get('email') ?? '').trim()
     const phone = String(form.get('phone') ?? '').trim()
+    const department = String(form.get('department') ?? '').trim()
     const programme = String(form.get('programme') ?? '').trim()
     const grade = String(form.get('grade') ?? '').trim()
     const message = String(form.get('message') ?? '').trim()
@@ -20,6 +24,7 @@ export function ContactForm() {
       `Applicant name: ${name}`,
       `Email: ${email}`,
       `Phone: ${phone}`,
+      `Department: ${department}`,
       `Programme: ${programme}`,
       `Highest qualification/grade: ${grade}`,
       '',
@@ -57,14 +62,24 @@ export function ContactForm() {
         </div>
         <div className="grid gap-5 sm:grid-cols-2">
           <div className="flex flex-col gap-2">
+            <label htmlFor="contact-department" className="text-sm font-semibold text-primary">Department</label>
+            <select
+              id="contact-department"
+              name="department"
+              required
+              value={selectedDepartment}
+              onChange={(event) => setSelectedDepartment(event.target.value)}
+              className="min-h-11 rounded-md border bg-background px-3 text-foreground outline-none ring-offset-background focus-visible:ring-2 focus-visible:ring-ring"
+            >
+              <option value="" disabled>Select a department</option>
+              {departments.map((department) => <option key={department.id} value={department.id}>{department.name}</option>)}
+            </select>
+          </div>
+          <div className="flex flex-col gap-2">
             <label htmlFor="contact-programme" className="text-sm font-semibold text-primary">Programme of interest</label>
-            <select id="contact-programme" name="programme" required defaultValue="" className="min-h-11 rounded-md border bg-background px-3 text-foreground outline-none ring-offset-background focus-visible:ring-2 focus-visible:ring-ring">
-              <option value="" disabled>Select a programme</option>
-              <option>Electrical and Electronics Engineering</option>
-              <option>Building and Civil Engineering</option>
-              <option>Computing and Informatics</option>
-              <option>Automotive and Mechanical Engineering</option>
-              <option>Agricultural Studies</option>
+            <select id="contact-programme" name="programme" required defaultValue="" disabled={!selectedDepartmentData} className="min-h-11 rounded-md border bg-background px-3 text-foreground outline-none ring-offset-background focus-visible:ring-2 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-60">
+              <option value="" disabled>{selectedDepartmentData ? 'Select a programme' : 'Select a department first'}</option>
+              {selectedDepartmentData?.courses.map((course) => <option key={course.name} value={course.name}>{course.name}</option>)}
             </select>
           </div>
           <div className="flex flex-col gap-2">
