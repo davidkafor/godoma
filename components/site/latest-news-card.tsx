@@ -16,7 +16,7 @@ export function LatestNewsCard() {
         </a>
       </div>
       <ul className="mt-6 divide-y divide-border">
-        {news.map((item) => (
+        {news.slice(0, 3).map((item) => (
           <li key={item.title} className="py-4 first:pt-0 last:pb-0">
             <a href={item.href} className="group block rounded-md outline-offset-4 focus-visible:ring-2 focus-visible:ring-ring">
               <p className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-accent">
