@@ -73,8 +73,8 @@ export function SiteHeader() {
           />
         </a>
 
-        <nav ref={navRef} aria-label="Main" className="hidden min-w-0 flex-1 overflow-x-auto lg:block">
-          <ul className="flex min-w-max items-center justify-end gap-0.5">
+        <nav ref={navRef} aria-label="Main" className="hidden min-w-0 flex-1 lg:block">
+          <ul className="flex flex-wrap items-center justify-end gap-x-0.5 gap-y-1">
             {navigation.map((group) => (
               <li
                 key={group.label}
@@ -89,7 +89,7 @@ export function SiteHeader() {
                       aria-expanded={openMenu === group.label}
                       aria-haspopup="true"
                       onClick={() => setOpenMenu((m) => (m === group.label ? null : group.label))}
-                      className="flex h-10 items-center gap-1 whitespace-nowrap rounded-md px-1.5 text-base font-semibold text-foreground transition-colors hover:text-primary"
+                      className="flex h-10 items-center gap-1 whitespace-nowrap rounded-md px-1 text-sm font-semibold xl:text-base text-foreground transition-colors hover:text-primary"
                     >
                       {group.label}
                       <ChevronDown
@@ -124,7 +124,7 @@ export function SiteHeader() {
                 ) : (
                   <a
                     href={group.href}
-                    className="flex h-10 items-center whitespace-nowrap rounded-md px-2 text-base font-semibold text-foreground transition-colors hover:text-primary"
+                    className="flex h-10 items-center whitespace-nowrap rounded-md px-1.5 text-sm font-semibold xl:px-2 xl:text-base text-foreground transition-colors hover:text-primary"
                   >
                     {group.label}
                   </a>
