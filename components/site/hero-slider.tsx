@@ -82,18 +82,30 @@ export function HeroSlider() {
 
       <h1 className="sr-only">Godoma Technical Training Institute</h1>
 
-      <aside className="animate-reveal-scale absolute right-4 top-1/2 z-20 hidden w-72 -translate-y-1/2 rounded-lg border border-border/70 bg-card/95 p-5 text-card-foreground shadow-xl backdrop-blur-sm lg:block" aria-label="College intake information">
-        <p className="text-xs font-bold uppercase tracking-[0.2em] text-accent">Admissions open</p>
-        <h2 className="mt-2 text-2xl font-extrabold text-primary">College intakes</h2>
-        <p className="mt-2 text-sm leading-relaxed text-muted-foreground">Start your journey at Godoma Technical Training Institute in any of our three annual intakes.</p>
-        <div className="mt-5 grid grid-cols-3 gap-2" aria-label="Annual intake months">
-          {['January', 'May', 'September'].map((month) => (
-            <div key={month} className="rounded-md bg-muted px-2 py-3 text-center">
-              <span className="block text-sm font-bold text-primary">{month}</span>
+      <aside className="animate-reveal-scale absolute bottom-4 right-4 z-20 hidden w-[19rem] overflow-hidden rounded-xl border border-primary-foreground/30 bg-card text-card-foreground shadow-2xl lg:block" aria-label="Admissions information">
+        <div className="bg-primary px-5 py-4 text-primary-foreground">
+          <div className="flex items-start justify-between gap-3">
+            <div>
+              <p className="text-xs font-bold uppercase tracking-[0.2em] text-accent">Admissions open</p>
+              <h2 className="mt-1 text-2xl font-extrabold">Apply to Godoma TTI</h2>
             </div>
-          ))}
+            <span className="mt-1 rounded-full bg-secondary px-2.5 py-1 text-[0.65rem] font-bold uppercase tracking-wider text-secondary-foreground">Now enrolling</span>
+          </div>
         </div>
-        <a href="#admissions" className="mt-5 inline-flex w-full items-center justify-center rounded-md bg-accent px-4 py-3 text-sm font-bold text-accent-foreground transition-colors hover:bg-accent/90">Apply now</a>
+        <div className="p-5">
+          <p className="text-sm leading-relaxed text-muted-foreground">Join a practical, career-focused programme through our CBET-CDACC Levels 3, 4, 5 and 6.</p>
+          <div className="mt-5" aria-label="Annual intake months">
+            <p className="text-xs font-bold uppercase tracking-wider text-primary">Annual intakes</p>
+            <div className="mt-2 grid grid-cols-3 gap-2">
+              {['January', 'May', 'September'].map((month) => (
+                <div key={month} className="rounded-md border border-border bg-background px-2 py-2.5 text-center">
+                  <span className="block text-xs font-bold text-primary">{month}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+          <a href="#admissions" className="mt-5 inline-flex w-full items-center justify-center rounded-md bg-accent px-4 py-3 text-sm font-bold text-accent-foreground transition-colors hover:bg-accent/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">View admission details</a>
+        </div>
       </aside>
 
       <div className="absolute inset-x-0 bottom-0 z-10">
