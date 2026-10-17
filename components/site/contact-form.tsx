@@ -32,8 +32,10 @@ export function ContactForm() {
       message || 'None provided',
     ].join('\\n')
 
-    window.location.assign(
-      `mailto:admissionsgtti@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`,
+    window.open(
+      `https://mail.google.com/mail/?view=cm&fs=1&to=admissionsgtti@gmail.com&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`,
+      '_blank',
+      'noopener,noreferrer',
     )
     setSubmitted(true)
   }
@@ -43,7 +45,7 @@ export function ContactForm() {
       <div className="mb-6">
         <p className="text-sm font-bold uppercase tracking-[0.2em] text-accent">Admissions application</p>
         <h2 className="mt-2 text-2xl font-extrabold text-primary">Apply to Godoma TTI</h2>
-        <p className="mt-2 leading-relaxed text-muted-foreground">Complete the form and select submit. Your email app will open with the application addressed to admissionsgtti@gmail.com.</p>
+        <p className="mt-2 leading-relaxed text-muted-foreground">Complete the form and select submit. Gmail will open in a new browser tab with the application addressed to admissionsgtti@gmail.com.</p>
       </div>
       <form className="flex flex-col gap-5" onSubmit={handleSubmit}>
         <div className="grid gap-5 sm:grid-cols-2">
@@ -93,7 +95,7 @@ export function ContactForm() {
         </div>
         <div className="flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:justify-between">
           <Button type="submit">Submit application</Button>
-          {submitted && <p className="text-sm font-medium text-secondary" role="status">Your email app should now be open. Review the message and send it to admissionsgtti@gmail.com.</p>}
+          {submitted && <p className="text-sm font-medium text-secondary" role="status">Gmail should now be open in a new tab. Review the message and send it to admissionsgtti@gmail.com.</p>}
         </div>
       </form>
     </div>
