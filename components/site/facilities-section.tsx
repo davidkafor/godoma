@@ -49,7 +49,7 @@ export function FacilitiesSection() {
               sizes="(min-width: 1024px) 33vw, 100vw"
               className="object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-[oklch(0.2_0.08_260)] via-[oklch(0.2_0.08_260)]/40 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-brand-deep via-brand-deep/40 to-transparent" />
             <div className="relative p-8 text-primary-foreground">
               <BookOpen className="size-9 text-accent" aria-hidden="true" />
               <h3 className="mt-3 text-2xl font-extrabold">Institution Library</h3>
