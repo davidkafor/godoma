@@ -4,7 +4,7 @@ import { SocialIcons } from './social-icons'
 
 export function TopBar() {
   return (
-    <div className="bg-[oklch(0.25_0.09_260)] text-primary-foreground">
+    <div className="bg-primary text-primary-foreground">
       <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-x-6 gap-y-1 px-4 py-2 text-xs sm:text-sm">
         <div className="flex flex-wrap items-center gap-x-5 gap-y-1">
           {contact.phones.map((phone) => (
