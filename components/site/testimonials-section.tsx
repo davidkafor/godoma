@@ -9,27 +9,27 @@ import { cn } from '@/lib/utils'
 const testimonials = [
   {
     quote:
-      'The electrical workshops gave me real practice, not just theory. By the time I completed my CBET-CDACC assessment, I had already wired installations on my own.',
+      'The electrical workshops gave me real practice, not just theory. By the time I completed my TVET CDACC assessment, I had already wired installations on my own.',
     name: 'Alumnus',
-    role: 'CBET-CDACC Electrical & Electronics — Level 6',
+    role: 'TVET CDACC Electrical & Electronics — Level 6',
   },
   {
     quote:
       'The ICT lab and campus Wi-Fi meant I could practice any time. The trainers are patient and always ready to help with projects.',
     name: 'Trainee',
-    role: 'CBET-CDACC Information & Communication Technology — Level 6',
+    role: 'TVET CDACC Information & Communication Technology — Level 6',
   },
   {
     quote:
       'Through the HELB TVET loan I was able to focus on my studies. Godoma TTI prepared me for work in the coastal hospitality industry.',
     name: 'Alumna',
-    role: 'CBET-CDACC Food & Beverage Production — Level 4',
+    role: 'TVET CDACC Food & Beverage Production — Level 4',
   },
   {
     quote:
       'As a student leader I saw how the Dean of Students office supports trainees — from motivational talks to mentorship and welfare.',
     name: 'Student Leader',
-    role: 'CBET-CDACC Business Management — Level 6',
+    role: 'TVET CDACC Business Management — Level 6',
   },
 ]
 

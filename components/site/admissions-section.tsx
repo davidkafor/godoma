@@ -4,9 +4,9 @@ import { cn } from '@/lib/utils'
 import { contact } from '@/lib/site-data'
 
 const levels = [
-  { level: 'CBET Level 6', requirement: 'KCSE C- (minus)', duration: 'As prescribed' },
-  { level: 'CBET Level 5', requirement: 'KCSE D (plain)', duration: 'As prescribed' },
-  { level: 'CBET Level 4', requirement: 'Open entry', duration: 'As prescribed' },
+  { level: 'TVET CDACC Level 6', requirement: 'KCSE C- (minus)', duration: 'As prescribed' },
+  { level: 'TVET CDACC Level 5', requirement: 'KCSE D (plain)', duration: 'As prescribed' },
+  { level: 'TVET CDACC Level 4', requirement: 'Open entry', duration: 'As prescribed' },
   { level: 'Short Courses', requirement: 'Open entry', duration: '6 Months' },
 ]
 
@@ -48,7 +48,7 @@ export function AdmissionsSection() {
               <div>
                 <p className="font-bold">HELB TVET loans & bursaries</p>
                 <p className="text-sm text-primary-foreground/80">
-                  Up to Kshs. 40,000 per year, upkeep inclusive, for eligible CBET-CDACC trainees.
+                  Up to Kshs. 40,000 per year, upkeep inclusive, for eligible TVET CDACC trainees.
                 </p>
               </div>
             </li>

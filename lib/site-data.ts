@@ -117,7 +117,7 @@ title: 'President Ruto Announces KSh 350 Million for Godoma TTI Expansion',
     date: 'Admissions',
     image: '/images/tvet-flier.jpg',
     excerpt:
-      'HELB finances TVET students in over 200 technical institutes. Get up to Kshs. 40,000 per year, upkeep money inclusive, for CBET-CDACC programmes.',
+      'HELB finances TVET students in over 200 technical institutes. Get up to Kshs. 40,000 per year, upkeep money inclusive, for TVET CDACC programmes.',
     href: '/notice-board#helb-tvet-loans',
   },
   {
@@ -140,7 +140,7 @@ title: 'President Ruto Announces KSh 350 Million for Godoma TTI Expansion',
 
 export const tickerItems = [
   'President Ruto announces KSh 350 million investment for Godoma TTI expansion',
-  'Admissions ongoing for CBET-CDACC Level 3, Level 4, Level 5 and Level 6 programmes',
+  'Admissions ongoing for TVET CDACC Level 3, Level 4, Level 5 and Level 6 programmes',
   'Apply for HELB TVET loans & bursaries — up to Kshs. 40,000 per year',
   'Download your admission letter from the Students Downloads page',
   'Computer Packages short course — 3 months, open entry',
@@ -179,7 +179,7 @@ export type Department = {
   courses: Course[]
 }
 
-const c = (name: string, requirement: string, duration: string, examiner = 'CBET-CDACC'): Course => ({
+const c = (name: string, requirement: string, duration: string, examiner = 'TVET CDACC'): Course => ({
   name,
   requirement,
   duration,
@@ -196,11 +196,11 @@ export const departments: Department[] = [
     summary:
       'Established in 2016 to train manpower in both the Power and Instrumentation & Control options, with two equipped modern workshops — Electrical workshops and an Electronics laboratory.',
     courses: [
-      c('Solar PV Installation (Level 4)', 'KCSE D', '6 Months', 'CBET-CDACC'),
-      c('Electronics Engineering (Level 5 & 4)', 'KCSE D', '2 Years', 'CBET-CDACC'),
-      c('Electrical Engineering (Level 6, 5 & 4)', 'KCSE C-', '3 Years', 'CBET-CDACC'),
-      c('Electrical Installation Technology (Level 4)', 'KCSE D', '6 Months', 'CBET-CDACC'),
-      c('Electrical Installation', 'Open', '6 Months', 'CDACC / NITA'),
+      c('Solar PV Installation (Level 4)', 'KCSE D', '6 Months', 'TVET CDACC'),
+      c('Electronics Engineering (Level 5 & 4)', 'KCSE D', '2 Years', 'TVET CDACC'),
+      c('Electrical Engineering (Level 6, 5 & 4)', 'KCSE C-', '3 Years', 'TVET CDACC'),
+      c('Electrical Installation Technology (Level 4)', 'KCSE D', '6 Months', 'TVET CDACC'),
+      c('Electrical Installation', 'Open', '6 Months', 'TVET CDACC'),
     ],
   },
   {
@@ -212,16 +212,16 @@ export const departments: Department[] = [
     summary:
       'One of the largest departments in the Institute, with well-equipped workshops. Graduates work in construction, real estate, the Ministry of Works, KeNHA and the SGR project.',
     courses: [
-      c('Land Survey (Level 5)', 'KCSE D', '2 Years', 'CBET-CDACC'),
-      c('Masonry (Level 4)', 'KCSE D', '6 Months', 'CBET-CDACC'),
-      c('Plumbing (Level 5 & 4)', 'KCSE D', '2 Years', 'CBET-CDACC'),
-      c('Civil Engineering (Level 6 & 5)', 'KCSE C-', '3 Years', 'CBET-CDACC'),
-      c('Building Technology (Level 6 & 5)', 'KCSE C-', '3 Years', 'CBET-CDACC'),
-      c('Carpentry & Joinery (Level 4)', 'KCSE D', '6 Months', 'CBET-CDACC'),
-      c('Masonry', 'Open', '6 Months', 'CDACC / NITA'),
-      c('Plumbing and Pipe Fitting', 'Open', '6 Months', 'CDACC / NITA'),
-      c('Carpentry', 'Open', '6 Months', 'CDACC / NITA'),
-      c('Welding', 'Open', '6 Months', 'CDACC / NITA'),
+      c('Land Survey (Level 5)', 'KCSE D', '2 Years', 'TVET CDACC'),
+      c('Masonry (Level 4)', 'KCSE D', '6 Months', 'TVET CDACC'),
+      c('Plumbing (Level 5 & 4)', 'KCSE D', '2 Years', 'TVET CDACC'),
+      c('Civil Engineering (Level 6 & 5)', 'KCSE C-', '3 Years', 'TVET CDACC'),
+      c('Building Technology (Level 6 & 5)', 'KCSE C-', '3 Years', 'TVET CDACC'),
+      c('Carpentry & Joinery (Level 4)', 'KCSE D', '6 Months', 'TVET CDACC'),
+      c('Masonry', 'Open', '6 Months', 'TVET CDACC'),
+      c('Plumbing and Pipe Fitting', 'Open', '6 Months', 'TVET CDACC'),
+      c('Carpentry', 'Open', '6 Months', 'TVET CDACC'),
+      c('Welding', 'Open', '6 Months', 'TVET CDACC'),
     ],
   },
   {
@@ -233,9 +233,9 @@ name: 'Computing and Informatics',
     summary:
       'Provides practical, industry-focused training in computing, software, cybersecurity, digital applications, and informatics through modern computer-based learning.',
     courses: [
-      c('Computing and Informatics (Level 6, 5 & 4)', 'KCSE C-', '3 Years', 'CBET-CDACC'),
-      c('Cyber Security (Level 4)', 'KCSE D', '6 Months', 'CBET-CDACC'),
-      c('Computer Science (Level 6)', 'KCSE C-', '3 Years', 'CBET-CDACC'),
+      c('Computing and Informatics (Level 6, 5 & 4)', 'KCSE C-', '3 Years', 'TVET CDACC'),
+      c('Cyber Security (Level 4)', 'KCSE D', '6 Months', 'TVET CDACC'),
+      c('Computer Science (Level 6)', 'KCSE C-', '3 Years', 'TVET CDACC'),
       c('Computer Packages', 'Open', '3 Months', 'GTTI'),
     ],
   },
@@ -248,11 +248,11 @@ name: 'Computing and Informatics',
     summary:
       "Prepares trainees for Kenya's coastal hospitality and tourism industry through food & beverage production, tour guiding and travel operations programmes.",
     courses: [
-      c('Catering & Accommodation (Level 5 & 4)', 'KCSE D', '2 Years', 'CBET-CDACC'),
-      c('Tourism & Travel Management (Level 6 & 5)', 'KCSE C-', '3 Years', 'CBET-CDACC'),
-      c('Food & Beverages — Culinary Arts (Level 6, 5 & 4)', 'KCSE C-', '3 Years', 'CBET-CDACC'),
-      c('House Keeping & Accommodation (Level 5 & 4)', 'KCSE D', '2 Years', 'CBET-CDACC'),
-      c('Food and Beverage Production', 'Open', '6 Months', 'CDACC / NITA'),
+      c('Catering & Accommodation (Level 5 & 4)', 'KCSE D', '2 Years', 'TVET CDACC'),
+      c('Tourism & Travel Management (Level 6 & 5)', 'KCSE C-', '3 Years', 'TVET CDACC'),
+      c('Food & Beverages — Culinary Arts (Level 6, 5 & 4)', 'KCSE C-', '3 Years', 'TVET CDACC'),
+      c('House Keeping & Accommodation (Level 5 & 4)', 'KCSE D', '2 Years', 'TVET CDACC'),
+      c('Food and Beverage Production', 'Open', '6 Months', 'TVET CDACC'),
     ],
   },
   {
@@ -263,10 +263,10 @@ image: '/images/dept-mechanical.jpg',
   head: 'Conrad Ibala',
     summary: 'Practical training for the automotive and fabrication industries through competency-based programmes.',
     courses: [
-      c('Automotive Technology (Level 5 & 4)', 'KCSE D', '2 Years', 'CBET-CDACC'),
-      c('Welding & Fabrication (Level 5 & 4)', 'KCSE D', '2 Years', 'CBET-CDACC'),
-      c('Motorcycle', 'Open', '6 Months', 'CDACC / NITA'),
-      c('Motor Vehicle Mechanics', 'Open', '6 Months', 'CDACC / NITA'),
+      c('Automotive Technology (Level 5 & 4)', 'KCSE D', '2 Years', 'TVET CDACC'),
+      c('Welding & Fabrication (Level 5 & 4)', 'KCSE D', '2 Years', 'TVET CDACC'),
+      c('Motorcycle', 'Open', '6 Months', 'TVET CDACC'),
+      c('Motor Vehicle Mechanics', 'Open', '6 Months', 'TVET CDACC'),
     ],
   },
   {
@@ -277,11 +277,11 @@ image: '/images/dept-mechanical.jpg',
   head: 'Department of Fashion & Cosmetology',
     summary: 'Creative and practical training in fashion design, hairdressing and beauty therapy.',
     courses: [
-      c('Fashion & Design (Level 5 & 4)', 'KCSE D', '2 Years', 'CBET-CDACC'),
-      c('Cosmetology (Level 5 & 4)', 'KCSE D', '2 Years', 'CBET-CDACC'),
-      c('Hairdressing', 'Open', '6 Months', 'CDACC / NITA'),
-      c('Beauty Therapy', 'Open', '6 Months', 'CDACC / NITA'),
-      c('Dress Making', 'Open', '6 Months', 'CDACC / NITA'),
+      c('Fashion & Design (Level 5 & 4)', 'KCSE D', '2 Years', 'TVET CDACC'),
+      c('Cosmetology (Level 5 & 4)', 'KCSE D', '2 Years', 'TVET CDACC'),
+      c('Hairdressing', 'Open', '6 Months', 'TVET CDACC'),
+      c('Beauty Therapy', 'Open', '6 Months', 'TVET CDACC'),
+      c('Dress Making', 'Open', '6 Months', 'TVET CDACC'),
     ],
   },
   {
@@ -292,8 +292,8 @@ image: '/images/dept-mechanical.jpg',
   head: 'Emmanuel Kipkorir',
   summary: 'Entrepreneurial agricultural training that equips trainees with practical skills for sustainable farming and economic development.',
     courses: [
-      c('Agri-preneurship (Level 5 & 4)', 'KCSE D', '2 Years', 'CBET-CDACC'),
-      c('Agri-preneurship', 'Open', '6 Months', 'CDACC / NITA'),
+      c('Agri-preneurship (Level 5 & 4)', 'KCSE D', '2 Years', 'TVET CDACC'),
+      c('Agri-preneurship', 'Open', '6 Months', 'TVET CDACC'),
     ],
   },
   {
@@ -305,10 +305,10 @@ image: '/images/dept-mechanical.jpg',
     summary:
       'Offers diploma and craft programmes in management, marketing, supply chain, human resources and social work for the growing private and public sector.',
     courses: [
-      c('Supply Chain Management (Level 6 & 5)', 'KCSE C-', '3 Years', 'CBET-CDACC'),
-      c('Human Resource Management (Level 6 & 5)', 'KCSE C-', '3 Years', 'CBET-CDACC'),
-      c('Business Management (Level 6 & 5)', 'KCSE C-', '3 Years', 'CBET-CDACC'),
-      c('Social Work & Community Development (Level 6 & 5)', 'KCSE C-', '3 Years', 'CBET-CDACC'),
+      c('Supply Chain Management (Level 6 & 5)', 'KCSE C-', '3 Years', 'TVET CDACC'),
+      c('Human Resource Management (Level 6 & 5)', 'KCSE C-', '3 Years', 'TVET CDACC'),
+      c('Business Management (Level 6 & 5)', 'KCSE C-', '3 Years', 'TVET CDACC'),
+      c('Social Work & Community Development (Level 6 & 5)', 'KCSE C-', '3 Years', 'TVET CDACC'),
     ],
   },
 ]
