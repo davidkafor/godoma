@@ -10,7 +10,7 @@ const quickLinks = [
   { label: 'Admissions', href: '/admissions' },
   { label: 'Academic Departments', href: '/departments' },
   { label: 'Library', href: '/library' },
-  { label: 'Notice Board', href: '/#news' },
+  { label: 'Notice Board', href: '/notice-board' },
 ]
 
 const importantPages = [
@@ -18,7 +18,7 @@ const importantPages = [
   { label: 'Student Funding', href: '/funding' },
   { label: 'Recognition of Prior Learning', href: '/recognition-of-prior-learning' },
   { label: 'Industrial Liaison Office', href: '/industrial-liaison-office' },
-  { label: 'Events Calendar', href: '/trainees#events' },
+  { label: 'Events Calendar', href: '/events' },
   { label: 'Contact Us', href: '/contact' },
 ]
 
