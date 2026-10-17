@@ -97,20 +97,28 @@ export function SiteFooter() {
       </div>
 
       <div className="mx-auto grid max-w-7xl gap-8 px-4 pb-16 lg:grid-cols-2">
-        <div className="flex min-h-64 flex-col justify-between rounded-lg border border-primary-foreground/10 bg-secondary p-6 text-secondary-foreground">
-          <div>
-            <p className="text-sm font-bold uppercase tracking-[0.2em] text-accent">Visit us</p>
-            <h2 className="mt-2 text-2xl font-bold">Godoma Technical Training Institute</h2>
-            <p className="mt-3 leading-relaxed">Vitengeni, Kilifi County, Kenya</p>
+        <div className="overflow-hidden rounded-lg border border-primary-foreground/10 bg-secondary">
+          <iframe
+            title="Map showing Godoma Technical Training Institute in Vitengeni, Kilifi"
+            src="https://www.openstreetmap.org/export/embed.html?bbox=39.7600%2C-3.8200%2C39.8400%2C-3.7400&layer=mapnik&marker=-3.7800%2C39.8000"
+            className="h-64 w-full border-0"
+            loading="lazy"
+            referrerPolicy="no-referrer"
+          />
+          <div className="flex items-center justify-between gap-4 p-4 text-secondary-foreground">
+            <div>
+              <p className="text-sm font-bold uppercase tracking-[0.2em] text-accent">Visit us</p>
+              <p className="mt-1 text-sm">Vitengeni, Kilifi County, Kenya</p>
+            </div>
+            <a
+              href={contact.mapEmbed}
+              target="_blank"
+              rel="noreferrer"
+              className="shrink-0 text-sm font-semibold text-primary underline-offset-4 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+            >
+              Directions
+            </a>
           </div>
-          <a
-            href={contact.mapEmbed}
-            target="_blank"
-            rel="noreferrer"
-            className="mt-6 inline-flex w-fit items-center rounded-md bg-primary px-4 py-2 font-semibold text-primary-foreground transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
-          >
-            Open location map
-          </a>
         </div>
         <div className="flex flex-col justify-center rounded-lg bg-primary-foreground/5 p-8">
           <h2 className="text-xl font-bold">Sign up for our newsletter</h2>
