@@ -5,7 +5,7 @@ export const contact = {
   postalAddress: 'P.O. Box 1808–80108, Kilifi',
   locationNote: '30 km from Kilifi town along Vitengeni Road, adjacent to Arabuko Sokoke Forest and next to Vitengeni Baptist Secondary School.',
   mapEmbed:
-    'https://www.google.com/maps?q=Godoma+Technical+Training+Institute,+Vitengeni,+Kilifi&output=embed',
+    'https://www.google.com/maps/search/?api=1&query=Godoma+Technical+Training+Institute%2C+Vitengeni%2C+Kilifi%2C+Kenya',
 }
 
 export const socials = [
