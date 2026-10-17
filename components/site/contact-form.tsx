@@ -40,7 +40,7 @@ export function ContactForm() {
           </div>
           <div className="flex flex-col gap-2">
             <label htmlFor="contact-phone" className="text-sm font-semibold text-primary">Phone number</label>
-            <input id="contact-phone" name="phone" type="tel" required autoComplete="tel" className="min-h-11 rounded-md border bg-background px-3 text-foreground outline-none ring-offset-background placeholder:text-muted-foreground focus-visible:ring-2 focus-visible:ring-ring" placeholder="+254 700 000 000" />
+            <input id="contact-phone" name="phone" type="tel" required autoComplete="tel" className="min-h-11 rounded-md border bg-background px-3 text-foreground outline-none ring-offset-background placeholder:text-muted-foreground focus-visible:ring-2 focus-visible:ring-ring" placeholder="+254 743 661 423" />
           </div>
         </div>
         <div className="grid gap-5 sm:grid-cols-2">
