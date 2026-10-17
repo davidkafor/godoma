@@ -14,7 +14,7 @@ export function DepartmentsSection() {
           id="departments-heading"
           eyebrow="Professional Training Courses"
           title="Academic Departments"
-          description="All Diploma, Craft Certificate and Artisan programmes are examined by the Kenya National Examinations Council (KNEC)."
+          description="Our competency-based programmes are assessed and certified through CBET-CDACC at Levels 3, 4, 5 and 6."
         />
 
         <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-5">

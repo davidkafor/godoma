@@ -170,7 +170,7 @@ export type Department = {
   courses: Course[]
 }
 
-const c = (name: string, requirement: string, duration: string, examiner = 'KNEC'): Course => ({
+const c = (name: string, requirement: string, duration: string, examiner = 'CBET-CDACC'): Course => ({
   name,
   requirement,
   duration,
