@@ -82,7 +82,7 @@ export function HeroSlider() {
 
       <h1 className="sr-only">Godoma Technical Training Institute</h1>
 
-      <aside className="animate-reveal-scale absolute bottom-20 right-4 z-20 hidden w-[19rem] overflow-hidden rounded-xl border border-primary-foreground/30 bg-card text-card-foreground shadow-2xl lg:block" aria-label="Admissions information">
+      <aside className="animate-reveal-scale absolute bottom-4 right-4 z-20 hidden w-[19rem] overflow-hidden rounded-xl border border-primary-foreground/30 bg-card text-card-foreground shadow-2xl lg:block" aria-label="Admissions information">
         <div className="bg-primary px-5 py-4 text-primary-foreground">
           <div className="flex items-start justify-between gap-3">
             <div>
