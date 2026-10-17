@@ -34,7 +34,7 @@ export function DepartmentsSection() {
                 <span className="absolute inset-0 bg-gradient-to-t from-[oklch(0.2_0.08_260)] via-[oklch(0.2_0.08_260)]/50 to-transparent" />
                 <span className="relative p-5 text-primary-foreground">
                   <span className="block text-xs font-bold uppercase tracking-wider text-accent">
-                    {d.courses.length} courses
+                    CBET-CDACC programmes
                   </span>
                   <span className="mt-1 block text-lg font-bold leading-tight">{d.name}</span>
                   <span className="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-primary-foreground/90 group-hover:text-accent">

@@ -109,7 +109,7 @@ export const news = [
     date: 'Admissions',
     image: '/images/tvet-flier.jpg',
     excerpt:
-      'HELB finances TVET students in over 200 technical institutes. Get up to Kshs. 40,000 per year, upkeep money inclusive, for Diploma and Certificate courses.',
+      'HELB finances TVET students in over 200 technical institutes. Get up to Kshs. 40,000 per year, upkeep money inclusive, for CBET-CDACC programmes.',
     href: '/notice-board#helb-tvet-loans',
   },
   {
@@ -131,7 +131,7 @@ export const news = [
 ]
 
 export const tickerItems = [
-  'Admissions ongoing for Diploma, Craft Certificate and Artisan courses',
+  'Admissions ongoing for CBET-CDACC Level 3, Level 4, Level 5 and Level 6 programmes',
   'Apply for HELB TVET loans & bursaries — up to Kshs. 40,000 per year',
   'Download your admission letter from the Students Downloads page',
   'Computer Packages short course — 3 months, open entry',
