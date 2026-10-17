@@ -11,7 +11,7 @@ const geistSans = Geist({
 export const metadata: Metadata = {
   title: 'Godoma Technical Training Institute | Kilifi County, Kenya',
   description:
-    'Godoma TTI is a public technical training institute in Vitengeni, Kilifi County offering CBET-CDACC competency-based programmes at Levels 3, 4, 5 and 6 in Engineering, ICT, Business and Hospitality.',
+    'Godoma TTI is a public technical training institute in Vitengeni, Kilifi County offering TVET CDACC competency-based programmes at Levels 3, 4, 5 and 6 in Engineering, ICT, Business and Hospitality.',
   generator: 'v0.app',
   icons: {
     icon: '/images/logo.png',

@@ -93,7 +93,7 @@ export function HeroSlider() {
           </div>
         </div>
         <div className="p-5">
-          <p className="text-sm leading-relaxed text-muted-foreground">Join a practical, career-focused programme through our CBET-CDACC Levels 3, 4, 5 and 6.</p>
+          <p className="text-sm leading-relaxed text-muted-foreground">Join a practical, career-focused programme through our TVET CDACC Levels 3, 4, 5 and 6.</p>
           <div className="mt-5" aria-label="Annual intake months">
             <p className="text-xs font-bold uppercase tracking-wider text-primary">Annual intakes</p>
             <div className="mt-2 grid grid-cols-3 gap-2">
