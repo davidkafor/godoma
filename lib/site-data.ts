@@ -105,6 +105,14 @@ image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DSC_0613.JPG-OsK
 
 export const news = [
   {
+    title: 'President Ruto Announces KSh 350 Million for Godoma TTI Expansion',
+    date: '17 October 2026',
+    image: '/images/foundation-stone-laying.jpeg',
+    excerpt:
+      'Godoma TTI is set to benefit from a KSh 350 million investment, including new student hostels and expanded facilities, following the laying of the foundation stone during President William Ruto’s development tour of the Coast region.',
+    href: '/notice-board#godoma-tti-expansion',
+  },
+  {
     title: 'HELB TVET Loans & Bursaries Now Available',
     date: 'Admissions',
     image: '/images/tvet-flier.jpg',
@@ -131,6 +139,7 @@ export const news = [
 ]
 
 export const tickerItems = [
+  'President Ruto announces KSh 350 million investment for Godoma TTI expansion',
   'Admissions ongoing for CBET-CDACC Level 3, Level 4, Level 5 and Level 6 programmes',
   'Apply for HELB TVET loans & bursaries — up to Kshs. 40,000 per year',
   'Download your admission letter from the Students Downloads page',
