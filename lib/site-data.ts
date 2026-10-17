@@ -10,7 +10,7 @@ export const contact = {
 
 export const socials = [
   { name: 'Facebook', href: 'https://www.facebook.com/search/top?q=Godoma%20Technical%20Training%20Institute' },
-  { name: 'X', href: 'https://x.com/search?q=Godoma%20TTI' },
+  { name: 'X', href: 'https://x.com/GodomaTTI' },
   { name: 'YouTube', href: 'https://www.youtube.com/results?search_query=Godoma+Technical+Training+Institute' },
 ] as const
 
