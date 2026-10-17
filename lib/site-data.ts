@@ -105,8 +105,9 @@ image: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DSC_0613.JPG-OsK
 
 export const news = [
   {
-    title: 'President Ruto Announces KSh 350 Million for Godoma TTI Expansion',
-    image: '/images/foundation-stone-laying.jpeg',
+title: 'President Ruto Announces KSh 350 Million for Godoma TTI Expansion',
+  date: 'October 2026',
+  image: '/images/foundation-stone-laying.jpeg',
     excerpt:
       'Godoma TTI is set to benefit from a KSh 350 million investment, including new student hostels and expanded facilities, following the laying of the foundation stone during President William Ruto’s development tour of the Coast region.',
     href: '/notice-board#godoma-tti-expansion',
