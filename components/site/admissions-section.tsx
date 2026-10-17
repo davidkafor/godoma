@@ -48,7 +48,7 @@ export function AdmissionsSection() {
               <div>
                 <p className="font-bold">HELB TVET loans & bursaries</p>
                 <p className="text-sm text-primary-foreground/80">
-                  Up to Kshs. 40,000 per year, upkeep inclusive, for Diploma & Certificate trainees.
+                  Up to Kshs. 40,000 per year, upkeep inclusive, for eligible CBET-CDACC trainees.
                 </p>
               </div>
             </li>
