@@ -45,9 +45,9 @@ export function HeroSlider() {
             fill
             priority={i === 0}
             sizes="100vw"
-            className={cn('object-cover transition-transform duration-[7000ms]', i === index && 'scale-105')}
+            className="object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[oklch(0.2_0.08_260)]/95 via-[oklch(0.25_0.09_260)]/70 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[oklch(0.2_0.08_260)]/55 via-[oklch(0.25_0.09_260)]/25 to-transparent" />
           <div className="relative mx-auto flex h-full max-w-7xl items-center px-4">
             <div className={cn('max-w-2xl text-primary-foreground', i === index && 'animate-reveal-up')}>
               <p className="mb-3 inline-block rounded-sm bg-accent px-3 py-1 text-xs font-bold uppercase tracking-wider text-accent-foreground">
