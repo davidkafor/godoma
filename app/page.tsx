@@ -14,8 +14,27 @@ import { PartnersSection } from '@/components/site/partners-section'
 import { SiteFooter } from '@/components/site/site-footer'
 
 export default function Page() {
+  const structuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'EducationalOrganization',
+    name: 'Godoma Technical Training Institute',
+    alternateName: 'Godoma TTI',
+    description: 'Public TVET college offering TVET CDACC technical and vocational training in Kilifi County, Kenya.',
+    telephone: '+254 743 661 423',
+    email: 'godomatti.gtti@gmail.com',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: 'Matanomanne Market, Vitengeni Road',
+      addressLocality: 'Vitengeni',
+      addressRegion: 'Kilifi County',
+      addressCountry: 'KE',
+    },
+    sameAs: ['https://www.facebook.com/search/top?q=Godoma%20Technical%20Training%20Institute', 'https://x.com/GodomaTTI'],
+  }
+
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
       <TopBar />
       <SiteHeader />
       <main id="top">

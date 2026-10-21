@@ -9,9 +9,42 @@ const geistSans = Geist({
 })
 
 export const metadata: Metadata = {
-  title: 'Godoma Technical Training Institute | Kilifi County, Kenya',
+  title: {
+    default: 'Godoma Technical Training Institute | TVET College in Kilifi, Kenya',
+    template: '%s | Godoma TTI',
+  },
   description:
-    'Godoma TTI is a public technical training institute in Vitengeni, Kilifi County offering TVET CDACC competency-based programmes at Levels 3, 4, 5 and 6 in Engineering, ICT, Business and Hospitality.',
+    'Godoma Technical Training Institute is a public TVET college in Vitengeni, Kilifi County, Kenya offering TVET CDACC courses in engineering, ICT, business, hospitality and agriculture.',
+  keywords: [
+    'Godoma Technical Training Institute',
+    'Godoma TTI',
+    'TVET colleges in Kenya',
+    'technical colleges in Kilifi',
+    'TVET courses in Kilifi',
+    'TVET CDACC courses Kenya',
+    'technical training institute Kenya',
+    'study in Kilifi',
+  ],
+  applicationName: 'Godoma Technical Training Institute',
+  category: 'education',
+  creator: 'Godoma Technical Training Institute',
+  publisher: 'Godoma Technical Training Institute',
+  alternates: { canonical: '/' },
+  openGraph: {
+    type: 'website',
+    locale: 'en_KE',
+    siteName: 'Godoma Technical Training Institute',
+    title: 'Godoma Technical Training Institute | TVET College in Kilifi, Kenya',
+    description: 'Public TVET training in Kilifi County with TVET CDACC courses in engineering, ICT, business, hospitality and agriculture.',
+    images: [{ url: '/images/logo.png', width: 512, height: 512, alt: 'Godoma Technical Training Institute logo' }],
+  },
+  twitter: {
+    card: 'summary',
+    title: 'Godoma Technical Training Institute | TVET College in Kilifi, Kenya',
+    description: 'Public TVET training and skills development in Kilifi County, Kenya.',
+    images: ['/images/logo.png'],
+  },
+  robots: { index: true, follow: true },
   generator: 'v0.app',
   icons: {
     icon: '/images/logo.png',
