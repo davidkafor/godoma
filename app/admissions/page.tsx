@@ -1,6 +1,13 @@
+import type { Metadata } from 'next'
 import { SiteFooter } from '@/components/site/site-footer'
 import { SiteHeader } from '@/components/site/site-header'
 import { TopBar } from '@/components/site/top-bar'
+
+export const metadata: Metadata = {
+  title: 'Admissions and Entry Requirements',
+  description: 'Apply to Godoma TTI in Kilifi County. View TVET CDACC Level 4, 5 and 6 entry requirements, course information and admissions guidance.',
+  alternates: { canonical: '/admissions' },
+}
 
 const levels = [
   { level: 'TVET CDACC Level 6', requirement: 'KCSE C- (minus)', duration: 'As prescribed' },

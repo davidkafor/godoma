@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowRight, BookOpen, Users } from 'lucide-react'
@@ -5,6 +6,12 @@ import { SiteFooter } from '@/components/site/site-footer'
 import { SiteHeader } from '@/components/site/site-header'
 import { TopBar } from '@/components/site/top-bar'
 import { departments, totalCourses } from '@/lib/site-data'
+
+export const metadata: Metadata = {
+  title: 'Departments and TVET Courses',
+  description: 'Explore Godoma TTI departments and TVET CDACC courses in engineering, ICT, business, hospitality and agriculture in Kilifi County, Kenya.',
+  alternates: { canonical: '/departments' },
+}
 
 export default function DepartmentsPage() {
   return (
