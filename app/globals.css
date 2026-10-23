@@ -141,15 +141,16 @@
 }
 
 @keyframes ticker {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
+  from { transform: translate3d(0, 0, 0); }
+  to { transform: translate3d(-50%, 0, 0); }
 }
-.animate-ticker {
-  animation: ticker 75s linear infinite;
+.marquee-track {
+  animation: ticker 45s linear infinite;
+  will-change: transform;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .animate-ticker {
+  .marquee-track {
     animation: none;
   }
 }
@@ -173,7 +174,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .animate-ticker,
+  .marquee-track,
   .animate-reveal-up,
   .animate-reveal-scale,
   .animate-ping { animation: none; }

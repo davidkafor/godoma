@@ -12,7 +12,7 @@ export function NewsTicker() {
           <span className="hidden sm:inline">Updates</span>
         </div>
         <div className="min-w-0 flex-1 overflow-hidden" aria-live="off">
-          <div className="animate-ticker flex w-max gap-12 whitespace-nowrap text-sm font-medium text-secondary-foreground">
+          <div className="marquee-track flex w-max gap-12 whitespace-nowrap text-sm font-medium text-secondary-foreground">
             {items.map((item, index) => <span key={`${item}-${index}`}>{item}</span>)}
           </div>
         </div>
