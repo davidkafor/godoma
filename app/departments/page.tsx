@@ -40,7 +40,7 @@ export default function DepartmentsPage() {
               {departments.map((department) => (
                 <article key={department.id} className="group flex flex-col overflow-hidden rounded-xl border border-border bg-card shadow-sm transition-shadow hover:shadow-lg">
                   <div className="relative aspect-[16/9] overflow-hidden bg-muted">
-                    <Image src={department.image} alt={`${department.name} department`} fill sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" className="object-cover transition-transform duration-500 group-hover:scale-105" />
+                    <Image src={department.image} alt={`${department.name} department`} fill quality={75} sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" className="object-cover transition-transform duration-500 group-hover:scale-105" />
                   </div>
                   <div className="flex flex-1 flex-col p-6">
                     <div className="flex size-12 items-center justify-center rounded-lg bg-secondary text-secondary-foreground">
