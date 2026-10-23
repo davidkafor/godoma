@@ -145,6 +145,7 @@ export const tickerItems = [
   'Download your admission letter from the Students Downloads page',
   'Computer Packages short course — 3 months, open entry',
   'Plans underway to become a NITA Exam Centre',
+  'Godoma TTI is earmarked to become the national Polytechnic for Kilifi County',
 ]
 
 export const instituteProfile = {
