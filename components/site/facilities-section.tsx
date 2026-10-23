@@ -43,7 +43,7 @@ export function FacilitiesSection() {
         <div className="grid gap-6 lg:grid-cols-3">
           <article className="relative flex min-h-[420px] flex-col justify-end overflow-hidden rounded-lg shadow-lg lg:row-span-2">
             <Image
-              src="/images/library.png"
+              src="/images/library.webp"
               alt="Trainees studying in the institution library"
               fill
               quality={75}

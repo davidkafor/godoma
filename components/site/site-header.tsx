@@ -64,7 +64,7 @@ export function SiteHeader() {
       <div className="mx-auto flex max-w-[90rem] items-center gap-4 px-4 py-4">
         <a href="/" className="shrink-0" aria-label="Godoma Technical Training Institute home">
           <Image
-            src="/images/godoma-main-logo.png"
+            src="/images/godoma-main-logo.webp"
             alt="Godoma Technical Training Institute with the Kenya coat of arms and institute crest"
             width={707}
             height={200}

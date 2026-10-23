@@ -107,7 +107,7 @@ export const news = [
   {
 title: 'President Ruto Announces KSh 350 Million for Godoma TTI Expansion',
   date: 'October 2026',
-  image: '/images/foundation-stone-laying.jpeg',
+  image: '/images/foundation-stone-laying.webp',
     excerpt:
       'Godoma TTI is set to benefit from a KSh 350 million investment, including new student hostels and expanded facilities, following the laying of the foundation stone during President William Ruto’s development tour of the Coast region.',
     href: '/notice-board#godoma-tti-expansion',
@@ -115,7 +115,7 @@ title: 'President Ruto Announces KSh 350 Million for Godoma TTI Expansion',
   {
     title: 'HELB TVET Loans & Bursaries Now Available',
     date: 'Admissions',
-    image: '/images/tvet-flier.jpg',
+    image: '/images/tvet-flier.webp',
     excerpt:
       'HELB finances TVET students in over 200 technical institutes. Get up to Kshs. 40,000 per year, upkeep money inclusive, for TVET CDACC programmes.',
     href: '/notice-board#helb-tvet-loans',
@@ -123,7 +123,7 @@ title: 'President Ruto Announces KSh 350 Million for Godoma TTI Expansion',
   {
     title: 'Motivational Talk: The Bridge Between Goals and Accomplishment is Discipline',
     date: '18 March 2020',
-    image: '/images/motivational-talk.jpg',
+    image: '/images/motivational-talk.webp',
     excerpt:
       'The Office of the Dean of Students invites all staff and students to a talk on Corona Virus, HIV/AIDS, drugs, mental health and discipline at GTTI Phase II.',
     href: '/notice-board#motivational-talk',
@@ -131,7 +131,7 @@ title: 'President Ruto Announces KSh 350 Million for Godoma TTI Expansion',
   {
     title: 'Godoma TTI Service Charter',
     date: 'Notice Board',
-    image: '/images/service-charter-en.jpg',
+    image: '/images/service-charter-en.webp',
     excerpt:
       'Read our service charter (English & Kiswahili) outlining the services we offer, our commitments, and the standards our customers can expect.',
     href: '/notice-board#service-charter',
@@ -192,7 +192,7 @@ export const departments: Department[] = [
     id: 'electrical',
     name: 'Electrical & Electronics Engineering',
     short: 'Electrical',
-  image: '/images/dept-electrical.png',
+  image: '/images/dept-electrical.webp',
   head: 'Mia Mulinge Kevin',
     summary:
       'Established in 2016 to train manpower in both the Power and Instrumentation & Control options, with two equipped modern workshops — Electrical workshops and an Electronics laboratory.',
@@ -211,7 +211,7 @@ export const departments: Department[] = [
     id: 'building',
     name: 'Building & Civil Engineering',
     short: 'Building & Civil',
-    image: '/images/dept-building.png',
+    image: '/images/dept-building.webp',
     head: 'Mr. Bernard Mganga',
     summary:
       'One of the largest departments in the Institute, with well-equipped workshops. Graduates work in construction, real estate, the Ministry of Works, KeNHA and the SGR project.',
@@ -235,7 +235,7 @@ export const departments: Department[] = [
     id: 'ict',
 name: 'Computing and Informatics',
   short: 'Computing and Informatics',
-  image: '/images/dept-ict.png',
+  image: '/images/dept-ict.webp',
   head: 'Priscillar Neema',
     summary:
       'Provides practical, industry-focused training in computing, software, cybersecurity, digital applications, and informatics through modern computer-based learning.',
@@ -252,7 +252,7 @@ name: 'Computing and Informatics',
     id: 'hospitality',
     name: 'Tourism & Hospitality',
     short: 'Hospitality',
-  image: '/images/dept-hospitality.png',
+  image: '/images/dept-hospitality.webp',
   head: 'Imelda Nyoka',
     summary:
       "Prepares trainees for Kenya's coastal hospitality and tourism industry through food & beverage production, tour guiding and travel operations programmes.",
@@ -289,7 +289,7 @@ image: '/images/dept-mechanical.jpg',
     id: 'fashion',
     name: 'Fashion & Cosmetology',
     short: 'Fashion',
-  image: '/images/dept-fashion-cosmetology.png',
+  image: '/images/dept-fashion-cosmetology.webp',
   head: 'Department of Fashion & Cosmetology',
     summary: 'Creative and practical training in fashion design, hairdressing and beauty therapy.',
     courses: [
@@ -306,7 +306,7 @@ image: '/images/dept-mechanical.jpg',
     id: 'agriculture',
     name: 'Agricultural Studies',
     short: 'Agriculture',
-  image: '/images/dept-agriculture.png',
+  image: '/images/dept-agriculture.webp',
   head: 'Emmanuel Kipkorir',
   summary: 'Entrepreneurial agricultural training that equips trainees with practical skills for sustainable farming and economic development.',
     courses: [
@@ -319,7 +319,7 @@ image: '/images/dept-mechanical.jpg',
     id: 'business',
     name: 'Business & Liberal Studies',
     short: 'Business',
-    image: '/images/dept-business.png',
+    image: '/images/dept-business.webp',
     head: 'Leonard Nyamawi',
     summary:
       'Offers diploma and craft programmes in management, marketing, supply chain, human resources and social work for the growing private and public sector.',
@@ -346,9 +346,9 @@ export const leadership = [
 ]
 
 export const partners = [
-  { acronym: 'TVETA', name: 'Technical & Vocational Education and Training Authority', logo: '/images/partners/tveta.png' },
+  { acronym: 'TVETA', name: 'Technical & Vocational Education and Training Authority', logo: '/images/partners/tveta.webp' },
   { acronym: 'KNEC', name: 'Kenya National Examinations Council', logo: '/images/partners/knec.jpeg' },
-  { acronym: 'HELB', name: 'Higher Education Loans Board', logo: '/images/partners/helb.png' },
-  { acronym: 'NITA', name: 'National Industrial Training Authority', logo: '/images/partners/nita.png' },
-  { acronym: 'KUCCPS', name: 'Kenya Universities & Colleges Central Placement Service', logo: '/images/partners/kuccps.jpeg' },
+  { acronym: 'HELB', name: 'Higher Education Loans Board', logo: '/images/partners/helb.webp' },
+  { acronym: 'NITA', name: 'National Industrial Training Authority', logo: '/images/partners/nita.webp' },
+  { acronym: 'KUCCPS', name: 'Kenya Universities & Colleges Central Placement Service', logo: '/images/partners/kuccps.webp' },
   ]

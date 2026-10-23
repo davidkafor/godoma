@@ -38,19 +38,19 @@ export const metadata: Metadata = {
     siteName: 'Godoma Technical Training Institute',
     title: 'Godoma Technical Training Institute | TVET College in Kilifi, Kenya',
     description: 'Public TVET training in Kilifi County with TVET CDACC courses in engineering, ICT, business, hospitality and agriculture.',
-    images: [{ url: '/images/logo.png', width: 512, height: 512, alt: 'Godoma Technical Training Institute logo' }],
+    images: [{ url: '/images/logo.webp', width: 512, height: 512, alt: 'Godoma Technical Training Institute logo' }],
   },
   twitter: {
     card: 'summary',
     title: 'Godoma Technical Training Institute | TVET College in Kilifi, Kenya',
     description: 'Public TVET training and skills development in Kilifi County, Kenya.',
-    images: ['/images/logo.png'],
+    images: ['/images/logo.webp'],
   },
   robots: { index: true, follow: true },
   generator: 'v0.app',
   icons: {
-    icon: '/images/logo.png',
-    apple: '/images/logo.png',
+    icon: '/images/logo.webp',
+    apple: '/images/logo.webp',
   },
 }
 

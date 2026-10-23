@@ -7,7 +7,7 @@ export function PrincipalMessage() {
     <section aria-labelledby="principal-message-heading" className="bg-secondary py-20">
       <div className="mx-auto grid max-w-7xl gap-10 px-4 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
         <div className="relative mx-auto w-full max-w-sm overflow-hidden rounded-lg bg-primary p-3 shadow-xl">
-          <Image src="/images/principal-portrait-updated.jpeg" alt="Principal of Godoma Technical Training Institute" width={640} height={800} className="aspect-[4/5] w-full object-cover" />
+          <Image src="/images/principal-portrait-updated.webp" alt="Principal of Godoma Technical Training Institute" width={640} height={800} className="aspect-[4/5] w-full object-cover" />
           <div className="px-3 py-4 text-primary-foreground"><p className="text-lg font-bold">Caroline Musyimi</p><p className="text-sm text-primary-foreground/75">Principal</p></div>
         </div>
         <div>
