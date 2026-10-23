@@ -1,24 +1,50 @@
-import { Megaphone } from 'lucide-react'
+'use client'
+
+import { useEffect, useState } from 'react'
+import { ChevronLeft, ChevronRight, Megaphone } from 'lucide-react'
 import { tickerItems } from '@/lib/site-data'
 
 export function NewsTicker() {
-  const items = [...tickerItems, ...tickerItems]
+  const [activeIndex, setActiveIndex] = useState(0)
+
+  useEffect(() => {
+    if (tickerItems.length < 2) return
+    const interval = window.setInterval(() => {
+      setActiveIndex((current) => (current + 1) % tickerItems.length)
+    }, 5000)
+    return () => window.clearInterval(interval)
+  }, [])
+
+  const showPrevious = () => {
+    setActiveIndex((current) => (current - 1 + tickerItems.length) % tickerItems.length)
+  }
+
+  const showNext = () => {
+    setActiveIndex((current) => (current + 1) % tickerItems.length)
+  }
+
   return (
-    <div className="flex items-stretch overflow-hidden border-b bg-secondary" aria-label="Quick updates">
-      <div className="z-10 flex shrink-0 items-center gap-2 bg-accent px-4 py-3 text-sm font-bold uppercase tracking-wide text-accent-foreground">
-        <Megaphone className="size-4" aria-hidden="true" />
-        <span>Updates</span>
+    <section className="border-b bg-secondary" aria-label="Latest updates">
+      <div className="mx-auto flex max-w-7xl items-center gap-3 px-4 py-3 sm:gap-5">
+        <div className="flex shrink-0 items-center gap-2 text-sm font-bold uppercase tracking-wide text-secondary-foreground">
+          <Megaphone className="size-4 text-accent" aria-hidden="true" />
+          <span className="hidden sm:inline">Updates</span>
+        </div>
+        <div className="min-w-0 flex-1" aria-live="polite">
+          <p key={activeIndex} className="animate-in fade-in slide-in-from-right-2 truncate text-sm font-medium text-secondary-foreground duration-500">
+            {tickerItems[activeIndex]}
+          </p>
+        </div>
+        <div className="flex shrink-0 items-center gap-1">
+          <button type="button" onClick={showPrevious} aria-label="Previous update" className="inline-flex size-8 items-center justify-center rounded-full text-secondary-foreground transition-colors hover:bg-secondary-foreground/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
+            <ChevronLeft className="size-4" aria-hidden="true" />
+          </button>
+          <span className="hidden text-xs tabular-nums text-secondary-foreground/70 sm:inline">{activeIndex + 1}/{tickerItems.length}</span>
+          <button type="button" onClick={showNext} aria-label="Next update" className="inline-flex size-8 items-center justify-center rounded-full text-secondary-foreground transition-colors hover:bg-secondary-foreground/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
+            <ChevronRight className="size-4" aria-hidden="true" />
+          </button>
+        </div>
       </div>
-      <div className="relative flex-1 overflow-hidden">
-        <ul className="animate-ticker flex w-max items-center gap-12 py-3 pl-6 text-sm font-medium text-secondary-foreground">
-          {items.map((item, i) => (
-            <li key={i} aria-hidden={i >= tickerItems.length} className="flex items-center gap-3 whitespace-nowrap">
-              <span className="size-1.5 rounded-full bg-accent" aria-hidden="true" />
-              {item}
-            </li>
-          ))}
-        </ul>
-      </div>
-    </div>
+    </section>
   )
 }
