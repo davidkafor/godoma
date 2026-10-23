@@ -145,7 +145,7 @@
   to { transform: translateX(-50%); }
 }
 .animate-ticker {
-  animation: ticker 55s linear infinite;
+  animation: ticker 75s linear infinite;
 }
 
 @media (prefers-reduced-motion: reduce) {
