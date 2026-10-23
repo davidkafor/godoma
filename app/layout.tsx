@@ -10,6 +10,7 @@ const geistSans = Geist({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://godomatti.ac.ke'),
   title: {
     default: 'Godoma Technical Training Institute | TVET College in Kilifi, Kenya',
     template: '%s | Godoma TTI',
