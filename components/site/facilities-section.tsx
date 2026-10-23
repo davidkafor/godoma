@@ -46,6 +46,7 @@ export function FacilitiesSection() {
               src="/images/library.png"
               alt="Trainees studying in the institution library"
               fill
+              quality={75}
               sizes="(min-width: 1024px) 33vw, 100vw"
               className="object-cover"
             />

@@ -22,7 +22,7 @@ export function LatestNewsCard() {
       {featured && (
         <a href={featured.href} className="group block border-b border-border p-4 outline-offset-4 focus-visible:ring-2 focus-visible:ring-ring sm:p-5">
           <div className="relative aspect-[16/8] overflow-hidden rounded-lg bg-muted">
-            <Image src={featured.image} alt="" fill className="object-cover transition-transform duration-300 group-hover:scale-105" sizes="(min-width: 1024px) 32vw, 100vw" />
+            <Image src={featured.image} alt="" fill quality={75} className="object-cover transition-transform duration-300 group-hover:scale-105" sizes="(min-width: 1024px) 32vw, 100vw" />
             <span className="absolute left-3 top-3 rounded-full bg-secondary px-3 py-1 text-xs font-bold uppercase tracking-wide text-secondary-foreground">Featured</span>
           </div>
           <p className="mt-4 flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-accent">
