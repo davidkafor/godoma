@@ -145,10 +145,13 @@
   to { transform: translateX(-50%); }
 }
 .animate-ticker {
-  animation: ticker 40s linear infinite;
+  animation: ticker 55s linear infinite;
 }
-.animate-ticker:hover {
-  animation-play-state: paused;
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-ticker {
+    animation: none;
+  }
 }
 
 @keyframes reveal-up {
