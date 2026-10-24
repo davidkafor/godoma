@@ -5,39 +5,37 @@ import { Button } from '@/components/ui/button'
 import { departments } from '@/lib/site-data'
 
 export function ContactForm() {
-  const [submitted, setSubmitted] = useState(false)
+  const [status, setStatus] = useState('')
+  const [sending, setSending] = useState(false)
   const [selectedDepartment, setSelectedDepartment] = useState('')
   const selectedDepartmentData = departments.find((department) => department.id === selectedDepartment)
 
-  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault()
-    const form = new FormData(event.currentTarget)
-    const name = String(form.get('name') ?? '').trim()
-    const email = String(form.get('email') ?? '').trim()
-    const phone = String(form.get('phone') ?? '').trim()
-    const department = String(form.get('department') ?? '').trim()
-    const programme = String(form.get('programme') ?? '').trim()
-    const grade = String(form.get('grade') ?? '').trim()
-    const message = String(form.get('message') ?? '').trim()
-    const subject = `Admission application - ${programme || 'Godoma TTI programme'}`
-    const body = [
-      `Applicant name: ${name}`,
-      `Email: ${email}`,
-      `Phone: ${phone}`,
-      `Department: ${department}`,
-      `Programme: ${programme}`,
-      `Highest qualification/grade: ${grade}`,
-      '',
-      'Additional information:',
-      message || 'None provided',
-    ].join('\\n')
-
-    window.open(
-      `https://mail.google.com/mail/?view=cm&fs=1&to=admissionsgtti@gmail.com&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`,
-      '_blank',
-      'noopener,noreferrer',
-    )
-    setSubmitted(true)
+    setSending(true)
+    setStatus('')
+    const form = event.currentTarget
+    const values = Object.fromEntries(new FormData(form))
+    const response = await fetch('/api/applications', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        fullName: values.name,
+        email: values.email,
+        phone: values.phone,
+        course: values.programme,
+        message: `Department: ${values.department}\\nHighest qualification/grade: ${values.grade}\\n\\n${values.message || 'None provided'}`,
+      }),
+    })
+    const result = await response.json()
+    setSending(false)
+    if (!response.ok) {
+      setStatus(result.error || 'Unable to send application.')
+      return
+    }
+    form.reset()
+    setSelectedDepartment('')
+    setStatus('Application submitted successfully. Admissions will contact you shortly.')
   }
 
   return (
@@ -45,7 +43,7 @@ export function ContactForm() {
       <div className="mb-6">
         <p className="text-sm font-bold uppercase tracking-[0.2em] text-accent">Admissions application</p>
         <h2 className="mt-2 text-2xl font-extrabold text-primary">Apply to Godoma TTI</h2>
-        <p className="mt-2 leading-relaxed text-muted-foreground">Complete the form and select submit. Gmail will open in a new browser tab with the application addressed to admissionsgtti@gmail.com.</p>
+        <p className="mt-2 leading-relaxed text-muted-foreground">Complete the form and submit your application enquiry directly to the Admissions Office.</p>
       </div>
       <form className="flex flex-col gap-5" onSubmit={handleSubmit}>
         <div className="grid gap-5 sm:grid-cols-2">
@@ -94,8 +92,8 @@ export function ContactForm() {
           <textarea id="contact-message" name="message" rows={5} className="rounded-md border bg-background px-3 py-3 text-foreground outline-none ring-offset-background placeholder:text-muted-foreground focus-visible:ring-2 focus-visible:ring-ring" placeholder="Tell us anything else about your application..." />
         </div>
         <div className="flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:justify-between">
-          <Button type="submit">Submit application</Button>
-          {submitted && <p className="text-sm font-medium text-secondary" role="status">Gmail should now be open in a new tab. Review the message and send it to admissionsgtti@gmail.com.</p>}
+          <Button type="submit" disabled={sending}>{sending ? 'Submitting…' : 'Submit application'}</Button>
+          {status && <p className="text-sm font-medium text-secondary" role="status">{status}</p>}
         </div>
       </form>
     </div>
