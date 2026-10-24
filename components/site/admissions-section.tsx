@@ -1,4 +1,5 @@
 import { FileText, Phone, Wallet } from 'lucide-react'
+import { ApplicationForm } from '@/components/site/application-form'
 import { buttonVariants } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
 import { contact } from '@/lib/site-data'
@@ -62,6 +63,8 @@ export function AdmissionsSection() {
               </div>
             </li>
           </ul>
+
+          <ApplicationForm />
 
           <div className="mt-8 flex flex-wrap gap-3">
             <a
