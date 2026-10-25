@@ -1,14 +1,17 @@
 import { FileText, Phone, Wallet } from 'lucide-react'
 import { buttonVariants } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
-import { contact } from '@/lib/site-data'
+import { contact, departments } from '@/lib/site-data'
 
 const levels = [
-  { level: 'TVET CDACC Level 6', requirement: 'KCSE C- (minus)', duration: 'As prescribed' },
-  { level: 'TVET CDACC Level 5', requirement: 'KCSE D (plain)', duration: 'As prescribed' },
-  { level: 'TVET CDACC Level 4', requirement: 'KCSE', duration: 'As prescribed' },
-  { level: 'Short Courses', requirement: 'Open entry', duration: '6 Months' },
-]
+  { level: 'TVET CDACC Level 6', courseLevel: '(Level 6)' },
+  { level: 'TVET CDACC Level 5', courseLevel: '(Level 5)' },
+  { level: 'TVET CDACC Level 4', courseLevel: '(Level 4)' },
+  { level: 'Short Courses', courseLevel: 'Open' },
+].map(({ level, courseLevel }) => {
+  const course = departments.flatMap((department) => department.courses).find((item) => item.name.includes(courseLevel))
+  return { level, requirement: course?.requirement ?? 'Open', duration: course?.duration ?? '3 Months' }
+})
 
 export function AdmissionsSection() {
   return (
