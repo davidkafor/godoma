@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { SiteFooter } from '@/components/site/site-footer'
 import { SiteHeader } from '@/components/site/site-header'
 import { TopBar } from '@/components/site/top-bar'
+import { departments } from '@/lib/site-data'
 
 export const metadata: Metadata = {
   title: 'Admissions and Entry Requirements',
@@ -10,11 +11,14 @@ export const metadata: Metadata = {
 }
 
 const levels = [
-  { level: 'TVET CDACC Level 6', requirement: 'KCSE C- (minus)', duration: 'As prescribed' },
-  { level: 'TVET CDACC Level 5', requirement: 'KCSE D (plain)', duration: 'As prescribed' },
-  { level: 'TVET CDACC Level 4', requirement: 'KCSE', duration: 'As prescribed' },
-  { level: 'Short Courses', requirement: 'Open entry', duration: '6 Months' },
-]
+  { level: 'TVET CDACC Level 6', courseLevel: '(Level 6)' },
+  { level: 'TVET CDACC Level 5', courseLevel: '(Level 5)' },
+  { level: 'TVET CDACC Level 4', courseLevel: '(Level 4)' },
+  { level: 'Short Courses', courseLevel: 'Open' },
+].map(({ level, courseLevel }) => {
+  const course = departments.flatMap((department) => department.courses).find((item) => item.name.includes(courseLevel))
+  return { level, requirement: course?.requirement ?? 'Open', duration: course?.duration ?? '3 Months' }
+})
 
 export default function AdmissionsPage() {
   return (
