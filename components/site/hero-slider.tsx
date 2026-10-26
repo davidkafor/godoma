@@ -28,7 +28,7 @@ export function HeroSlider() {
     <section
       aria-roledescription="carousel"
       aria-label="Highlights"
-      className="relative isolate h-[560px] overflow-hidden bg-primary sm:h-[620px]"
+      className="relative isolate h-[540px] overflow-hidden bg-primary sm:h-[600px] lg:h-[640px]"
     >
       {heroSlides.map((slide, i) => (
         <div
@@ -48,10 +48,10 @@ export function HeroSlider() {
             sizes="100vw"
             className="object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[oklch(0.2_0.08_260)]/55 via-[oklch(0.25_0.09_260)]/25 to-transparent" />
+          <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(14,42,71,0.88)_0%,rgba(14,42,71,0.62)_42%,rgba(14,42,71,0.12)_100%)]" />
           <div className="relative mx-auto flex h-full max-w-7xl items-center px-4">
-            <div className={cn('max-w-2xl text-primary-foreground', i === index && 'animate-reveal-up')}>
-              <p className="mb-3 inline-block rounded-sm bg-accent px-3 py-1 text-xs font-bold uppercase tracking-wider text-accent-foreground">
+            <div className={cn('max-w-2xl border-l-2 border-accent pl-5 text-primary-foreground sm:pl-7', i === index && 'animate-reveal-up')}>
+              <p className="mb-4 inline-block bg-secondary px-3 py-1.5 text-xs font-bold uppercase tracking-[0.18em] text-secondary-foreground">
                 {slide.eyebrow}
               </p>
               <h2 className="text-balance text-4xl font-extrabold leading-tight sm:text-5xl lg:text-6xl">

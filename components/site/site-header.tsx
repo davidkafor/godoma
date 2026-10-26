@@ -60,8 +60,8 @@ export function SiteHeader() {
   }, [])
 
   return (
-    <header className="sticky top-0 z-50 border-b bg-background/95 shadow-sm backdrop-blur supports-[backdrop-filter]:bg-background/85">
-      <div className="mx-auto flex max-w-[90rem] items-center gap-4 px-4 py-4">
+    <header className="sticky top-0 z-50 border-b border-primary/10 bg-background/95 shadow-[0_8px_30px_rgba(14,42,71,0.08)] backdrop-blur supports-[backdrop-filter]:bg-background/85">
+      <div className="mx-auto flex max-w-[90rem] items-center gap-4 px-4 py-3 lg:px-8">
         <a href="/" className="shrink-0" aria-label="Godoma Technical Training Institute home">
           <Image
             src="/images/godoma-main-logo.webp"
@@ -150,7 +150,7 @@ export function SiteHeader() {
       </div>
 
       {mobileOpen && (
-        <nav id="mobile-nav" aria-label="Mobile" className="max-h-[70vh] overflow-y-auto border-t bg-background lg:hidden">
+        <nav id="mobile-nav" aria-label="Mobile" className="max-h-[70vh] overflow-y-auto border-t border-primary/10 bg-card shadow-lg lg:hidden">
           <ul className="mx-auto max-w-7xl px-4 py-2">
             {navigation.map((group) => (
               <li key={group.label} className="border-b last:border-0">

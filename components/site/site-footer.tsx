@@ -25,9 +25,9 @@ const importantPages = [
 export function SiteFooter() {
   return (
     <footer id="contact" className="bg-primary text-primary-foreground">
-      <div className="mx-auto grid max-w-7xl gap-10 px-4 py-16 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="mx-auto grid max-w-7xl gap-12 px-4 py-16 sm:grid-cols-2 lg:grid-cols-[1.2fr_0.8fr_0.8fr_1fr] lg:px-8">
         <div>
-          <div className="inline-block rounded-md bg-background p-2">
+          <div className="inline-block bg-primary-foreground p-3 shadow-sm">
             <Image src="/images/godoma-main-logo.webp" alt="Godoma Technical Training Institute" width={960} height={261} className="h-auto w-full max-w-sm" />
           </div>
           <p className="mt-5 text-sm leading-relaxed text-primary-foreground/75">
