@@ -60,7 +60,7 @@ export function SiteHeader() {
   }, [])
 
   return (
-    <header className="sticky top-0 z-50 border-b border-primary/10 bg-background/95 shadow-[0_8px_30px_rgba(14,42,71,0.08)] backdrop-blur supports-[backdrop-filter]:bg-background/85">
+    <header className="sticky top-0 z-50 border-b border-primary/10 bg-white shadow-[0_8px_30px_rgba(14,42,71,0.08)] backdrop-blur supports-[backdrop-filter]:bg-white/95">
       <div className="mx-auto flex max-w-[90rem] items-center gap-4 px-4 py-3 lg:px-8">
         <a href="/" className="shrink-0" aria-label="Godoma Technical Training Institute home">
           <Image
