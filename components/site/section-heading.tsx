@@ -17,11 +17,11 @@ export function SectionHeading({
 }) {
   return (
     <div className={cn('mb-12 max-w-3xl', align === 'center' && 'mx-auto text-center')}>
-      <p className="text-sm font-bold uppercase tracking-widest text-accent">{eyebrow}</p>
+      <p className="text-xs font-bold uppercase tracking-[0.22em] text-secondary">{eyebrow}</p>
       <h2
         id={id}
         className={cn(
-          'mt-2 text-balance text-3xl font-extrabold sm:text-4xl',
+          'mt-3 text-balance text-3xl font-extrabold tracking-tight sm:text-4xl',
           invert ? 'text-primary-foreground' : 'text-primary',
         )}
       >

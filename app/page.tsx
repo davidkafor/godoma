@@ -42,7 +42,7 @@ export default function Page() {
         <NewsTicker />
 
         <PrincipalMessage />
-        <section className="border-t bg-background py-12"><div className="mx-auto grid max-w-7xl gap-8 px-4 lg:grid-cols-[minmax(0,1.65fr)_minmax(300px,0.85fr)] lg:items-start"><IntroductionVideo /><LatestNewsCard /></div></section>
+        <section className="border-y border-border/70 bg-card py-16 sm:py-20"><div className="mx-auto grid max-w-7xl gap-10 px-4 lg:grid-cols-[minmax(0,1.65fr)_minmax(300px,0.85fr)] lg:items-start lg:px-8"><IntroductionVideo /><LatestNewsCard /></div></section>
         <AboutSection />
         <StatsSection />
           <AdmissionsSection />
