@@ -60,7 +60,7 @@ export function SiteHeader() {
   }, [])
 
   return (
-    <header className="sticky top-0 z-50 border-b border-primary/10 bg-white shadow-[0_8px_30px_rgba(14,42,71,0.08)] backdrop-blur supports-[backdrop-filter]:bg-white/95">
+    <header className="sticky top-0 z-50 overflow-x-clip border-b border-primary/10 bg-white shadow-[0_8px_30px_rgba(14,42,71,0.08)] backdrop-blur supports-[backdrop-filter]:bg-white/95">
       <div className="mx-auto flex max-w-[90rem] items-center gap-4 px-4 py-3 lg:px-8">
         <a href="/" className="shrink-0" aria-label="Godoma Technical Training Institute home">
           <Image
@@ -75,7 +75,7 @@ export function SiteHeader() {
 
         <nav ref={navRef} aria-label="Main" className="hidden min-w-0 flex-1 lg:block">
           <ul className="flex flex-wrap items-center justify-end gap-x-0.5 gap-y-1">
-            {navigation.map((group) => (
+            {navigation.map((group, groupIndex) => (
               <li
                 key={group.label}
                 className="relative"
@@ -99,7 +99,8 @@ export function SiteHeader() {
                     </button>
                     <div
                       className={cn(
-                        'absolute left-0 top-full pt-2 transition-all',
+                        'absolute top-full pt-2 transition-all',
+                        groupIndex >= Math.floor(navigation.length / 2) ? 'right-0' : 'left-0',
                         openMenu === group.label ? 'visible opacity-100' : 'invisible -translate-y-1 opacity-0',
                       )}
                     >
