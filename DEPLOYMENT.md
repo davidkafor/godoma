@@ -24,7 +24,13 @@ Set these in DirectAdmin under **Setup Node.js App > Environment variables**. Ne
 | `APP_URL` | `https://your-domain` (must be https so cookies are `Secure`) |
 | `UPLOAD_DIR` | Absolute path outside the code folder, for example `/home/USERNAME/godoma-uploads` |
 | `UPLOAD_MAX_MB` | Maximum upload size, default `8` |
-| `SMTP_HOST`, `SMTP_PORT`, `SMTP_USER`, `SMTP_PASSWORD`, `APPLICATION_RECIPIENT` | Existing application-form email |
+| `SMTP_HOST` | SMTP host supplied by HostAfrica (often `mail.your-domain`) |
+| `SMTP_PORT` | `465` (implicit TLS) or `587` (STARTTLS); use what HostAfrica gives you |
+| `SMTP_USER` | Full domain mailbox address, e.g. `admissions@your-domain` |
+| `SMTP_PASSWORD` | That mailbox's password |
+| `MAIL_FROM` | Authorised sender, normally the same mailbox (optional `Godoma TTI <address>` form) |
+| `APPLICATION_RECIPIENT` | Gmail address that receives student applications |
+| `CONTACT_RECIPIENT` | Gmail address that receives contact messages (may equal the one above) |
 | `NODE_ENV` | `production` |
 
 For local development copy `.env.example` to `.env.local`.
@@ -81,6 +87,34 @@ In DirectAdmin go to **SSL Certificates** and enable the free Let's Encrypt cert
 - Sign in, create a draft news item, publish it, confirm it appears on the homepage, then delete it.
 - Upload an image in **Media library** and confirm it displays. Uploaded files are served through `/uploads/...`, so make sure `UPLOAD_DIR` is writable by the Node.js user.
 - If the host places a proxy limit on request size, uploads larger than that limit will fail even though `UPLOAD_MAX_MB` allows them.
+
+## 8a. Application and contact form email
+
+How it works: a submission is validated, **saved to MySQL first**, then the notification email is sent from the HostAfrica mailbox to your Gmail address with the visitor in `Reply-To`. The result is stored as `PENDING`, `SENT` or `FAILED` on the record. Nothing runs in the background: the email is attempted during the request (10-20 s timeouts), and if SMTP is down the record is kept and shows as `FAILED` in **Admin > Student applications / Contact messages**, where a super administrator or administrator can press **Retry email notification**. The retry is claimed atomically, so it can never send the same notification twice.
+
+Important: **"Sent" means the SMTP server accepted the message. It does not guarantee it reached the Gmail inbox** (check Spam on first use; adding SPF/DKIM for your domain in DirectAdmin **DNS Management / Email Accounts** greatly improves Gmail delivery). The site never tells the visitor an email was sent; it only confirms the application was received and saved.
+
+Steps:
+
+1. In DirectAdmin create (or pick) the mailbox, and note the SMTP host, port and password in the HostAfrica email settings.
+2. Add the SMTP variables from section 2 in **Setup Node.js App**.
+3. Apply the new migration: `npm run db:migrate` (adds `Application`, `ContactMessage` and `RateLimitHit` tables; no existing data is touched and it is safe to re-run).
+4. `npm install && npm run build`, then **Restart**.
+5. Test the connection (sends nothing): `npm run smtp:test`. To send one real test email to `APPLICATION_RECIPIENT`: `npm run smtp:test -- --send`.
+6. Submit the live contact form and the application form once, check Gmail (inbox and Spam), and confirm the record shows `Sent` in the admin.
+
+Troubleshooting (the admin record shows a safe reason in "Last error"; details go to the Node.js app log, never to visitors):
+
+| Symptom | Likely cause and fix |
+| --- | --- |
+| "SMTP authentication failed" | Wrong `SMTP_USER` (must be the full address) or `SMTP_PASSWORD`. Log in to webmail with the same credentials to confirm. |
+| "Could not connect ... timed out" | Wrong `SMTP_HOST`/`SMTP_PORT`, or the host blocks outbound SMTP. Try the other port (465 vs 587) and ask HostAfrica support. |
+| "TLS negotiation failed" | Port/mode mismatch (465 must be implicit TLS, 587 STARTTLS) or the certificate does not match `SMTP_HOST`. Use the hostname on the certificate (HostAfrica documents it). |
+| "rejected the sender" | `MAIL_FROM` is not the authenticated mailbox. Set it to the same address as `SMTP_USER`. |
+| Marked `Sent` but not in Gmail | Check Spam, then set up SPF and DKIM for the domain. |
+| "Email is not configured" | A variable is missing; the message lists which. Restart the app after changing variables. |
+
+Spam and abuse protection: hidden honeypot field, minimum fill time, per-IP and per-email rate limits stored in MySQL (so they work without Redis or workers), 16 KB request limit, same-origin check, duplicate detection (same idempotency key or identical recent submission returns the original reference instead of a second email).
 
 ## 9. Updating the site later
 

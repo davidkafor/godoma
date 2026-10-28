@@ -50,3 +50,34 @@ export const MediaKind = {
 } as const
 
 export type MediaKind = (typeof MediaKind)[keyof typeof MediaKind]
+
+
+export const EmailStatus = {
+  PENDING: 'PENDING',
+  SENT: 'SENT',
+  FAILED: 'FAILED'
+} as const
+
+export type EmailStatus = (typeof EmailStatus)[keyof typeof EmailStatus]
+
+
+export const ApplicationStatus = {
+  NEW: 'NEW',
+  IN_REVIEW: 'IN_REVIEW',
+  CONTACTED: 'CONTACTED',
+  ADMITTED: 'ADMITTED',
+  DECLINED: 'DECLINED',
+  ARCHIVED: 'ARCHIVED'
+} as const
+
+export type ApplicationStatus = (typeof ApplicationStatus)[keyof typeof ApplicationStatus]
+
+
+export const MessageStatus = {
+  NEW: 'NEW',
+  READ: 'READ',
+  REPLIED: 'REPLIED',
+  ARCHIVED: 'ARCHIVED'
+} as const
+
+export type MessageStatus = (typeof MessageStatus)[keyof typeof MessageStatus]

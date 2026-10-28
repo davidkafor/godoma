@@ -289,3 +289,88 @@ model Partner {
   createdAt   DateTime      @default(now())
   updatedAt   DateTime      @updatedAt
 }
+
+enum EmailStatus {
+  PENDING
+  SENT
+  FAILED
+}
+
+enum ApplicationStatus {
+  NEW
+  IN_REVIEW
+  CONTACTED
+  ADMITTED
+  DECLINED
+  ARCHIVED
+}
+
+enum MessageStatus {
+  NEW
+  READ
+  REPLIED
+  ARCHIVED
+}
+
+model Application {
+  id               String            @id @default(cuid())
+  reference        String            @unique @db.VarChar(32)
+  idempotencyKey   String            @unique @db.VarChar(64)
+  fingerprint      String            @db.VarChar(64)
+  fullName         String            @db.VarChar(100)
+  email            String            @db.VarChar(254)
+  phone            String            @db.VarChar(24)
+  department       String            @db.VarChar(255)
+  programme        String            @db.VarChar(255)
+  qualification    String            @db.VarChar(100)
+  notes            String?           @db.Text
+  status           ApplicationStatus @default(NEW)
+  emailStatus      EmailStatus       @default(PENDING)
+  emailAttempts    Int               @default(0)
+  emailAttemptedAt DateTime?
+  emailSentAt      DateTime?
+  emailError       String?           @db.VarChar(255)
+  createdAt        DateTime          @default(now())
+  updatedAt        DateTime          @updatedAt
+
+  @@index([createdAt])
+  @@index([status, createdAt])
+  @@index([emailStatus, createdAt])
+  @@index([fingerprint, createdAt])
+  @@index([email])
+}
+
+model ContactMessage {
+  id               String        @id @default(cuid())
+  reference        String        @unique @db.VarChar(32)
+  idempotencyKey   String        @unique @db.VarChar(64)
+  fingerprint      String        @db.VarChar(64)
+  name             String        @db.VarChar(100)
+  email            String        @db.VarChar(254)
+  subject          String        @db.VarChar(150)
+  message          String        @db.Text
+  status           MessageStatus @default(NEW)
+  emailStatus      EmailStatus   @default(PENDING)
+  emailAttempts    Int           @default(0)
+  emailAttemptedAt DateTime?
+  emailSentAt      DateTime?
+  emailError       String?       @db.VarChar(255)
+  createdAt        DateTime      @default(now())
+  updatedAt        DateTime      @updatedAt
+
+  @@index([createdAt])
+  @@index([status, createdAt])
+  @@index([emailStatus, createdAt])
+  @@index([fingerprint, createdAt])
+  @@index([email])
+}
+
+model RateLimitHit {
+  id        String   @id @default(cuid())
+  scope     String   @db.VarChar(32)
+  key       String   @db.VarChar(64)
+  createdAt DateTime @default(now())
+
+  @@index([scope, key, createdAt])
+  @@index([createdAt])
+}

@@ -413,7 +413,10 @@ export const ModelName = {
   GalleryImage: 'GalleryImage',
   Download: 'Download',
   Testimonial: 'Testimonial',
-  Partner: 'Partner'
+  Partner: 'Partner',
+  Application: 'Application',
+  ContactMessage: 'ContactMessage',
+  RateLimitHit: 'RateLimitHit'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -429,7 +432,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "adminUser" | "session" | "loginAttempt" | "auditLog" | "mediaAsset" | "siteSetting" | "heroSlide" | "post" | "department" | "course" | "contentPage" | "staffProfile" | "facility" | "galleryImage" | "download" | "testimonial" | "partner"
+    modelProps: "adminUser" | "session" | "loginAttempt" | "auditLog" | "mediaAsset" | "siteSetting" | "heroSlide" | "post" | "department" | "course" | "contentPage" | "staffProfile" | "facility" | "galleryImage" | "download" | "testimonial" | "partner" | "application" | "contactMessage" | "rateLimitHit"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
@@ -1555,6 +1558,204 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         }
       }
     }
+    Application: {
+      payload: Prisma.$ApplicationPayload<ExtArgs>
+      fields: Prisma.ApplicationFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.ApplicationFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ApplicationPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.ApplicationFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ApplicationPayload>
+        }
+        findFirst: {
+          args: Prisma.ApplicationFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ApplicationPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.ApplicationFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ApplicationPayload>
+        }
+        findMany: {
+          args: Prisma.ApplicationFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ApplicationPayload>[]
+        }
+        create: {
+          args: Prisma.ApplicationCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ApplicationPayload>
+        }
+        createMany: {
+          args: Prisma.ApplicationCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        delete: {
+          args: Prisma.ApplicationDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ApplicationPayload>
+        }
+        update: {
+          args: Prisma.ApplicationUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ApplicationPayload>
+        }
+        deleteMany: {
+          args: Prisma.ApplicationDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.ApplicationUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        upsert: {
+          args: Prisma.ApplicationUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ApplicationPayload>
+        }
+        aggregate: {
+          args: Prisma.ApplicationAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateApplication>
+        }
+        groupBy: {
+          args: Prisma.ApplicationGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.ApplicationGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.ApplicationCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.ApplicationCountAggregateOutputType> | number
+        }
+      }
+    }
+    ContactMessage: {
+      payload: Prisma.$ContactMessagePayload<ExtArgs>
+      fields: Prisma.ContactMessageFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.ContactMessageFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ContactMessagePayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.ContactMessageFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ContactMessagePayload>
+        }
+        findFirst: {
+          args: Prisma.ContactMessageFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ContactMessagePayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.ContactMessageFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ContactMessagePayload>
+        }
+        findMany: {
+          args: Prisma.ContactMessageFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ContactMessagePayload>[]
+        }
+        create: {
+          args: Prisma.ContactMessageCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ContactMessagePayload>
+        }
+        createMany: {
+          args: Prisma.ContactMessageCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        delete: {
+          args: Prisma.ContactMessageDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ContactMessagePayload>
+        }
+        update: {
+          args: Prisma.ContactMessageUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ContactMessagePayload>
+        }
+        deleteMany: {
+          args: Prisma.ContactMessageDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.ContactMessageUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        upsert: {
+          args: Prisma.ContactMessageUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ContactMessagePayload>
+        }
+        aggregate: {
+          args: Prisma.ContactMessageAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateContactMessage>
+        }
+        groupBy: {
+          args: Prisma.ContactMessageGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.ContactMessageGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.ContactMessageCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.ContactMessageCountAggregateOutputType> | number
+        }
+      }
+    }
+    RateLimitHit: {
+      payload: Prisma.$RateLimitHitPayload<ExtArgs>
+      fields: Prisma.RateLimitHitFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.RateLimitHitFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$RateLimitHitPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.RateLimitHitFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$RateLimitHitPayload>
+        }
+        findFirst: {
+          args: Prisma.RateLimitHitFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$RateLimitHitPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.RateLimitHitFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$RateLimitHitPayload>
+        }
+        findMany: {
+          args: Prisma.RateLimitHitFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$RateLimitHitPayload>[]
+        }
+        create: {
+          args: Prisma.RateLimitHitCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$RateLimitHitPayload>
+        }
+        createMany: {
+          args: Prisma.RateLimitHitCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        delete: {
+          args: Prisma.RateLimitHitDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$RateLimitHitPayload>
+        }
+        update: {
+          args: Prisma.RateLimitHitUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$RateLimitHitPayload>
+        }
+        deleteMany: {
+          args: Prisma.RateLimitHitDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.RateLimitHitUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        upsert: {
+          args: Prisma.RateLimitHitUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$RateLimitHitPayload>
+        }
+        aggregate: {
+          args: Prisma.RateLimitHitAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateRateLimitHit>
+        }
+        groupBy: {
+          args: Prisma.RateLimitHitGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.RateLimitHitGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.RateLimitHitCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.RateLimitHitCountAggregateOutputType> | number
+        }
+      }
+    }
   }
 } & {
   other: {
@@ -1861,6 +2062,63 @@ export const PartnerScalarFieldEnum = {
 export type PartnerScalarFieldEnum = (typeof PartnerScalarFieldEnum)[keyof typeof PartnerScalarFieldEnum]
 
 
+export const ApplicationScalarFieldEnum = {
+  id: 'id',
+  reference: 'reference',
+  idempotencyKey: 'idempotencyKey',
+  fingerprint: 'fingerprint',
+  fullName: 'fullName',
+  email: 'email',
+  phone: 'phone',
+  department: 'department',
+  programme: 'programme',
+  qualification: 'qualification',
+  notes: 'notes',
+  status: 'status',
+  emailStatus: 'emailStatus',
+  emailAttempts: 'emailAttempts',
+  emailAttemptedAt: 'emailAttemptedAt',
+  emailSentAt: 'emailSentAt',
+  emailError: 'emailError',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type ApplicationScalarFieldEnum = (typeof ApplicationScalarFieldEnum)[keyof typeof ApplicationScalarFieldEnum]
+
+
+export const ContactMessageScalarFieldEnum = {
+  id: 'id',
+  reference: 'reference',
+  idempotencyKey: 'idempotencyKey',
+  fingerprint: 'fingerprint',
+  name: 'name',
+  email: 'email',
+  subject: 'subject',
+  message: 'message',
+  status: 'status',
+  emailStatus: 'emailStatus',
+  emailAttempts: 'emailAttempts',
+  emailAttemptedAt: 'emailAttemptedAt',
+  emailSentAt: 'emailSentAt',
+  emailError: 'emailError',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type ContactMessageScalarFieldEnum = (typeof ContactMessageScalarFieldEnum)[keyof typeof ContactMessageScalarFieldEnum]
+
+
+export const RateLimitHitScalarFieldEnum = {
+  id: 'id',
+  scope: 'scope',
+  key: 'key',
+  createdAt: 'createdAt'
+} as const
+
+export type RateLimitHitScalarFieldEnum = (typeof RateLimitHitScalarFieldEnum)[keyof typeof RateLimitHitScalarFieldEnum]
+
+
 export const SortOrder = {
   asc: 'asc',
   desc: 'desc'
@@ -2094,6 +2352,48 @@ export const PartnerOrderByRelevanceFieldEnum = {
 export type PartnerOrderByRelevanceFieldEnum = (typeof PartnerOrderByRelevanceFieldEnum)[keyof typeof PartnerOrderByRelevanceFieldEnum]
 
 
+export const ApplicationOrderByRelevanceFieldEnum = {
+  id: 'id',
+  reference: 'reference',
+  idempotencyKey: 'idempotencyKey',
+  fingerprint: 'fingerprint',
+  fullName: 'fullName',
+  email: 'email',
+  phone: 'phone',
+  department: 'department',
+  programme: 'programme',
+  qualification: 'qualification',
+  notes: 'notes',
+  emailError: 'emailError'
+} as const
+
+export type ApplicationOrderByRelevanceFieldEnum = (typeof ApplicationOrderByRelevanceFieldEnum)[keyof typeof ApplicationOrderByRelevanceFieldEnum]
+
+
+export const ContactMessageOrderByRelevanceFieldEnum = {
+  id: 'id',
+  reference: 'reference',
+  idempotencyKey: 'idempotencyKey',
+  fingerprint: 'fingerprint',
+  name: 'name',
+  email: 'email',
+  subject: 'subject',
+  message: 'message',
+  emailError: 'emailError'
+} as const
+
+export type ContactMessageOrderByRelevanceFieldEnum = (typeof ContactMessageOrderByRelevanceFieldEnum)[keyof typeof ContactMessageOrderByRelevanceFieldEnum]
+
+
+export const RateLimitHitOrderByRelevanceFieldEnum = {
+  id: 'id',
+  scope: 'scope',
+  key: 'key'
+} as const
+
+export type RateLimitHitOrderByRelevanceFieldEnum = (typeof RateLimitHitOrderByRelevanceFieldEnum)[keyof typeof RateLimitHitOrderByRelevanceFieldEnum]
+
+
 
 /**
  * Field references
@@ -2174,6 +2474,27 @@ export type EnumPostTypeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaM
  * Reference to a field of type 'StaffGroup'
  */
 export type EnumStaffGroupFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'StaffGroup'>
+    
+
+
+/**
+ * Reference to a field of type 'ApplicationStatus'
+ */
+export type EnumApplicationStatusFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'ApplicationStatus'>
+    
+
+
+/**
+ * Reference to a field of type 'EmailStatus'
+ */
+export type EnumEmailStatusFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'EmailStatus'>
+    
+
+
+/**
+ * Reference to a field of type 'MessageStatus'
+ */
+export type EnumMessageStatusFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'MessageStatus'>
     
 
 
@@ -2351,6 +2672,9 @@ export type GlobalOmitConfig = {
   download?: Prisma.DownloadOmit
   testimonial?: Prisma.TestimonialOmit
   partner?: Prisma.PartnerOmit
+  application?: Prisma.ApplicationOmit
+  contactMessage?: Prisma.ContactMessageOmit
+  rateLimitHit?: Prisma.RateLimitHitOmit
 }
 
 /* Types for Logging */
