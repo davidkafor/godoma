@@ -67,7 +67,10 @@ export const ModelName = {
   GalleryImage: 'GalleryImage',
   Download: 'Download',
   Testimonial: 'Testimonial',
-  Partner: 'Partner'
+  Partner: 'Partner',
+  Application: 'Application',
+  ContactMessage: 'ContactMessage',
+  RateLimitHit: 'RateLimitHit'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -353,6 +356,63 @@ export const PartnerScalarFieldEnum = {
 export type PartnerScalarFieldEnum = (typeof PartnerScalarFieldEnum)[keyof typeof PartnerScalarFieldEnum]
 
 
+export const ApplicationScalarFieldEnum = {
+  id: 'id',
+  reference: 'reference',
+  idempotencyKey: 'idempotencyKey',
+  fingerprint: 'fingerprint',
+  fullName: 'fullName',
+  email: 'email',
+  phone: 'phone',
+  department: 'department',
+  programme: 'programme',
+  qualification: 'qualification',
+  notes: 'notes',
+  status: 'status',
+  emailStatus: 'emailStatus',
+  emailAttempts: 'emailAttempts',
+  emailAttemptedAt: 'emailAttemptedAt',
+  emailSentAt: 'emailSentAt',
+  emailError: 'emailError',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type ApplicationScalarFieldEnum = (typeof ApplicationScalarFieldEnum)[keyof typeof ApplicationScalarFieldEnum]
+
+
+export const ContactMessageScalarFieldEnum = {
+  id: 'id',
+  reference: 'reference',
+  idempotencyKey: 'idempotencyKey',
+  fingerprint: 'fingerprint',
+  name: 'name',
+  email: 'email',
+  subject: 'subject',
+  message: 'message',
+  status: 'status',
+  emailStatus: 'emailStatus',
+  emailAttempts: 'emailAttempts',
+  emailAttemptedAt: 'emailAttemptedAt',
+  emailSentAt: 'emailSentAt',
+  emailError: 'emailError',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type ContactMessageScalarFieldEnum = (typeof ContactMessageScalarFieldEnum)[keyof typeof ContactMessageScalarFieldEnum]
+
+
+export const RateLimitHitScalarFieldEnum = {
+  id: 'id',
+  scope: 'scope',
+  key: 'key',
+  createdAt: 'createdAt'
+} as const
+
+export type RateLimitHitScalarFieldEnum = (typeof RateLimitHitScalarFieldEnum)[keyof typeof RateLimitHitScalarFieldEnum]
+
+
 export const SortOrder = {
   asc: 'asc',
   desc: 'desc'
@@ -584,4 +644,46 @@ export const PartnerOrderByRelevanceFieldEnum = {
 } as const
 
 export type PartnerOrderByRelevanceFieldEnum = (typeof PartnerOrderByRelevanceFieldEnum)[keyof typeof PartnerOrderByRelevanceFieldEnum]
+
+
+export const ApplicationOrderByRelevanceFieldEnum = {
+  id: 'id',
+  reference: 'reference',
+  idempotencyKey: 'idempotencyKey',
+  fingerprint: 'fingerprint',
+  fullName: 'fullName',
+  email: 'email',
+  phone: 'phone',
+  department: 'department',
+  programme: 'programme',
+  qualification: 'qualification',
+  notes: 'notes',
+  emailError: 'emailError'
+} as const
+
+export type ApplicationOrderByRelevanceFieldEnum = (typeof ApplicationOrderByRelevanceFieldEnum)[keyof typeof ApplicationOrderByRelevanceFieldEnum]
+
+
+export const ContactMessageOrderByRelevanceFieldEnum = {
+  id: 'id',
+  reference: 'reference',
+  idempotencyKey: 'idempotencyKey',
+  fingerprint: 'fingerprint',
+  name: 'name',
+  email: 'email',
+  subject: 'subject',
+  message: 'message',
+  emailError: 'emailError'
+} as const
+
+export type ContactMessageOrderByRelevanceFieldEnum = (typeof ContactMessageOrderByRelevanceFieldEnum)[keyof typeof ContactMessageOrderByRelevanceFieldEnum]
+
+
+export const RateLimitHitOrderByRelevanceFieldEnum = {
+  id: 'id',
+  scope: 'scope',
+  key: 'key'
+} as const
+
+export type RateLimitHitOrderByRelevanceFieldEnum = (typeof RateLimitHitOrderByRelevanceFieldEnum)[keyof typeof RateLimitHitOrderByRelevanceFieldEnum]
 

@@ -1,11 +1,11 @@
 export type RoleName = 'SUPER_ADMIN' | 'ADMIN' | 'EDITOR'
 
-export type Permission = 'content:write' | 'content:publish' | 'content:delete' | 'media:delete' | 'settings:write' | 'users:manage' | 'audit:read'
+export type Permission = 'content:write' | 'content:publish' | 'content:delete' | 'media:delete' | 'settings:write' | 'users:manage' | 'audit:read' | 'submissions:read' | 'submissions:manage'
 
 const matrix: Record<RoleName, Permission[]> = {
   EDITOR: ['content:write', 'content:publish'],
-  ADMIN: ['content:write', 'content:publish', 'content:delete', 'media:delete', 'settings:write', 'audit:read'],
-  SUPER_ADMIN: ['content:write', 'content:publish', 'content:delete', 'media:delete', 'settings:write', 'audit:read', 'users:manage'],
+  ADMIN: ['content:write', 'content:publish', 'content:delete', 'media:delete', 'settings:write', 'audit:read', 'submissions:read', 'submissions:manage'],
+  SUPER_ADMIN: ['content:write', 'content:publish', 'content:delete', 'media:delete', 'settings:write', 'audit:read', 'submissions:read', 'submissions:manage', 'users:manage'],
 }
 
 export function can(role: RoleName, permission: Permission) {

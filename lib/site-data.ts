@@ -48,6 +48,7 @@ export const navigation: NavGroup[] = [
   label: 'Admissions',
     href: '/admissions',
   items: [
+  { label: 'Online Application', href: '/apply' },
   { label: 'Entry Requirements', href: '/admissions#entry-requirements' },
   { label: 'Registrar Office', href: '/registrar-office' },
       { label: 'Student Funding', href: '/funding' },

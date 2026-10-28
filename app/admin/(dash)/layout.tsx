@@ -31,6 +31,15 @@ export default async function DashboardLayout({ children }: { children: React.Re
     { heading: 'People & campus', items: [link('staff'), link('facilities'), link('gallery')] },
     { heading: 'Files', items: [link('downloads'), { href: '/admin/media', label: 'Media library' }] },
   ]
+  if (can(role, 'submissions:read')) {
+    groups.splice(1, 0, {
+      heading: 'Enquiries',
+      items: [
+        { href: '/admin/applications', label: 'Student applications' },
+        { href: '/admin/messages', label: 'Contact messages' },
+      ],
+    })
+  }
   const settings: NavGroup['items'] = []
   if (can(role, 'settings:write')) settings.push({ href: '/admin/settings', label: 'Contact & social links' })
   if (can(role, 'users:manage')) settings.push({ href: '/admin/users', label: 'Administrators' })

@@ -126,3 +126,18 @@ export type Testimonial = Prisma.TestimonialModel
  * 
  */
 export type Partner = Prisma.PartnerModel
+/**
+ * Model Application
+ * 
+ */
+export type Application = Prisma.ApplicationModel
+/**
+ * Model ContactMessage
+ * 
+ */
+export type ContactMessage = Prisma.ContactMessageModel
+/**
+ * Model RateLimitHit
+ * 
+ */
+export type RateLimitHit = Prisma.RateLimitHitModel
