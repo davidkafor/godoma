@@ -1,4 +1,4 @@
-import { prisma } from '@/lib/prisma'
+import { databaseConfigured, prisma } from '@/lib/prisma'
 import * as fallback from '@/lib/site-data'
 import type { Department } from '@/lib/site-data'
 
@@ -13,11 +13,26 @@ const published = () => ({
   OR: [{ publishedAt: null }, { publishedAt: { lte: new Date() } }],
 })
 
+const DB_RETRY_AFTER_MS = 30_000
+let databaseDownUntil = 0
+let warnedUnconfigured = false
+
 async function safe<T>(label: string, read: () => Promise<T>, backup: T): Promise<T> {
+  if (!databaseConfigured()) {
+    if (!warnedUnconfigured) {
+      warnedUnconfigured = true
+      console.warn('[content] database is not configured (DB_NAME, DB_USER, DB_PASSWORD); serving built-in copy')
+    }
+    return backup
+  }
+  // After a connection failure, skip the database briefly so every page render does not wait on the pool timeout.
+  if (Date.now() < databaseDownUntil) return backup
   try {
     return await read()
   } catch (error) {
-    console.error(`[content] ${label} failed, serving built-in copy`, error)
+    databaseDownUntil = Date.now() + DB_RETRY_AFTER_MS
+    const e = error as { name?: string; code?: string }
+    console.warn(`[content] ${label} unavailable, serving built-in copy`, { name: e?.name, code: e?.code })
     return backup
   }
 }
