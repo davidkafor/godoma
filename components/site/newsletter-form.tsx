@@ -2,10 +2,10 @@
 
 import { useState } from 'react'
 import { Send } from 'lucide-react'
-import { contact } from '@/lib/site-data'
 import { Button } from '@/components/ui/button'
 
-export function NewsletterForm() {
+export function NewsletterForm({ email: contactEmail }: { email: string }) {
+  const contact = { email: contactEmail }
   const [email, setEmail] = useState('')
 
   return (

@@ -12,8 +12,10 @@ import { StatsSection } from '@/components/site/stats-section'
 import { TestimonialsSection } from '@/components/site/testimonials-section'
 import { PartnersSection } from '@/components/site/partners-section'
 import { SiteFooter } from '@/components/site/site-footer'
+import { getDepartments, getHeroSlides, getTotalCourses } from '@/lib/content'
 
-export default function Page() {
+export default async function Page() {
+  const [departments, totalCourses, slides] = await Promise.all([getDepartments(), getTotalCourses(), getHeroSlides()])
   const structuredData = {
     '@context': 'https://schema.org',
     '@type': 'EducationalOrganization',
@@ -38,13 +40,13 @@ export default function Page() {
       <TopBar />
       <SiteHeader />
       <main id="top">
-        <HeroSlider />
+        <HeroSlider slides={slides} />
         <NewsTicker />
 
         <PrincipalMessage />
         <section className="border-y border-border/70 bg-card py-16 sm:py-20"><div className="mx-auto grid max-w-7xl gap-10 px-4 lg:grid-cols-[minmax(0,1.65fr)_minmax(300px,0.85fr)] lg:items-start lg:px-8"><IntroductionVideo /><LatestNewsCard /></div></section>
         <AboutSection />
-        <StatsSection />
+        <StatsSection totalCourses={totalCourses} departmentCount={departments.length} />
           <AdmissionsSection />
         <FacilitiesSection />
         <TestimonialsSection />

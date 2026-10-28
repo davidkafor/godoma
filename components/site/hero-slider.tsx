@@ -3,11 +3,11 @@
 import { useEffect, useState } from 'react'
 import Image from 'next/image'
 import { ChevronLeft, ChevronRight, Pause, Play } from 'lucide-react'
-import { heroSlides } from '@/lib/site-data'
+import type { HeroSlideView } from '@/lib/content'
 import { buttonVariants } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
 
-export function HeroSlider() {
+export function HeroSlider({ slides: heroSlides }: { slides: HeroSlideView[] }) {
   const [index, setIndex] = useState(0)
   const [paused, setPaused] = useState(false)
   const count = heroSlides.length

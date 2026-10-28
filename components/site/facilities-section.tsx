@@ -1,8 +1,11 @@
 import Image from 'next/image'
-import { BookOpen, Cpu, Wifi, Wrench, BedDouble, HeartPulse } from 'lucide-react'
+import { BookOpen, Bus, Cpu, Dumbbell, FlaskConical, HeartPulse, ShieldCheck, Sprout, Utensils, Wifi, Wrench, BedDouble, type LucideIcon } from 'lucide-react'
+import { getFacilities } from '@/lib/content'
 import { SectionHeading } from './section-heading'
 
-const facilities = [
+const iconMap: Record<string, LucideIcon> = { Wrench, Cpu, Wifi, BedDouble, HeartPulse, BookOpen, Utensils, Dumbbell, FlaskConical, Bus, ShieldCheck, Sprout }
+
+const defaultFacilities = [
   {
     icon: Wrench,
     title: 'Modern Workshops',
@@ -30,7 +33,11 @@ const facilities = [
   },
 ]
 
-export function FacilitiesSection() {
+export async function FacilitiesSection() {
+  const stored = await getFacilities()
+  const facilities = stored
+    ? stored.map((f) => ({ icon: iconMap[f.icon] ?? Wrench, title: f.title, text: f.text }))
+    : defaultFacilities
   return (
     <section id="facilities" aria-labelledby="facilities-heading" className="bg-muted py-20">
       <div className="mx-auto max-w-7xl px-4">

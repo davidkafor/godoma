@@ -1,8 +1,9 @@
 import { Mail, Phone, Download } from 'lucide-react'
-import { contact } from '@/lib/site-data'
+import { getContact } from '@/lib/content'
 import { SocialIcons } from './social-icons'
 
-export function TopBar() {
+export async function TopBar() {
+  const contact = await getContact()
   return (
     <div className="bg-primary text-primary-foreground">
       <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-x-6 gap-y-1 px-4 py-2 text-xs sm:text-sm">

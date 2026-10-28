@@ -1,9 +1,11 @@
 import Image from 'next/image'
 import { ArrowRight, CalendarDays } from 'lucide-react'
-import { news } from '@/lib/site-data'
+import { getNews } from '@/lib/content'
 import { SectionHeading } from './section-heading'
 
-export function NewsSection() {
+export async function NewsSection() {
+  const news = await getNews(6)
+  if (news.length === 0) return null
   return (
     <section id="news" aria-labelledby="news-heading" className="bg-background py-20">
       <div className="mx-auto max-w-7xl px-4">

@@ -2,9 +2,9 @@
 
 import { useState } from 'react'
 import { Button } from '@/components/ui/button'
-import { departments } from '@/lib/site-data'
+import type { Department } from '@/lib/site-data'
 
-export function ContactForm() {
+export function ContactForm({ departments }: { departments: Department[] }) {
   const [status, setStatus] = useState('')
   const [sending, setSending] = useState(false)
   const [selectedDepartment, setSelectedDepartment] = useState('')

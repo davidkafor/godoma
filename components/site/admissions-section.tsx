@@ -1,19 +1,19 @@
 import { FileText, Phone, Wallet } from 'lucide-react'
 import { buttonVariants } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
-import { contact, departments } from '@/lib/site-data'
+import { getContact, getDepartments } from '@/lib/content'
 
-const levels = [
-  { level: 'TVET CDACC Level 6', courseLevel: '(Level 6)' },
-  { level: 'TVET CDACC Level 5', courseLevel: '(Level 5)' },
-  { level: 'TVET CDACC Level 4', courseLevel: '(Level 4)' },
-  { level: 'Short Courses', courseLevel: 'Open' },
-].map(({ level, courseLevel }) => {
-  const course = departments.flatMap((department) => department.courses).find((item) => item.name.includes(courseLevel))
-  return { level, requirement: course?.requirement ?? 'Open', duration: course?.duration ?? '3 Months' }
-})
-
-export function AdmissionsSection() {
+export async function AdmissionsSection() {
+  const [contact, departments] = await Promise.all([getContact(), getDepartments()])
+  const levels = [
+    { level: 'TVET CDACC Level 6', courseLevel: '(Level 6)' },
+    { level: 'TVET CDACC Level 5', courseLevel: '(Level 5)' },
+    { level: 'TVET CDACC Level 4', courseLevel: '(Level 4)' },
+    { level: 'Short Courses', courseLevel: 'Open' },
+  ].map(({ level, courseLevel }) => {
+    const course = departments.flatMap((department) => department.courses).find((item) => item.name.includes(courseLevel))
+    return { level, requirement: course?.requirement ?? 'Open', duration: course?.duration ?? '3 Months' }
+  })
   return (
     <section
       id="admissions"
