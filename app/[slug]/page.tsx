@@ -65,6 +65,7 @@ export default async function InformationPage({ params }: { params: Promise<{ sl
   const isRplOffice = slug === 'recognition-of-prior-learning'
   const isAssessmentOffice = slug === 'assessment-office'
   const isGuidanceCounselling = slug === 'guidance-counselling'
+  const isRegistrarOffice = slug === 'registrar-office'
   const principalMessage = [
     'We strive to create a supportive, inclusive, and learner-centred environment where every trainee is encouraged to discover their potential, develop their abilities, and pursue their ambitions. Through the dedication of our trainers and staff, we endeavour to maintain high standards of professionalism, discipline, integrity, and excellence in all our training programmes and institutional activities.',
     'As the world continues to embrace technological advancement and innovation, Godoma TTI remains committed to adapting to emerging trends and industry demands. We recognize the importance of digital literacy, creativity, critical thinking, and problem-solving in preparing our trainees for the modern workplace. By strengthening partnerships with industry, government agencies, development partners, and other stakeholders, we seek to enhance training opportunities and bridge the gap between classroom learning and practical workplace experience.',
