@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 import { ChevronLeft, ChevronRight, Pause, Play } from 'lucide-react'
 import type { HeroSlideView } from '@/lib/content'
 import { buttonVariants } from '@/components/ui/button'
@@ -61,13 +62,13 @@ export function HeroSlider({ slides: heroSlides }: { slides: HeroSlideView[] }) 
                 {slide.text}
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
-                <a
-                  href="#admissions"
+                <Link
+                  href="/apply"
                   tabIndex={i === index ? 0 : -1}
                   className={cn(buttonVariants(), 'h-12 bg-accent px-6 text-base font-bold text-accent-foreground hover:bg-accent/90')}
                 >
                   Apply Now
-                </a>
+                </Link>
                 <a
                   href="#departments"
                   tabIndex={i === index ? 0 : -1}
