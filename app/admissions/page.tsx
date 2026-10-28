@@ -2,7 +2,8 @@ import type { Metadata } from 'next'
 import { SiteFooter } from '@/components/site/site-footer'
 import { SiteHeader } from '@/components/site/site-header'
 import { TopBar } from '@/components/site/top-bar'
-import { departments } from '@/lib/site-data'
+import { getDepartments } from '@/lib/content'
+import type { Department } from '@/lib/site-data'
 
 export const metadata: Metadata = {
   title: 'Admissions and Entry Requirements',
@@ -10,7 +11,7 @@ export const metadata: Metadata = {
   alternates: { canonical: '/admissions' },
 }
 
-const levels = [
+const buildLevels = (departments: Department[]) => [
   { level: 'TVET CDACC Level 6', courseLevel: '(Level 6)' },
   { level: 'TVET CDACC Level 5', courseLevel: '(Level 5)' },
   { level: 'TVET CDACC Level 4', courseLevel: '(Level 4)' },
@@ -20,7 +21,8 @@ const levels = [
   return { level, requirement: course?.requirement ?? 'Open', duration: course?.duration ?? '3 Months' }
 })
 
-export default function AdmissionsPage() {
+export default async function AdmissionsPage() {
+  const levels = buildLevels(await getDepartments())
   return (
     <>
       <TopBar />

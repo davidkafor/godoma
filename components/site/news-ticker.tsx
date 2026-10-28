@@ -1,7 +1,9 @@
 import { Megaphone } from 'lucide-react'
-import { tickerItems } from '@/lib/site-data'
+import { getTicker } from '@/lib/content'
 
-export function NewsTicker() {
+export async function NewsTicker() {
+  const tickerItems = await getTicker()
+  if (tickerItems.length === 0) return null
   const items = [...tickerItems, ...tickerItems]
 
   return (

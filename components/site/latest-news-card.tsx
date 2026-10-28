@@ -1,9 +1,9 @@
 import Image from 'next/image'
 import { ArrowRight, CalendarDays } from 'lucide-react'
-import { news } from '@/lib/site-data'
+import { getNews } from '@/lib/content'
 
-export function LatestNewsCard() {
-  const [featured, ...secondary] = news.slice(0, 3)
+export async function LatestNewsCard() {
+  const [featured, ...secondary] = await getNews(3)
 
   return (
     <aside aria-labelledby="latest-news-heading" className="overflow-hidden rounded-xl border border-border bg-card shadow-lg">

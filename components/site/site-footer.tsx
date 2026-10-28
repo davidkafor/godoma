@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { Mail, MapPin, Phone } from 'lucide-react'
-import { contact } from '@/lib/site-data'
+import { getContact } from '@/lib/content'
 import { SocialIcons } from './social-icons'
 import { NewsletterForm } from './newsletter-form'
 
@@ -22,7 +22,8 @@ const importantPages = [
   { label: 'Contact Us', href: '/contact' },
 ]
 
-export function SiteFooter() {
+export async function SiteFooter() {
+  const contact = await getContact()
   return (
     <footer id="contact" className="bg-primary text-primary-foreground">
       <div className="mx-auto grid max-w-7xl gap-12 px-4 py-16 sm:grid-cols-2 lg:grid-cols-[1.2fr_0.8fr_0.8fr_1fr] lg:px-8">
@@ -125,7 +126,7 @@ export function SiteFooter() {
           <p className="mt-2 text-sm text-primary-foreground/75">
             Get admissions updates, notices and events from Godoma TTI straight to your inbox.
           </p>
-          <NewsletterForm />
+          <NewsletterForm email={contact.email} />
         </div>
       </div>
 

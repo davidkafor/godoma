@@ -1,9 +1,10 @@
 import type { MetadataRoute } from 'next'
-import { departments } from '@/lib/site-data'
+import { getDepartments } from '@/lib/content'
 
 const staticRoutes = ['/', '/about', '/admissions', '/departments', '/events', '/notice-board', '/governance', '/administration', '/funding', '/trainees', '/library', '/downloads', '/contact']
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const departments = await getDepartments()
   const now = new Date()
   return [
     ...staticRoutes.map((url) => ({ url, lastModified: now, changeFrequency: 'weekly' as const, priority: url === '/' ? 1 : 0.7 })),

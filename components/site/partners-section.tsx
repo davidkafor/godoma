@@ -1,6 +1,8 @@
-import { partners } from '@/lib/site-data'
+import { getPartners } from '@/lib/content'
 
-export function PartnersSection() {
+export async function PartnersSection() {
+  const partners = await getPartners()
+  if (partners.length === 0) return null
   return (
     <section aria-labelledby="partners-heading" className="border-t bg-muted py-16">
       <div className="mx-auto max-w-7xl px-4">

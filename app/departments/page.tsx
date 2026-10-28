@@ -5,7 +5,7 @@ import { ArrowRight, BookOpen, Users } from 'lucide-react'
 import { SiteFooter } from '@/components/site/site-footer'
 import { SiteHeader } from '@/components/site/site-header'
 import { TopBar } from '@/components/site/top-bar'
-import { departments, totalCourses } from '@/lib/site-data'
+import { getDepartments, getTotalCourses } from '@/lib/content'
 
 export const metadata: Metadata = {
   title: 'Departments and TVET Courses',
@@ -13,7 +13,8 @@ export const metadata: Metadata = {
   alternates: { canonical: '/departments' },
 }
 
-export default function DepartmentsPage() {
+export default async function DepartmentsPage() {
+  const [departments, totalCourses] = await Promise.all([getDepartments(), getTotalCourses()])
   return (
     <>
       <TopBar />

@@ -2,12 +2,11 @@
 
 import { useEffect, useRef, useState } from 'react'
 import { BookOpen, Building2, CalendarCheck, Users } from 'lucide-react'
-import { departments, totalCourses } from '@/lib/site-data'
 
-const stats = [
-  { icon: BookOpen, value: totalCourses, suffix: '', label: 'Courses Offered' },
-  { icon: Building2, value: departments.length, suffix: '', label: 'Academic Departments' },
-  { icon: Users, value: 3, suffix: '', label: 'Training Levels' },
+const buildStats = (totalCourses: number, departmentCount: number) => [
+  { icon: BookOpen, value: totalCourses, suffix: '', label: 'Courses Offered', noAnimate: false },
+  { icon: Building2, value: departmentCount, suffix: '', label: 'Academic Departments', noAnimate: false },
+  { icon: Users, value: 3, suffix: '', label: 'Training Levels', noAnimate: false },
   { icon: CalendarCheck, value: 2016, suffix: '', label: 'Year Established', noAnimate: true },
 ]
 
@@ -51,7 +50,8 @@ function Counter({ value, suffix, animate }: { value: number; suffix: string; an
   )
 }
 
-export function StatsSection() {
+export function StatsSection({ totalCourses, departmentCount }: { totalCourses: number; departmentCount: number }) {
+  const stats = buildStats(totalCourses, departmentCount)
   return (
     <section aria-label="Godoma TTI in numbers" className="bg-primary py-14 text-primary-foreground">
       <ul className="mx-auto grid max-w-7xl grid-cols-2 gap-8 px-4 lg:grid-cols-4">

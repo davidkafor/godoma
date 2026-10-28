@@ -3,10 +3,10 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
-import { departments } from '@/lib/site-data'
+import type { Department } from '@/lib/site-data'
 import { SectionHeading } from './section-heading'
 
-export function DepartmentsSection() {
+export function DepartmentsSection({ departments }: { departments: Department[] }) {
   return (
     <section id="departments" aria-labelledby="departments-heading" className="bg-background py-20">
       <div className="mx-auto max-w-7xl px-4">
