@@ -65,7 +65,7 @@ export function HeroSlider({ slides: heroSlides }: { slides: HeroSlideView[] }) 
                 <Link
                   href="/apply"
                   tabIndex={i === index ? 0 : -1}
-                  className={cn(buttonVariants(), 'h-12 bg-accent px-6 text-base font-bold text-accent-foreground hover:bg-accent/90')}
+                  className={cn(buttonVariants(), 'h-12 border-2 border-white bg-[#56a9e8] px-8 text-base font-extrabold uppercase tracking-wide text-[#0e2a47] shadow-lg shadow-black/40 hover:bg-white hover:text-[#1d3f8b] focus-visible:ring-2 focus-visible:ring-white')}
                 >
                   Apply Now
                 </Link>
