@@ -243,9 +243,9 @@ name: 'Computing and Informatics',
     summary:
       'Provides practical, industry-focused training in computing, software, cybersecurity, digital applications, and informatics through modern computer-based learning.',
     courses: [
-      c('Computing and Informatics (Level 6)', 'KCSE C-', '3 Years', 'TVET CDACC'),
-  c('Computing and Informatics (Level 5)', 'D-', '2 Years', 'TVET CDACC'),
-  c('Computing and Informatics (Level 4)', 'KCSE', '6 Months', 'TVET CDACC'),
+      c('ICT Technician (Level 6)', 'KCSE C-', '3 Years', 'TVET CDACC'),
+  c('ICT Technician (Level 5)', 'D-', '2 Years', 'TVET CDACC'),
+  c('ICT Assistant (Level 4)', 'KCSE', '6 Months', 'TVET CDACC'),
       c('Cyber Security (Level 4)', 'KCSE', '6 Months', 'TVET CDACC'),
       c('Computer Science (Level 6)', 'KCSE C-', '3 Years', 'TVET CDACC'),
       c('Computer Packages', 'Open', '3 Months', 'TVET CDACC'),
