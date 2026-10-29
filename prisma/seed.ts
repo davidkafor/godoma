@@ -126,7 +126,7 @@ async function main() {
     for (const [j, c] of d.courses.entries()) {
       await prisma.course.upsert({
         where: { departmentId_name: { departmentId: dept.id, name: c.name } },
-        update: {},
+        update: { requirement: c.requirement, duration: c.duration, examiner: c.examiner, sortOrder: j },
         create: { departmentId: dept.id, ...c, status: 'PUBLISHED', publishedAt: new Date(), sortOrder: j },
       })
     }

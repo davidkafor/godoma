@@ -12,7 +12,7 @@ export async function AdmissionsSection() {
     { level: 'Short Courses', courseLevel: 'Open' },
   ].map(({ level, courseLevel }) => {
     const course = departments.flatMap((department) => department.courses).find((item) => item.name.includes(courseLevel))
-    return { level, requirement: course?.requirement ?? 'Open', duration: course?.duration ?? '3 Months' }
+    return { level, requirement: course?.requirement ?? 'Open', duration: course?.duration ?? '6 Months' }
   })
   return (
     <section
