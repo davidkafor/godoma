@@ -29,7 +29,7 @@ INSERT INTO `Course` (`id`, `departmentId`, `name`, `requirement`, `duration`, `
 SELECT UUID(), d.`id`, 'Electrical Installation Technology (Level 4)', 'KCSE', '6 Months', 'TVET CDACC', 'PUBLISHED', CURRENT_TIMESTAMP(3), 6, CURRENT_TIMESTAMP(3), CURRENT_TIMESTAMP(3) FROM `Department` d WHERE d.`slug` = 'electrical'
 ON DUPLICATE KEY UPDATE `requirement` = VALUES(`requirement`), `duration` = VALUES(`duration`), `examiner` = VALUES(`examiner`), `sortOrder` = VALUES(`sortOrder`), `updatedAt` = CURRENT_TIMESTAMP(3);
 INSERT INTO `Course` (`id`, `departmentId`, `name`, `requirement`, `duration`, `examiner`, `status`, `publishedAt`, `sortOrder`, `createdAt`, `updatedAt`)
-SELECT UUID(), d.`id`, 'Electrical Installation', 'Open', '6 Months', 'Godoma Technical Training Institute', 'PUBLISHED', CURRENT_TIMESTAMP(3), 7, CURRENT_TIMESTAMP(3), CURRENT_TIMESTAMP(3) FROM `Department` d WHERE d.`slug` = 'electrical'
+SELECT UUID(), d.`id`, 'Electrical Installation', 'Open', '6 Months', 'GTTI', 'PUBLISHED', CURRENT_TIMESTAMP(3), 7, CURRENT_TIMESTAMP(3), CURRENT_TIMESTAMP(3) FROM `Department` d WHERE d.`slug` = 'electrical'
 ON DUPLICATE KEY UPDATE `requirement` = VALUES(`requirement`), `duration` = VALUES(`duration`), `examiner` = VALUES(`examiner`), `sortOrder` = VALUES(`sortOrder`), `updatedAt` = CURRENT_TIMESTAMP(3);
 
 -- Building & Civil Engineering
@@ -61,13 +61,13 @@ INSERT INTO `Course` (`id`, `departmentId`, `name`, `requirement`, `duration`, `
 SELECT UUID(), d.`id`, 'Carpentry & Joinery (Level 4)', 'KCSE', '6 Months', 'TVET CDACC', 'PUBLISHED', CURRENT_TIMESTAMP(3), 8, CURRENT_TIMESTAMP(3), CURRENT_TIMESTAMP(3) FROM `Department` d WHERE d.`slug` = 'building'
 ON DUPLICATE KEY UPDATE `requirement` = VALUES(`requirement`), `duration` = VALUES(`duration`), `examiner` = VALUES(`examiner`), `sortOrder` = VALUES(`sortOrder`), `updatedAt` = CURRENT_TIMESTAMP(3);
 INSERT INTO `Course` (`id`, `departmentId`, `name`, `requirement`, `duration`, `examiner`, `status`, `publishedAt`, `sortOrder`, `createdAt`, `updatedAt`)
-SELECT UUID(), d.`id`, 'Masonry', 'Open', '6 Months', 'Godoma Technical Training Institute', 'PUBLISHED', CURRENT_TIMESTAMP(3), 9, CURRENT_TIMESTAMP(3), CURRENT_TIMESTAMP(3) FROM `Department` d WHERE d.`slug` = 'building'
+SELECT UUID(), d.`id`, 'Masonry', 'Open', '6 Months', 'GTTI', 'PUBLISHED', CURRENT_TIMESTAMP(3), 9, CURRENT_TIMESTAMP(3), CURRENT_TIMESTAMP(3) FROM `Department` d WHERE d.`slug` = 'building'
 ON DUPLICATE KEY UPDATE `requirement` = VALUES(`requirement`), `duration` = VALUES(`duration`), `examiner` = VALUES(`examiner`), `sortOrder` = VALUES(`sortOrder`), `updatedAt` = CURRENT_TIMESTAMP(3);
 INSERT INTO `Course` (`id`, `departmentId`, `name`, `requirement`, `duration`, `examiner`, `status`, `publishedAt`, `sortOrder`, `createdAt`, `updatedAt`)
-SELECT UUID(), d.`id`, 'Plumbing and Pipe Fitting', 'Open', '6 Months', 'Godoma Technical Training Institute', 'PUBLISHED', CURRENT_TIMESTAMP(3), 10, CURRENT_TIMESTAMP(3), CURRENT_TIMESTAMP(3) FROM `Department` d WHERE d.`slug` = 'building'
+SELECT UUID(), d.`id`, 'Plumbing and Pipe Fitting', 'Open', '6 Months', 'GTTI', 'PUBLISHED', CURRENT_TIMESTAMP(3), 10, CURRENT_TIMESTAMP(3), CURRENT_TIMESTAMP(3) FROM `Department` d WHERE d.`slug` = 'building'
 ON DUPLICATE KEY UPDATE `requirement` = VALUES(`requirement`), `duration` = VALUES(`duration`), `examiner` = VALUES(`examiner`), `sortOrder` = VALUES(`sortOrder`), `updatedAt` = CURRENT_TIMESTAMP(3);
 INSERT INTO `Course` (`id`, `departmentId`, `name`, `requirement`, `duration`, `examiner`, `status`, `publishedAt`, `sortOrder`, `createdAt`, `updatedAt`)
-SELECT UUID(), d.`id`, 'Carpentry', 'Open', '6 Months', 'Godoma Technical Training Institute', 'PUBLISHED', CURRENT_TIMESTAMP(3), 11, CURRENT_TIMESTAMP(3), CURRENT_TIMESTAMP(3) FROM `Department` d WHERE d.`slug` = 'building'
+SELECT UUID(), d.`id`, 'Carpentry', 'Open', '6 Months', 'GTTI', 'PUBLISHED', CURRENT_TIMESTAMP(3), 11, CURRENT_TIMESTAMP(3), CURRENT_TIMESTAMP(3) FROM `Department` d WHERE d.`slug` = 'building'
 ON DUPLICATE KEY UPDATE `requirement` = VALUES(`requirement`), `duration` = VALUES(`duration`), `examiner` = VALUES(`examiner`), `sortOrder` = VALUES(`sortOrder`), `updatedAt` = CURRENT_TIMESTAMP(3);
 
 -- Computing and Informatics
@@ -93,7 +93,7 @@ INSERT INTO `Course` (`id`, `departmentId`, `name`, `requirement`, `duration`, `
 SELECT UUID(), d.`id`, 'Computer Science (Level 6)', 'KCSE C-', '3 Years', 'TVET CDACC', 'PUBLISHED', CURRENT_TIMESTAMP(3), 6, CURRENT_TIMESTAMP(3), CURRENT_TIMESTAMP(3) FROM `Department` d WHERE d.`slug` = 'ict'
 ON DUPLICATE KEY UPDATE `requirement` = VALUES(`requirement`), `duration` = VALUES(`duration`), `examiner` = VALUES(`examiner`), `sortOrder` = VALUES(`sortOrder`), `updatedAt` = CURRENT_TIMESTAMP(3);
 INSERT INTO `Course` (`id`, `departmentId`, `name`, `requirement`, `duration`, `examiner`, `status`, `publishedAt`, `sortOrder`, `createdAt`, `updatedAt`)
-SELECT UUID(), d.`id`, 'Computer Packages', 'Open', '6 Months', 'Godoma Technical Training Institute', 'PUBLISHED', CURRENT_TIMESTAMP(3), 7, CURRENT_TIMESTAMP(3), CURRENT_TIMESTAMP(3) FROM `Department` d WHERE d.`slug` = 'ict'
+SELECT UUID(), d.`id`, 'Computer Packages', 'Open', '6 Months', 'GTTI', 'PUBLISHED', CURRENT_TIMESTAMP(3), 7, CURRENT_TIMESTAMP(3), CURRENT_TIMESTAMP(3) FROM `Department` d WHERE d.`slug` = 'ict'
 ON DUPLICATE KEY UPDATE `requirement` = VALUES(`requirement`), `duration` = VALUES(`duration`), `examiner` = VALUES(`examiner`), `sortOrder` = VALUES(`sortOrder`), `updatedAt` = CURRENT_TIMESTAMP(3);
 
 -- Tourism & Hospitality
@@ -125,7 +125,7 @@ INSERT INTO `Course` (`id`, `departmentId`, `name`, `requirement`, `duration`, `
 SELECT UUID(), d.`id`, 'House Keeping & Accommodation (Level 4)', 'KCSE', '6 Months', 'TVET CDACC', 'PUBLISHED', CURRENT_TIMESTAMP(3), 8, CURRENT_TIMESTAMP(3), CURRENT_TIMESTAMP(3) FROM `Department` d WHERE d.`slug` = 'hospitality'
 ON DUPLICATE KEY UPDATE `requirement` = VALUES(`requirement`), `duration` = VALUES(`duration`), `examiner` = VALUES(`examiner`), `sortOrder` = VALUES(`sortOrder`), `updatedAt` = CURRENT_TIMESTAMP(3);
 INSERT INTO `Course` (`id`, `departmentId`, `name`, `requirement`, `duration`, `examiner`, `status`, `publishedAt`, `sortOrder`, `createdAt`, `updatedAt`)
-SELECT UUID(), d.`id`, 'Food and Beverage Production', 'Open', '6 Months', 'Godoma Technical Training Institute', 'PUBLISHED', CURRENT_TIMESTAMP(3), 9, CURRENT_TIMESTAMP(3), CURRENT_TIMESTAMP(3) FROM `Department` d WHERE d.`slug` = 'hospitality'
+SELECT UUID(), d.`id`, 'Food and Beverage Production', 'Open', '6 Months', 'GTTI', 'PUBLISHED', CURRENT_TIMESTAMP(3), 9, CURRENT_TIMESTAMP(3), CURRENT_TIMESTAMP(3) FROM `Department` d WHERE d.`slug` = 'hospitality'
 ON DUPLICATE KEY UPDATE `requirement` = VALUES(`requirement`), `duration` = VALUES(`duration`), `examiner` = VALUES(`examiner`), `sortOrder` = VALUES(`sortOrder`), `updatedAt` = CURRENT_TIMESTAMP(3);
 
 -- Mechanical Engineering
@@ -148,10 +148,10 @@ INSERT INTO `Course` (`id`, `departmentId`, `name`, `requirement`, `duration`, `
 SELECT UUID(), d.`id`, 'Welding & Fabrication (Level 4)', 'KCSE', '6 Months', 'TVET CDACC', 'PUBLISHED', CURRENT_TIMESTAMP(3), 5, CURRENT_TIMESTAMP(3), CURRENT_TIMESTAMP(3) FROM `Department` d WHERE d.`slug` = 'mechanical'
 ON DUPLICATE KEY UPDATE `requirement` = VALUES(`requirement`), `duration` = VALUES(`duration`), `examiner` = VALUES(`examiner`), `sortOrder` = VALUES(`sortOrder`), `updatedAt` = CURRENT_TIMESTAMP(3);
 INSERT INTO `Course` (`id`, `departmentId`, `name`, `requirement`, `duration`, `examiner`, `status`, `publishedAt`, `sortOrder`, `createdAt`, `updatedAt`)
-SELECT UUID(), d.`id`, 'Motorcycle', 'Open', '6 Months', 'Godoma Technical Training Institute', 'PUBLISHED', CURRENT_TIMESTAMP(3), 6, CURRENT_TIMESTAMP(3), CURRENT_TIMESTAMP(3) FROM `Department` d WHERE d.`slug` = 'mechanical'
+SELECT UUID(), d.`id`, 'Motorcycle', 'Open', '6 Months', 'GTTI', 'PUBLISHED', CURRENT_TIMESTAMP(3), 6, CURRENT_TIMESTAMP(3), CURRENT_TIMESTAMP(3) FROM `Department` d WHERE d.`slug` = 'mechanical'
 ON DUPLICATE KEY UPDATE `requirement` = VALUES(`requirement`), `duration` = VALUES(`duration`), `examiner` = VALUES(`examiner`), `sortOrder` = VALUES(`sortOrder`), `updatedAt` = CURRENT_TIMESTAMP(3);
 INSERT INTO `Course` (`id`, `departmentId`, `name`, `requirement`, `duration`, `examiner`, `status`, `publishedAt`, `sortOrder`, `createdAt`, `updatedAt`)
-SELECT UUID(), d.`id`, 'Motor Vehicle Mechanics', 'Open', '6 Months', 'Godoma Technical Training Institute', 'PUBLISHED', CURRENT_TIMESTAMP(3), 7, CURRENT_TIMESTAMP(3), CURRENT_TIMESTAMP(3) FROM `Department` d WHERE d.`slug` = 'mechanical'
+SELECT UUID(), d.`id`, 'Motor Vehicle Mechanics', 'Open', '6 Months', 'GTTI', 'PUBLISHED', CURRENT_TIMESTAMP(3), 7, CURRENT_TIMESTAMP(3), CURRENT_TIMESTAMP(3) FROM `Department` d WHERE d.`slug` = 'mechanical'
 ON DUPLICATE KEY UPDATE `requirement` = VALUES(`requirement`), `duration` = VALUES(`duration`), `examiner` = VALUES(`examiner`), `sortOrder` = VALUES(`sortOrder`), `updatedAt` = CURRENT_TIMESTAMP(3);
 
 -- Fashion & Cosmetology
@@ -174,13 +174,13 @@ INSERT INTO `Course` (`id`, `departmentId`, `name`, `requirement`, `duration`, `
 SELECT UUID(), d.`id`, 'Cosmetology (Level 4)', 'KCSE', '6 Months', 'TVET CDACC', 'PUBLISHED', CURRENT_TIMESTAMP(3), 5, CURRENT_TIMESTAMP(3), CURRENT_TIMESTAMP(3) FROM `Department` d WHERE d.`slug` = 'fashion'
 ON DUPLICATE KEY UPDATE `requirement` = VALUES(`requirement`), `duration` = VALUES(`duration`), `examiner` = VALUES(`examiner`), `sortOrder` = VALUES(`sortOrder`), `updatedAt` = CURRENT_TIMESTAMP(3);
 INSERT INTO `Course` (`id`, `departmentId`, `name`, `requirement`, `duration`, `examiner`, `status`, `publishedAt`, `sortOrder`, `createdAt`, `updatedAt`)
-SELECT UUID(), d.`id`, 'Hairdressing', 'Open', '6 Months', 'Godoma Technical Training Institute', 'PUBLISHED', CURRENT_TIMESTAMP(3), 6, CURRENT_TIMESTAMP(3), CURRENT_TIMESTAMP(3) FROM `Department` d WHERE d.`slug` = 'fashion'
+SELECT UUID(), d.`id`, 'Hairdressing', 'Open', '6 Months', 'GTTI', 'PUBLISHED', CURRENT_TIMESTAMP(3), 6, CURRENT_TIMESTAMP(3), CURRENT_TIMESTAMP(3) FROM `Department` d WHERE d.`slug` = 'fashion'
 ON DUPLICATE KEY UPDATE `requirement` = VALUES(`requirement`), `duration` = VALUES(`duration`), `examiner` = VALUES(`examiner`), `sortOrder` = VALUES(`sortOrder`), `updatedAt` = CURRENT_TIMESTAMP(3);
 INSERT INTO `Course` (`id`, `departmentId`, `name`, `requirement`, `duration`, `examiner`, `status`, `publishedAt`, `sortOrder`, `createdAt`, `updatedAt`)
-SELECT UUID(), d.`id`, 'Beauty Therapy', 'Open', '6 Months', 'Godoma Technical Training Institute', 'PUBLISHED', CURRENT_TIMESTAMP(3), 7, CURRENT_TIMESTAMP(3), CURRENT_TIMESTAMP(3) FROM `Department` d WHERE d.`slug` = 'fashion'
+SELECT UUID(), d.`id`, 'Beauty Therapy', 'Open', '6 Months', 'GTTI', 'PUBLISHED', CURRENT_TIMESTAMP(3), 7, CURRENT_TIMESTAMP(3), CURRENT_TIMESTAMP(3) FROM `Department` d WHERE d.`slug` = 'fashion'
 ON DUPLICATE KEY UPDATE `requirement` = VALUES(`requirement`), `duration` = VALUES(`duration`), `examiner` = VALUES(`examiner`), `sortOrder` = VALUES(`sortOrder`), `updatedAt` = CURRENT_TIMESTAMP(3);
 INSERT INTO `Course` (`id`, `departmentId`, `name`, `requirement`, `duration`, `examiner`, `status`, `publishedAt`, `sortOrder`, `createdAt`, `updatedAt`)
-SELECT UUID(), d.`id`, 'Dress Making', 'Open', '6 Months', 'Godoma Technical Training Institute', 'PUBLISHED', CURRENT_TIMESTAMP(3), 8, CURRENT_TIMESTAMP(3), CURRENT_TIMESTAMP(3) FROM `Department` d WHERE d.`slug` = 'fashion'
+SELECT UUID(), d.`id`, 'Dress Making', 'Open', '6 Months', 'GTTI', 'PUBLISHED', CURRENT_TIMESTAMP(3), 8, CURRENT_TIMESTAMP(3), CURRENT_TIMESTAMP(3) FROM `Department` d WHERE d.`slug` = 'fashion'
 ON DUPLICATE KEY UPDATE `requirement` = VALUES(`requirement`), `duration` = VALUES(`duration`), `examiner` = VALUES(`examiner`), `sortOrder` = VALUES(`sortOrder`), `updatedAt` = CURRENT_TIMESTAMP(3);
 
 -- Agricultural Studies
@@ -197,7 +197,7 @@ INSERT INTO `Course` (`id`, `departmentId`, `name`, `requirement`, `duration`, `
 SELECT UUID(), d.`id`, 'Agricultural Extension (Level 4)', 'KCSE', '6 Months', 'TVET CDACC', 'PUBLISHED', CURRENT_TIMESTAMP(3), 3, CURRENT_TIMESTAMP(3), CURRENT_TIMESTAMP(3) FROM `Department` d WHERE d.`slug` = 'agriculture'
 ON DUPLICATE KEY UPDATE `requirement` = VALUES(`requirement`), `duration` = VALUES(`duration`), `examiner` = VALUES(`examiner`), `sortOrder` = VALUES(`sortOrder`), `updatedAt` = CURRENT_TIMESTAMP(3);
 INSERT INTO `Course` (`id`, `departmentId`, `name`, `requirement`, `duration`, `examiner`, `status`, `publishedAt`, `sortOrder`, `createdAt`, `updatedAt`)
-SELECT UUID(), d.`id`, 'Agri-preneurship', 'Open', '6 Months', 'Godoma Technical Training Institute', 'PUBLISHED', CURRENT_TIMESTAMP(3), 4, CURRENT_TIMESTAMP(3), CURRENT_TIMESTAMP(3) FROM `Department` d WHERE d.`slug` = 'agriculture'
+SELECT UUID(), d.`id`, 'Agri-preneurship', 'Open', '6 Months', 'GTTI', 'PUBLISHED', CURRENT_TIMESTAMP(3), 4, CURRENT_TIMESTAMP(3), CURRENT_TIMESTAMP(3) FROM `Department` d WHERE d.`slug` = 'agriculture'
 ON DUPLICATE KEY UPDATE `requirement` = VALUES(`requirement`), `duration` = VALUES(`duration`), `examiner` = VALUES(`examiner`), `sortOrder` = VALUES(`sortOrder`), `updatedAt` = CURRENT_TIMESTAMP(3);
 
 -- Business & Liberal Studies
