@@ -227,10 +227,6 @@ export const departments: Department[] = [
       c('Building Technology (Level 6)', 'KCSE C-', '3 Years', 'TVET CDACC'),
   c('Building Technology (Level 5)', 'D-', '2 Years', 'TVET CDACC'),
       c('Carpentry & Joinery (Level 4)', 'KCSE', '6 Months', 'TVET CDACC'),
-      c('Masonry', 'Open', '3 Months', 'TVET CDACC'),
-      c('Plumbing and Pipe Fitting', 'Open', '3 Months', 'TVET CDACC'),
-      c('Carpentry', 'Open', '3 Months', 'TVET CDACC'),
-      c('Welding', 'Open', '3 Months', 'TVET CDACC'),
     ],
   },
   {
