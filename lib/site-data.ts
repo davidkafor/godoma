@@ -143,7 +143,7 @@ title: 'President Ruto Announces KSh 350 Million for Godoma TTI Expansion',
 
 export const tickerItems = [
   'President Ruto announces KSh 350 million investment for Godoma TTI expansion',
-  'Admissions ongoing for TVET CDACC Level 3, Level 4, Level 5 and Level 6 programmes',
+  'Admissions ongoing for TVET CDACC Level 4, Level 5 and Level 6 programmes and short courses',
   'Apply for HELB TVET loans & bursaries — up to Kshs. 40,000 per year',
   'Download your admission letter from the Students Downloads page',
   'Computer Packages short course — 6 months, open entry, assessed by Godoma Technical Training Institute',
