@@ -68,7 +68,7 @@ export async function AdmissionsSection() {
 
           <div className="mt-8 flex flex-wrap gap-3">
             <a
-              href="mailto:admissionsgtti@gmail.com?subject=Admission%20Application"
+              href="/apply"
               className={cn(buttonVariants(), 'h-12 bg-accent px-6 text-base font-bold text-accent-foreground hover:bg-accent/90')}
             >
               Apply Now!
