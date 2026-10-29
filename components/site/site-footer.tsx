@@ -3,7 +3,6 @@ import Link from 'next/link'
 import { Mail, MapPin, Phone } from 'lucide-react'
 import { getContact } from '@/lib/content'
 import { SocialIcons } from './social-icons'
-import { NewsletterForm } from './newsletter-form'
 
 const quickLinks = [
   { label: 'About Us', href: '/about' },
@@ -97,7 +96,7 @@ export async function SiteFooter() {
         </div>
       </div>
 
-      <div className="mx-auto grid max-w-7xl gap-8 px-4 pb-16 lg:grid-cols-2">
+      <div className="mx-auto max-w-7xl px-4 pb-16">
         <div className="overflow-hidden rounded-lg border border-primary-foreground/10 bg-secondary">
           <iframe
             title="Map showing Godoma Technical Training Institute in Vitengeni, Kilifi"
@@ -120,13 +119,6 @@ export async function SiteFooter() {
               Directions
             </a>
           </div>
-        </div>
-        <div className="flex flex-col justify-center rounded-lg bg-primary-foreground/5 p-8">
-          <h2 className="text-xl font-bold">Sign up for our newsletter</h2>
-          <p className="mt-2 text-sm text-primary-foreground/75">
-            Get admissions updates, notices and events from Godoma TTI straight to your inbox.
-          </p>
-          <NewsletterForm email={contact.email} />
         </div>
       </div>
 
