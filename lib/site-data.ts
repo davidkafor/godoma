@@ -207,7 +207,6 @@ export const departments: Department[] = [
   c('Electrical Engineering (Level 5)', 'D-', '2 Years', 'TVET CDACC'),
   c('Electrical Engineering (Level 4)', 'KCSE', '6 Months', 'TVET CDACC'),
       c('Electrical Installation Technology (Level 4)', 'KCSE', '6 Months', 'TVET CDACC'),
-      c('Electrical Installation', 'Open', '3 Months', 'TVET CDACC'),
     ],
   },
   {
