@@ -207,6 +207,7 @@ export const departments: Department[] = [
   c('Electrical Engineering (Level 5)', 'D-', '2 Years', 'TVET CDACC'),
   c('Electrical Engineering (Level 4)', 'KCSE', '6 Months', 'TVET CDACC'),
       c('Electrical Installation Technology (Level 4)', 'KCSE', '6 Months', 'TVET CDACC'),
+      c('Electrical Installation', 'Open', '6 Months', 'GTTI'),
     ],
   },
   {
@@ -227,6 +228,9 @@ export const departments: Department[] = [
       c('Building Technology (Level 6)', 'KCSE C-', '3 Years', 'TVET CDACC'),
   c('Building Technology (Level 5)', 'D-', '2 Years', 'TVET CDACC'),
       c('Carpentry & Joinery (Level 4)', 'KCSE', '6 Months', 'TVET CDACC'),
+      c('Masonry', 'Open', '6 Months', 'GTTI'),
+      c('Plumbing and Pipe Fitting', 'Open', '6 Months', 'GTTI'),
+      c('Carpentry', 'Open', '6 Months', 'GTTI'),
     ],
   },
   {
