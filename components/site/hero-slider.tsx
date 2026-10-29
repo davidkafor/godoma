@@ -69,13 +69,6 @@ export function HeroSlider({ slides: heroSlides }: { slides: HeroSlideView[] }) 
                 >
                   Apply Now
                 </Link>
-                <a
-                  href="#departments"
-                  tabIndex={i === index ? 0 : -1}
-                  className={cn(buttonVariants({ variant: 'outline' }), 'h-12 border-primary-foreground/60 bg-transparent px-6 text-base font-semibold text-primary-foreground hover:bg-primary-foreground hover:text-primary')}
-                >
-                  Explore Courses
-                </a>
               </div>
             </div>
           </div>
