@@ -30,6 +30,9 @@ export type ContentPageMinAggregateOutputType = {
   title: string | null
   eyebrow: string | null
   intro: string | null
+  heroImage: string | null
+  videoUrl: string | null
+  inMenu: boolean | null
   status: $Enums.PublishStatus | null
   publishedAt: Date | null
   createdAt: Date | null
@@ -42,6 +45,9 @@ export type ContentPageMaxAggregateOutputType = {
   title: string | null
   eyebrow: string | null
   intro: string | null
+  heroImage: string | null
+  videoUrl: string | null
+  inMenu: boolean | null
   status: $Enums.PublishStatus | null
   publishedAt: Date | null
   createdAt: Date | null
@@ -55,6 +61,9 @@ export type ContentPageCountAggregateOutputType = {
   eyebrow: number
   intro: number
   sections: number
+  heroImage: number
+  videoUrl: number
+  inMenu: number
   status: number
   publishedAt: number
   createdAt: number
@@ -69,6 +78,9 @@ export type ContentPageMinAggregateInputType = {
   title?: true
   eyebrow?: true
   intro?: true
+  heroImage?: true
+  videoUrl?: true
+  inMenu?: true
   status?: true
   publishedAt?: true
   createdAt?: true
@@ -81,6 +93,9 @@ export type ContentPageMaxAggregateInputType = {
   title?: true
   eyebrow?: true
   intro?: true
+  heroImage?: true
+  videoUrl?: true
+  inMenu?: true
   status?: true
   publishedAt?: true
   createdAt?: true
@@ -94,6 +109,9 @@ export type ContentPageCountAggregateInputType = {
   eyebrow?: true
   intro?: true
   sections?: true
+  heroImage?: true
+  videoUrl?: true
+  inMenu?: true
   status?: true
   publishedAt?: true
   createdAt?: true
@@ -180,6 +198,9 @@ export type ContentPageGroupByOutputType = {
   eyebrow: string
   intro: string
   sections: runtime.JsonValue
+  heroImage: string | null
+  videoUrl: string | null
+  inMenu: boolean
   status: $Enums.PublishStatus
   publishedAt: Date | null
   createdAt: Date
@@ -214,6 +235,9 @@ export type ContentPageWhereInput = {
   eyebrow?: Prisma.StringFilter<"ContentPage"> | string
   intro?: Prisma.StringFilter<"ContentPage"> | string
   sections?: Prisma.JsonFilter<"ContentPage">
+  heroImage?: Prisma.StringNullableFilter<"ContentPage"> | string | null
+  videoUrl?: Prisma.StringNullableFilter<"ContentPage"> | string | null
+  inMenu?: Prisma.BoolFilter<"ContentPage"> | boolean
   status?: Prisma.EnumPublishStatusFilter<"ContentPage"> | $Enums.PublishStatus
   publishedAt?: Prisma.DateTimeNullableFilter<"ContentPage"> | Date | string | null
   createdAt?: Prisma.DateTimeFilter<"ContentPage"> | Date | string
@@ -227,6 +251,9 @@ export type ContentPageOrderByWithRelationInput = {
   eyebrow?: Prisma.SortOrder
   intro?: Prisma.SortOrder
   sections?: Prisma.SortOrder
+  heroImage?: Prisma.SortOrderInput | Prisma.SortOrder
+  videoUrl?: Prisma.SortOrderInput | Prisma.SortOrder
+  inMenu?: Prisma.SortOrder
   status?: Prisma.SortOrder
   publishedAt?: Prisma.SortOrderInput | Prisma.SortOrder
   createdAt?: Prisma.SortOrder
@@ -244,6 +271,9 @@ export type ContentPageWhereUniqueInput = Prisma.AtLeast<{
   eyebrow?: Prisma.StringFilter<"ContentPage"> | string
   intro?: Prisma.StringFilter<"ContentPage"> | string
   sections?: Prisma.JsonFilter<"ContentPage">
+  heroImage?: Prisma.StringNullableFilter<"ContentPage"> | string | null
+  videoUrl?: Prisma.StringNullableFilter<"ContentPage"> | string | null
+  inMenu?: Prisma.BoolFilter<"ContentPage"> | boolean
   status?: Prisma.EnumPublishStatusFilter<"ContentPage"> | $Enums.PublishStatus
   publishedAt?: Prisma.DateTimeNullableFilter<"ContentPage"> | Date | string | null
   createdAt?: Prisma.DateTimeFilter<"ContentPage"> | Date | string
@@ -257,6 +287,9 @@ export type ContentPageOrderByWithAggregationInput = {
   eyebrow?: Prisma.SortOrder
   intro?: Prisma.SortOrder
   sections?: Prisma.SortOrder
+  heroImage?: Prisma.SortOrderInput | Prisma.SortOrder
+  videoUrl?: Prisma.SortOrderInput | Prisma.SortOrder
+  inMenu?: Prisma.SortOrder
   status?: Prisma.SortOrder
   publishedAt?: Prisma.SortOrderInput | Prisma.SortOrder
   createdAt?: Prisma.SortOrder
@@ -276,6 +309,9 @@ export type ContentPageScalarWhereWithAggregatesInput = {
   eyebrow?: Prisma.StringWithAggregatesFilter<"ContentPage"> | string
   intro?: Prisma.StringWithAggregatesFilter<"ContentPage"> | string
   sections?: Prisma.JsonWithAggregatesFilter<"ContentPage">
+  heroImage?: Prisma.StringNullableWithAggregatesFilter<"ContentPage"> | string | null
+  videoUrl?: Prisma.StringNullableWithAggregatesFilter<"ContentPage"> | string | null
+  inMenu?: Prisma.BoolWithAggregatesFilter<"ContentPage"> | boolean
   status?: Prisma.EnumPublishStatusWithAggregatesFilter<"ContentPage"> | $Enums.PublishStatus
   publishedAt?: Prisma.DateTimeNullableWithAggregatesFilter<"ContentPage"> | Date | string | null
   createdAt?: Prisma.DateTimeWithAggregatesFilter<"ContentPage"> | Date | string
@@ -289,6 +325,9 @@ export type ContentPageCreateInput = {
   eyebrow: string
   intro: string
   sections: Prisma.JsonNullValueInput | runtime.InputJsonValue
+  heroImage?: string | null
+  videoUrl?: string | null
+  inMenu?: boolean
   status?: $Enums.PublishStatus
   publishedAt?: Date | string | null
   createdAt?: Date | string
@@ -302,6 +341,9 @@ export type ContentPageUncheckedCreateInput = {
   eyebrow: string
   intro: string
   sections: Prisma.JsonNullValueInput | runtime.InputJsonValue
+  heroImage?: string | null
+  videoUrl?: string | null
+  inMenu?: boolean
   status?: $Enums.PublishStatus
   publishedAt?: Date | string | null
   createdAt?: Date | string
@@ -315,6 +357,9 @@ export type ContentPageUpdateInput = {
   eyebrow?: Prisma.StringFieldUpdateOperationsInput | string
   intro?: Prisma.StringFieldUpdateOperationsInput | string
   sections?: Prisma.JsonNullValueInput | runtime.InputJsonValue
+  heroImage?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  videoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  inMenu?: Prisma.BoolFieldUpdateOperationsInput | boolean
   status?: Prisma.EnumPublishStatusFieldUpdateOperationsInput | $Enums.PublishStatus
   publishedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -328,6 +373,9 @@ export type ContentPageUncheckedUpdateInput = {
   eyebrow?: Prisma.StringFieldUpdateOperationsInput | string
   intro?: Prisma.StringFieldUpdateOperationsInput | string
   sections?: Prisma.JsonNullValueInput | runtime.InputJsonValue
+  heroImage?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  videoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  inMenu?: Prisma.BoolFieldUpdateOperationsInput | boolean
   status?: Prisma.EnumPublishStatusFieldUpdateOperationsInput | $Enums.PublishStatus
   publishedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -341,6 +389,9 @@ export type ContentPageCreateManyInput = {
   eyebrow: string
   intro: string
   sections: Prisma.JsonNullValueInput | runtime.InputJsonValue
+  heroImage?: string | null
+  videoUrl?: string | null
+  inMenu?: boolean
   status?: $Enums.PublishStatus
   publishedAt?: Date | string | null
   createdAt?: Date | string
@@ -354,6 +405,9 @@ export type ContentPageUpdateManyMutationInput = {
   eyebrow?: Prisma.StringFieldUpdateOperationsInput | string
   intro?: Prisma.StringFieldUpdateOperationsInput | string
   sections?: Prisma.JsonNullValueInput | runtime.InputJsonValue
+  heroImage?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  videoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  inMenu?: Prisma.BoolFieldUpdateOperationsInput | boolean
   status?: Prisma.EnumPublishStatusFieldUpdateOperationsInput | $Enums.PublishStatus
   publishedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -367,6 +421,9 @@ export type ContentPageUncheckedUpdateManyInput = {
   eyebrow?: Prisma.StringFieldUpdateOperationsInput | string
   intro?: Prisma.StringFieldUpdateOperationsInput | string
   sections?: Prisma.JsonNullValueInput | runtime.InputJsonValue
+  heroImage?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  videoUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  inMenu?: Prisma.BoolFieldUpdateOperationsInput | boolean
   status?: Prisma.EnumPublishStatusFieldUpdateOperationsInput | $Enums.PublishStatus
   publishedAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -386,6 +443,9 @@ export type ContentPageCountOrderByAggregateInput = {
   eyebrow?: Prisma.SortOrder
   intro?: Prisma.SortOrder
   sections?: Prisma.SortOrder
+  heroImage?: Prisma.SortOrder
+  videoUrl?: Prisma.SortOrder
+  inMenu?: Prisma.SortOrder
   status?: Prisma.SortOrder
   publishedAt?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
@@ -398,6 +458,9 @@ export type ContentPageMaxOrderByAggregateInput = {
   title?: Prisma.SortOrder
   eyebrow?: Prisma.SortOrder
   intro?: Prisma.SortOrder
+  heroImage?: Prisma.SortOrder
+  videoUrl?: Prisma.SortOrder
+  inMenu?: Prisma.SortOrder
   status?: Prisma.SortOrder
   publishedAt?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
@@ -410,6 +473,9 @@ export type ContentPageMinOrderByAggregateInput = {
   title?: Prisma.SortOrder
   eyebrow?: Prisma.SortOrder
   intro?: Prisma.SortOrder
+  heroImage?: Prisma.SortOrder
+  videoUrl?: Prisma.SortOrder
+  inMenu?: Prisma.SortOrder
   status?: Prisma.SortOrder
   publishedAt?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
@@ -425,6 +491,9 @@ export type ContentPageSelect<ExtArgs extends runtime.Types.Extensions.InternalA
   eyebrow?: boolean
   intro?: boolean
   sections?: boolean
+  heroImage?: boolean
+  videoUrl?: boolean
+  inMenu?: boolean
   status?: boolean
   publishedAt?: boolean
   createdAt?: boolean
@@ -440,13 +509,16 @@ export type ContentPageSelectScalar = {
   eyebrow?: boolean
   intro?: boolean
   sections?: boolean
+  heroImage?: boolean
+  videoUrl?: boolean
+  inMenu?: boolean
   status?: boolean
   publishedAt?: boolean
   createdAt?: boolean
   updatedAt?: boolean
 }
 
-export type ContentPageOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "slug" | "title" | "eyebrow" | "intro" | "sections" | "status" | "publishedAt" | "createdAt" | "updatedAt", ExtArgs["result"]["contentPage"]>
+export type ContentPageOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "slug" | "title" | "eyebrow" | "intro" | "sections" | "heroImage" | "videoUrl" | "inMenu" | "status" | "publishedAt" | "createdAt" | "updatedAt", ExtArgs["result"]["contentPage"]>
 
 export type $ContentPagePayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "ContentPage"
@@ -458,6 +530,9 @@ export type $ContentPagePayload<ExtArgs extends runtime.Types.Extensions.Interna
     eyebrow: string
     intro: string
     sections: runtime.JsonValue
+    heroImage: string | null
+    videoUrl: string | null
+    inMenu: boolean
     status: $Enums.PublishStatus
     publishedAt: Date | null
     createdAt: Date
@@ -837,6 +912,9 @@ export interface ContentPageFieldRefs {
   readonly eyebrow: Prisma.FieldRef<"ContentPage", 'String'>
   readonly intro: Prisma.FieldRef<"ContentPage", 'String'>
   readonly sections: Prisma.FieldRef<"ContentPage", 'Json'>
+  readonly heroImage: Prisma.FieldRef<"ContentPage", 'String'>
+  readonly videoUrl: Prisma.FieldRef<"ContentPage", 'String'>
+  readonly inMenu: Prisma.FieldRef<"ContentPage", 'Boolean'>
   readonly status: Prisma.FieldRef<"ContentPage", 'PublishStatus'>
   readonly publishedAt: Prisma.FieldRef<"ContentPage", 'DateTime'>
   readonly createdAt: Prisma.FieldRef<"ContentPage", 'DateTime'>

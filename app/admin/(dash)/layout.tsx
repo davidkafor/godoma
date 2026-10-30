@@ -25,7 +25,7 @@ export default async function DashboardLayout({ children }: { children: React.Re
     { heading: 'Overview', items: [{ href: '/admin', label: 'Dashboard' }] },
     {
       heading: 'Website',
-      items: [link('hero'), { href: '/admin/pages', label: 'Pages' }, link('posts'), link('testimonials'), link('partners')],
+      items: [{ href: '/admin/homepage', label: 'Homepage' }, link('hero'), { href: '/admin/pages', label: 'Pages' }, link('posts'), link('testimonials'), link('partners')],
     },
     { heading: 'Academics', items: [link('departments'), link('courses')] },
     { heading: 'People & campus', items: [link('staff'), link('facilities'), link('gallery')] },

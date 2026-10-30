@@ -8,6 +8,8 @@ import { TopBar } from '@/components/site/top-bar'
 import { SiteFooter } from '@/components/site/site-footer'
 import { MessageForm } from '@/components/site/message-form'
 import { news } from '@/lib/site-data'
+import { getContentPage } from '@/lib/content'
+import { parseVideo } from '@/lib/video'
 
 const pages = {
   about: { title: 'About Godoma TTI', eyebrow: 'Our institute', intro: 'Godoma Technical Training Institute is a public technical training institute in Vitengeni, Kilifi County, committed to equipping youth with practical, entrepreneurial and employable skills.', sections: [['Who we are', 'Godoma TTI is the first public sub-county technical training institute in Kilifi County. Since opening in 2016, the institute has provided accessible technical and vocational education and training for young people and working adults across the region.'], ['Our role in Kenya', 'The institute contributes to Kenya’s skills development agenda by preparing competent graduates for employment, self-employment, enterprise, innovation and further learning. Training combines classroom knowledge, practical workshop experience, digital literacy, industry exposure and responsible citizenship.'], ['Vision', 'To be a centre of excellence in technical training.'], ['Mission', 'To provide quality, relevant and accessible technical training for sustainable development.'], ['Core values', 'Respect, quality, excellence, integrity, discipline, equity and teamwork.'], ['Training environment', 'Godoma TTI offers a supportive learning environment with practical workshops, ICT laboratories, a library, student support services, co-curricular activities, industry engagement and dedicated teaching and non-teaching staff.'], ['Academic departments', 'The institute delivers training through Electrical and Electronics Engineering, Building and Civil Engineering, Computing and Informatics, Tourism and Hospitality, Mechanical Engineering, Fashion and Cosmetology, Agricultural Studies, and Business and Liberal Studies. Programmes include TVET CDACC Level 4, 5 and 6 courses and 6-month short courses, subject to current course offerings and entry requirements.'], ['Brief history', 'Godoma Technical Training Institute was commissioned in November 2016 and is located in Vitengeni near Kilifi County. The campus sits in a serene setting bordering the famous Dida Forest, where the welcoming local community promotes peaceful coexistence. The institute continues to grow as a centre for quality learning, research, innovation and practical skills development.'], ['Partners and quality assurance', 'Godoma TTI works within Kenya’s TVET system and engages with national education, examination, placement, loans and industrial training institutions, including TVETA, KNEC, KUCCPS, HELB and NITA.']] },
@@ -52,8 +54,29 @@ export function generateStaticParams() { return Object.keys(pages).map((slug) =>
 
 export default async function InformationPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
-  const page = pages[slug as keyof typeof pages]
-  if (!page) notFound()
+  const builtIn = pages[slug as keyof typeof pages] as unknown as { title: string; eyebrow: string; intro: string; sections: string[][] } | undefined
+  const stored = await getContentPage(slug)
+  if (!builtIn && !stored) notFound()
+  const page: { title: string; eyebrow: string; intro: string; sections: string[][] } = stored
+    ? { title: stored.title, eyebrow: stored.eyebrow, intro: stored.intro, sections: stored.sections.map(([heading, ...rest]) => [heading, rest.join('\n\n')]) }
+    : builtIn!
+  const video = parseVideo(stored?.videoUrl)
+  const extras = (stored?.heroImage || video) && (
+    <section className="bg-background py-10">
+      <div className="mx-auto grid max-w-5xl gap-8 px-4 lg:px-8">
+        {stored?.heroImage && <img src={stored.heroImage} alt="" className="max-h-[32rem] w-full rounded-lg object-cover shadow-md" />}
+        {video && (
+          <div className="aspect-video overflow-hidden rounded-lg bg-muted shadow-md">
+            {video.kind === 'embed' ? (
+              <iframe src={video.src} title={`${page.title} video`} loading="lazy" className="h-full w-full" allow="encrypted-media; picture-in-picture; fullscreen" allowFullScreen />
+            ) : (
+              <video src={video.src} controls preload="metadata" className="h-full w-full" />
+            )}
+          </div>
+        )}
+      </div>
+    </section>
+  )
   const isGovernance = slug === 'governance'
   const isAbout = slug === 'about'
   const isDownloads = slug === 'downloads'
@@ -75,7 +98,7 @@ export default async function InformationPage({ params }: { params: Promise<{ sl
     'Thank you for choosing Godoma Technical Training Institute. Together, let us build a future founded on skills, innovation, integrity, and opportunity.',
     'Welcome to Godoma TTI — where skills are nurtured, talents are transformed, and futures are built.',
   ]
-  return <><TopBar /><SiteHeader /><main key={slug}><section className="border-b border-primary/10 bg-primary py-20 text-primary-foreground sm:py-24"><div className="mx-auto max-w-7xl px-4 lg:px-8"><p className="text-xs font-bold uppercase tracking-[0.24em] text-accent">{page.eyebrow}</p><h1 className="mt-4 max-w-4xl text-balance text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl">{page.title}</h1><p className="mt-5 max-w-3xl text-pretty text-lg leading-relaxed text-primary-foreground/80">{page.intro}</p></div></section>{slug === 'trainees' && <section id="downloads" className="border-b bg-card py-12"><div className="mx-auto max-w-5xl px-4"><div className="mb-6"><p className="text-sm font-bold uppercase tracking-[0.2em] text-accent">Student resources</p><h2 className="mt-2 text-3xl font-extrabold text-primary">Trainee downloads</h2><p className="mt-2 max-w-2xl leading-relaxed text-muted-foreground">Download the forms, guides and official resources you need during your training journey.</p></div><div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">{[
+  return <><TopBar /><SiteHeader /><main key={slug}><section className="border-b border-primary/10 bg-primary py-20 text-primary-foreground sm:py-24"><div className="mx-auto max-w-7xl px-4 lg:px-8"><p className="text-xs font-bold uppercase tracking-[0.24em] text-accent">{page.eyebrow}</p><h1 className="mt-4 max-w-4xl text-balance text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl">{page.title}</h1><p className="mt-5 max-w-3xl text-pretty text-lg leading-relaxed text-primary-foreground/80">{page.intro}</p></div></section>{extras}{slug === 'trainees' && <section id="downloads" className="border-b bg-card py-12"><div className="mx-auto max-w-5xl px-4"><div className="mb-6"><p className="text-sm font-bold uppercase tracking-[0.2em] text-accent">Student resources</p><h2 className="mt-2 text-3xl font-extrabold text-primary">Trainee downloads</h2><p className="mt-2 max-w-2xl leading-relaxed text-muted-foreground">Download the forms, guides and official resources you need during your training journey.</p></div><div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">{[
   ['Admission joining instructions', '/downloads/admission-joining-instructions.pdf'],
   ['Application form', '/downloads/application-form.pdf'],
   ['Student personal details form', '/downloads/student-personal-details-form.pdf'],

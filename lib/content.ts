@@ -1,6 +1,7 @@
 import { databaseConfigured, prisma } from '@/lib/prisma'
 import * as fallback from '@/lib/site-data'
 import type { Department } from '@/lib/site-data'
+import { defaultHome, mergeHome, type HomeContent } from '@/lib/home-defaults'
 
 /**
  * Server-side readers for the public website. Only published content is returned.
@@ -246,5 +247,29 @@ export async function getContentPage(slug: string) {
       return page ? { ...page, sections: (Array.isArray(page.sections) ? page.sections : []) as string[][] } : null
     },
     null,
+  )
+}
+
+/** Editable homepage copy, images and section order. Falls back to the built-in defaults. */
+export function getHome(): Promise<HomeContent> {
+  return safe(
+    'home',
+    async () => {
+      const row = await prisma.siteSetting.findUnique({ where: { key: 'home' } })
+      return row ? mergeHome(row.value) : defaultHome
+    },
+    defaultHome,
+  )
+}
+
+/** Published pages the admin has chosen to show in the site menu. */
+export function getMenuPages() {
+  return safe(
+    'menu-pages',
+    async () => {
+      const rows = await prisma.contentPage.findMany({ where: { ...published(), inMenu: true }, orderBy: { title: 'asc' }, select: { slug: true, title: true } })
+      return rows
+    },
+    [] as { slug: string; title: string }[],
   )
 }

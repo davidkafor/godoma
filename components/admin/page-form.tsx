@@ -6,6 +6,7 @@ import { ArrowDown, ArrowUp, Eye, Loader2, Plus, Trash2 } from 'lucide-react'
 import { savePage } from '@/lib/admin/page-actions'
 import type { FormState } from '@/lib/admin/crud'
 import { Notice } from './page-header'
+import { MediaField } from './media-field'
 import { btnGhost, btnPrimary, btnSecondary, inputClass, labelClass } from './styles'
 
 type Section = { key: number; heading: string; body: string }
@@ -17,13 +18,14 @@ type Props = {
   status: 'DRAFT' | 'PUBLISHED'
   publishedAt: string
   canPublish: boolean
+  media: { heroImage: string; videoUrl: string; inMenu: boolean }
 }
 
-export function PageForm({ slug, values, sections: initial, status, publishedAt, canPublish }: Props) {
+export function PageForm({ slug, values, sections: initial, status, publishedAt, canPublish, media }: Props) {
   const [state, action, pending] = useActionState<FormState, FormData>(savePage.bind(null, slug), {})
   const [sections, setSections] = useState<Section[]>(() => initial.map((s, key) => ({ key, ...s })))
   const [nextKey, setNextKey] = useState(initial.length)
-  const ids = { title: useId(), eyebrow: useId(), intro: useId(), status: useId(), date: useId() }
+  const ids = { video: useId(), title: useId(), eyebrow: useId(), intro: useId(), status: useId(), date: useId() }
   const err = state.fieldErrors ?? {}
 
   const move = (index: number, delta: number) =>
@@ -68,6 +70,23 @@ export function PageForm({ slug, values, sections: initial, status, publishedAt,
             {err.intro && (
               <p role="alert" className="mt-1 text-xs font-semibold text-destructive">
                 {err.intro}
+              </p>
+            )}
+          </div>
+        </div>
+
+        <div className="space-y-5 rounded-lg border border-border bg-card p-4 sm:p-6">
+          <h2 className="text-lg font-extrabold text-primary">Image and video</h2>
+          <MediaField name="heroImage" label="Page image (optional)" kind="IMAGE" defaultValue={media.heroImage} help="Shown under the page title. Upload a file or choose one from the media library." error={err.heroImage} />
+          <div>
+            <label htmlFor={ids.video} className={labelClass}>
+              Video link (optional)
+            </label>
+            <input id={ids.video} name="videoUrl" type="url" defaultValue={media.videoUrl} placeholder="https://www.youtube.com/watch?v=…" maxLength={500} className={inputClass} aria-invalid={err.videoUrl ? true : undefined} />
+            <p className="mt-1 text-xs text-muted-foreground">YouTube, Vimeo, or a direct https link to an .mp4 or .webm file.</p>
+            {err.videoUrl && (
+              <p role="alert" className="mt-1 text-xs font-semibold text-destructive">
+                {err.videoUrl}
               </p>
             )}
           </div>
@@ -144,6 +163,13 @@ export function PageForm({ slug, values, sections: initial, status, publishedAt,
             </p>
           )}
         </div>
+        <label className="flex items-start gap-2 text-sm font-semibold">
+          <input type="checkbox" name="inMenu" defaultChecked={media.inMenu} className="mt-1 size-4 accent-primary" />
+          <span>
+            Show in the website menu
+            <span className="block text-xs font-normal text-muted-foreground">Adds this page under “More” in the main navigation.</span>
+          </span>
+        </label>
         <div className="flex flex-col gap-2">
           <button type="submit" disabled={pending} className={btnPrimary}>
             {pending && <Loader2 className="size-4 animate-spin" aria-hidden="true" />}

@@ -4,6 +4,9 @@ import { prisma } from '@/lib/prisma'
 import { requireSession } from '@/lib/auth/session'
 import { can } from '@/lib/auth/permissions'
 import { toInputValue } from '@/lib/admin/dates'
+import { Trash2 } from 'lucide-react'
+import { deletePage } from '@/lib/admin/page-actions'
+import { btnSecondary } from '@/components/admin/styles'
 import { PageHeader } from '@/components/admin/page-header'
 import { PageForm } from '@/components/admin/page-form'
 import { StatusBadge } from '@/components/admin/status-badge'
@@ -27,7 +30,19 @@ export default async function EditPage({ params }: { params: Promise<{ slug: str
         title={page.title}
         description={`Public address: /${page.slug}`}
         crumbs={[{ href: '/admin', label: 'Dashboard' }, { href: '/admin/pages', label: 'Pages' }, { label: 'Edit' }]}
-        actions={<StatusBadge value={page.status} publishedAt={page.publishedAt} />}
+        actions={
+          <>
+            <StatusBadge value={page.status} publishedAt={page.publishedAt} />
+            {can(session.user.role, 'content:publish') && (
+              <form action={deletePage.bind(null, slug)}>
+                <button type="submit" className={`${btnSecondary} text-destructive`}>
+                  <Trash2 className="size-4" aria-hidden="true" />
+                  Delete page
+                </button>
+              </form>
+            )}
+          </>
+        }
       />
       <PageForm
         slug={slug}
@@ -35,6 +50,7 @@ export default async function EditPage({ params }: { params: Promise<{ slug: str
         sections={sections}
         status={page.status === 'PUBLISHED' ? 'PUBLISHED' : 'DRAFT'}
         publishedAt={toInputValue(page.publishedAt)}
+        media={{ heroImage: page.heroImage ?? '', videoUrl: page.videoUrl ?? '', inMenu: page.inMenu }}
         canPublish={can(session.user.role, 'content:publish')}
       />
     </>

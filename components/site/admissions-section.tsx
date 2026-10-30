@@ -2,8 +2,9 @@ import { FileText, Phone, Wallet } from 'lucide-react'
 import { buttonVariants } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
 import { getContact, getDepartments } from '@/lib/content'
+import type { HomeContent } from '@/lib/home-defaults'
 
-export async function AdmissionsSection() {
+export async function AdmissionsSection({ content }: { content: HomeContent['admissions'] }) {
   const [contact, departments] = await Promise.all([getContact(), getDepartments()])
   const levels = [
     { level: 'TVET CDACC Level 6', courseLevel: '(Level 6)' },
@@ -22,16 +23,12 @@ export async function AdmissionsSection() {
     >
       <div className="mx-auto grid max-w-7xl gap-12 px-4 lg:grid-cols-2">
         <div>
-          <p className="text-sm font-bold uppercase tracking-widest text-accent">Admissions</p>
+          <p className="text-sm font-bold uppercase tracking-widest text-accent">{content.eyebrow}</p>
           <h2 id="admissions-heading" className="mt-2 text-balance text-3xl font-extrabold sm:text-4xl">
-            Start Your Technical Career at Godoma TTI
+            {content.heading}
           </h2>
           <div className="mt-4 h-1 w-16 rounded-full bg-accent" aria-hidden="true" />
-            <p className="mt-5 leading-relaxed text-primary-foreground/80">
-            Applications are accepted online and offline for the January, May and September intakes. Submit photocopies
-            of your National ID, birth certificate, KCSE and KCPE result slips, and leaving certificate addressed to
-            the Principal, Godoma Technical Training Institute.
-          </p>
+            <p className="mt-5 leading-relaxed text-primary-foreground/80">{content.intro}</p>
 
           <ul className="mt-8 space-y-4">
             <li className="flex gap-4">
@@ -49,9 +46,9 @@ export async function AdmissionsSection() {
             <li className="flex gap-4">
               <Wallet className="size-6 shrink-0 text-accent" aria-hidden="true" />
               <div>
-                <p className="font-bold">HELB TVET loans & bursaries</p>
+                <p className="font-bold">{content.helbTitle}</p>
                 <p className="text-sm text-primary-foreground/80">
-                  Up to Kshs. 40,000 per year, upkeep inclusive, for eligible TVET CDACC trainees.
+                  {content.helbText}
                 </p>
               </div>
             </li>
@@ -71,20 +68,20 @@ export async function AdmissionsSection() {
               href="/apply"
               className={cn(buttonVariants(), 'h-12 bg-accent px-6 text-base font-bold text-accent-foreground hover:bg-accent/90')}
             >
-              Apply Now!
+              {content.applyLabel}
             </a>
             <a
               href="/trainees#portal"
               className={cn(buttonVariants({ variant: 'outline' }), 'h-12 border-primary-foreground/50 bg-transparent px-6 text-base font-semibold text-primary-foreground hover:bg-primary-foreground hover:text-primary')}
             >
-              Students Portal
+              {content.portalLabel}
             </a>
           </div>
         </div>
 
         <div id="entry-requirements" className="scroll-mt-24 rounded-lg bg-background p-6 text-foreground shadow-2xl sm:p-8">
-          <h3 className="text-xl font-bold text-primary">Entry Requirements</h3>
-          <p className="mt-1 text-sm text-muted-foreground">Current minimum entry requirements for Godoma TTI programmes.</p>
+          <h3 className="text-xl font-bold text-primary">{content.tableTitle}</h3>
+          <p className="mt-1 text-sm text-muted-foreground">{content.tableNote}</p>
           <div className="mt-6 grid grid-cols-[1fr_auto] gap-x-4 border-b pb-2 text-xs font-bold uppercase tracking-wider text-muted-foreground">
             <span>Programme level</span>
             <span>Minimum requirement</span>
@@ -102,7 +99,7 @@ export async function AdmissionsSection() {
               </li>
             ))}
           </ul>
-          <p className="mt-5 text-xs leading-relaxed text-muted-foreground">Applicants should also submit the required identification and academic documents listed on this page.</p>
+          <p className="mt-5 text-xs leading-relaxed text-muted-foreground">{content.footnote}</p>
         </div>
       </div>
     </section>

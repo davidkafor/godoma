@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { Mail, MapPin, Phone } from 'lucide-react'
-import { getContact } from '@/lib/content'
+import { getContact, getHome } from '@/lib/content'
 import { SocialIcons } from './social-icons'
 
 const quickLinks = [
@@ -22,7 +22,7 @@ const importantPages = [
 ]
 
 export async function SiteFooter() {
-  const contact = await getContact()
+  const [contact, home] = await Promise.all([getContact(), getHome()])
   return (
     <footer id="contact" className="bg-primary text-primary-foreground">
       <div className="mx-auto grid max-w-7xl gap-12 px-4 py-16 sm:grid-cols-2 lg:grid-cols-[1.2fr_0.8fr_0.8fr_1fr] lg:px-8">
@@ -31,7 +31,7 @@ export async function SiteFooter() {
             <Image src="/images/godoma-main-logo.webp" alt="Godoma Technical Training Institute" width={960} height={261} className="h-auto w-full max-w-sm" />
           </div>
           <p className="mt-5 text-sm leading-relaxed text-primary-foreground/75">
-            A centre of excellence in technical training, research and business incubation in Kilifi County.
+            {home.footer.tagline}
           </p>
           <SocialIcons className="mt-5" iconClassName="size-9 bg-primary-foreground/10" />
         </div>

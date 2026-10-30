@@ -195,6 +195,9 @@ model ContentPage {
   eyebrow     String        @db.VarChar(255)
   intro       String        @db.Text
   sections    Json
+  heroImage   String?       @db.VarChar(500)
+  videoUrl    String?       @db.VarChar(500)
+  inMenu      Boolean       @default(false)
   status      PublishStatus @default(PUBLISHED)
   publishedAt DateTime?
   createdAt   DateTime      @default(now())
