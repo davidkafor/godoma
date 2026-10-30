@@ -26,6 +26,7 @@ export const navigation: NavGroup[] = [
       { label: 'Vision, Mission & Core Values', href: '/about' },
       { label: 'Brief History', href: '/about#history' },
       { label: 'Governance', href: '/governance' },
+      { label: 'Service Charter', href: '/service-charter' },
     ],
   },
   {
