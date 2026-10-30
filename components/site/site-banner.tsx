@@ -2,7 +2,7 @@ import Image from 'next/image'
 
 export function SiteBanner() {
   return (
-    <div className="bg-white">
+    <div className="bg-[#fff4d7]">
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-2 px-3 py-1.5 sm:gap-6 sm:px-8 sm:py-2">
         <Image
           src="/images/charter/coat-of-arms.png"
