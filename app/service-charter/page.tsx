@@ -24,7 +24,7 @@ type CharterLanguage = {
 
 const tagline = 'Quality Learning for Academic and Technological Excellence'
 const address = 'P.O. Box 1808-80108, Kilifi, Kenya'
-const email = 'godomatti@gmail.com'
+const email = 'godomatti.gtti@gmail.com'
 const website = 'www.godomatti.ac.ke'
 
 const english: CharterLanguage = {

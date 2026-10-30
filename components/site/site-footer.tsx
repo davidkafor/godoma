@@ -100,7 +100,7 @@ export async function SiteFooter() {
         <div className="overflow-hidden rounded-lg border border-primary-foreground/10 bg-secondary">
           <iframe
             title="Map showing Godoma Technical Training Institute in Vitengeni, Kilifi"
-            src="https://www.openstreetmap.org/export/embed.html?bbox=39.7600%2C-3.8200%2C39.8400%2C-3.7400&layer=mapnik&marker=-3.7800%2C39.8000"
+            src="https://www.openstreetmap.org/export/embed.html?bbox=39.6900%2C-3.3800%2C39.7300%2C-3.3480&layer=mapnik&marker=-3.3640%2C39.7100"
             className="h-64 w-full border-0"
             loading="lazy"
             referrerPolicy="no-referrer"
@@ -111,7 +111,7 @@ export async function SiteFooter() {
               <p className="mt-1 text-sm">Vitengeni, Kilifi County, Kenya</p>
             </div>
             <a
-              href={contact.mapEmbed}
+              href="https://www.google.com/maps/dir/?api=1&destination=-3.3640,39.7100"
               target="_blank"
               rel="noreferrer"
               className="shrink-0 text-sm font-semibold text-primary underline-offset-4 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"

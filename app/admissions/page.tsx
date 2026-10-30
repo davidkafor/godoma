@@ -17,8 +17,11 @@ const buildLevels = (departments: Department[]) => [
   { level: 'TVET CDACC Level 4', courseLevel: '(Level 4)' },
   { level: 'Short Courses', courseLevel: 'Open' },
 ].map(({ level, courseLevel }) => {
-  const course = departments.flatMap((department) => department.courses).find((item) => item.name.includes(courseLevel))
-  return { level, requirement: course?.requirement ?? 'Open', duration: course?.duration ?? '6 Months' }
+  const courses = departments.flatMap((department) => department.courses)
+  const course = courseLevel === 'Open'
+    ? courses.find((item) => item.requirement === 'Open')
+    : courses.find((item) => item.name.includes(courseLevel))
+  return { level, requirement: course?.requirement ?? 'Open', duration: course?.duration ?? '3 Months' }
 })
 
 export default async function AdmissionsPage() {
