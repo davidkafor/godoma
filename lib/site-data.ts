@@ -36,7 +36,9 @@ export const navigation: NavGroup[] = [
           { label: 'Principal Office', href: '/principal-office' },
       { label: 'Deputy Principal — Administration', href: '/deputy-principal-administration' },
       { label: 'Deputy Principal — Academics', href: '/deputy-principal-academics' },
-  { label: 'Dean of Students', href: '/dean-of-students' },
+    { label: 'Dean of Students', href: '/dean-of-students' },
+    { label: 'Registrar Office', href: '/registrar-office' },
+
       { label: 'Finance Office', href: '/finance' },
       { label: 'Procurement Office', href: '/procurement' },
   ],
@@ -46,8 +48,8 @@ export const navigation: NavGroup[] = [
     href: '/admissions',
   items: [
   { label: 'Online Application', href: '/apply' },
-  { label: 'Entry Requirements', href: '/admissions#entry-requirements' },
-  { label: 'Registrar Office', href: '/registrar-office' },
+    { label: 'Entry Requirements', href: '/admissions#entry-requirements' },
+
       { label: 'Student Funding', href: '/funding' },
             ],
   },
