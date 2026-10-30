@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import { Download, Globe, Mail, MapPin } from 'lucide-react'
 import { SiteFooter } from '@/components/site/site-footer'
 import { SiteHeader } from '@/components/site/site-header'
@@ -93,9 +94,29 @@ function CharterTable({ data }: { data: CharterLanguage }) {
   return (
     <section id={data.id} lang={data.lang} aria-labelledby={`${data.id}-heading`} className="scroll-mt-24">
       <div className="overflow-hidden rounded-lg border bg-card shadow-sm">
-        <div className="bg-primary px-5 py-5 text-primary-foreground sm:px-8">
-          <p className="text-xs font-bold uppercase tracking-[0.2em] text-accent">Godoma Technical Training Institute</p>
-          <h2 id={`${data.id}-heading`} className="mt-2 text-balance text-2xl font-extrabold uppercase sm:text-3xl">
+        <div className="flex items-center justify-between gap-2 bg-[#fff4d7] px-3 py-4 sm:gap-6 sm:px-8 sm:py-6">
+          <Image
+            src="/images/charter/coat-of-arms.png"
+            alt="Coat of arms of the Republic of Kenya"
+            width={435}
+            height={428}
+            className="h-14 w-auto shrink-0 sm:h-24 lg:h-32"
+          />
+          <p className="text-balance text-center text-xl font-black uppercase leading-[1.05] tracking-tight text-[#2d358f] sm:text-4xl lg:text-6xl">
+            Godoma Technical
+            <br />
+            Training Institute
+          </p>
+          <Image
+            src="/images/charter/gtti-logo.png"
+            alt="Godoma Technical Training Institute logo"
+            width={578}
+            height={480}
+            className="h-14 w-auto shrink-0 sm:h-24 lg:h-32"
+          />
+        </div>
+        <div className="bg-[#2a2e7d] px-5 py-2 text-center text-white sm:py-3">
+          <h2 id={`${data.id}-heading`} className="text-balance text-lg font-extrabold uppercase sm:text-3xl">
             {data.title}
           </h2>
         </div>
@@ -103,7 +124,7 @@ function CharterTable({ data }: { data: CharterLanguage }) {
         <div className="hidden overflow-x-auto md:block">
           <table className="w-full border-collapse text-left text-sm">
             <thead>
-              <tr className="bg-muted text-xs font-bold uppercase tracking-wide text-primary">
+              <tr className="bg-[#2a2e7d] text-xs font-bold uppercase tracking-wide text-white">
                 <th scope="col" className="w-14 px-4 py-3">{columns.sn}</th>
                 <th scope="col" className="px-4 py-3">{columns.service}</th>
                 <th scope="col" className="px-4 py-3">{columns.customer}</th>
@@ -113,12 +134,12 @@ function CharterTable({ data }: { data: CharterLanguage }) {
             </thead>
             <tbody>
               {rows.map((row, index) => (
-                <tr key={row.service} className="border-t align-top odd:bg-background even:bg-muted/30">
-                  <td className="px-4 py-4 font-bold text-accent">{index + 1}.</td>
-                  <th scope="row" className="px-4 py-4 font-semibold text-primary">{row.service}</th>
-                  <td className="px-4 py-4 leading-relaxed text-foreground/80">{row.customer}</td>
-                  <td className="px-4 py-4 leading-relaxed text-foreground/80">{row.ours}</td>
-                  <td className="px-4 py-4 font-medium leading-relaxed text-foreground">{row.time}</td>
+                <tr key={row.service} className="border-t border-[#2a2e7d]/30 bg-white align-top text-[#1a1a1a]">
+                  <td className="px-4 py-4 font-bold text-[#1a1a1a]">{index + 1}.</td>
+                  <th scope="row" className="px-4 py-4 font-semibold text-[#1a1a1a]">{row.service}</th>
+                  <td className="px-4 py-4 leading-relaxed text-[#1a1a1a]">{row.customer}</td>
+                  <td className="px-4 py-4 leading-relaxed text-[#1a1a1a]">{row.ours}</td>
+                  <td className="px-4 py-4 font-semibold leading-relaxed text-[#1a1a1a]">{row.time}</td>
                 </tr>
               ))}
             </tbody>
@@ -135,11 +156,11 @@ function CharterTable({ data }: { data: CharterLanguage }) {
               <dl className="mt-4 grid gap-3 text-sm">
                 <div>
                   <dt className="text-xs font-bold uppercase tracking-wide text-accent">{columns.customer}</dt>
-                  <dd className="mt-1 leading-relaxed text-foreground/80">{row.customer}</dd>
+                  <dd className="mt-1 leading-relaxed text-[#1a1a1a]">{row.customer}</dd>
                 </div>
                 <div>
                   <dt className="text-xs font-bold uppercase tracking-wide text-accent">{columns.ours}</dt>
-                  <dd className="mt-1 leading-relaxed text-foreground/80">{row.ours}</dd>
+                  <dd className="mt-1 leading-relaxed text-[#1a1a1a]">{row.ours}</dd>
                 </div>
                 <div>
                   <dt className="text-xs font-bold uppercase tracking-wide text-accent">{columns.time}</dt>
@@ -150,12 +171,14 @@ function CharterTable({ data }: { data: CharterLanguage }) {
           ))}
         </ol>
 
-        <div className="border-t bg-muted/40 px-5 py-5 sm:px-8">
-          <p className="font-semibold text-primary">{tagline}</p>
-          <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+        <div className="bg-white px-5 pt-4 text-center text-[#1a1a1a]">
+          <p className="text-balance font-bold sm:text-lg">{data.footnote}</p>
+          <p className="mt-1 pb-3 text-xs leading-relaxed tracking-wider text-[#2a2e7d] sm:text-sm">
             Address: {address} &nbsp;|&nbsp; Email: {email} &nbsp;|&nbsp; Website: {website}
           </p>
-          <p className="mt-3 text-sm font-medium text-foreground">{data.footnote}</p>
+        </div>
+        <div className="bg-[#648d3c] px-5 py-2 text-center text-sm font-medium italic tracking-widest text-white sm:text-lg">
+          {tagline}
         </div>
       </div>
     </section>
