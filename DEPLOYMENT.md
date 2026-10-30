@@ -71,6 +71,23 @@ Never run plain `npm install` here: it would create a `package-lock.json` and ma
 
 Then press **Restart** on the Node.js App page.
 
+### Building in GitHub Codespaces (Node 24 default, server on Node 20)
+
+Codespaces installs Node 24 by default, but the server runs Node 20. Build with the same major version the server runs, otherwise the build can use syntax or APIs that Node 20 does not have, and native packages are compiled for the wrong runtime. The repository includes an `.nvmrc` set to `20`, so in the Codespace terminal:
+
+```bash
+nvm install        # reads .nvmrc and installs Node 20
+nvm use            # switch this terminal to Node 20
+node --version     # must print v20.x
+corepack enable
+pnpm install --frozen-lockfile
+pnpm run build
+```
+
+Run `nvm use` again in every new terminal. Then upload the project to the server and, **on the server**, run `pnpm install --frozen-lockfile` and `pnpm run db:migrate` as in the steps above. Do not upload `node_modules` or `generated` from the Codespace: Prisma and other native packages must be installed on the server so they match its operating system.
+
+If you only upload the built `.next` folder (for example because the server runs out of memory during the build), it must come from a Node 20 build.
+
 ## 6. Create the first administrator
 
 There is no public sign-up and no default password. Run once on the server:
