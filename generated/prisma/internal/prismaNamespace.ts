@@ -1956,6 +1956,9 @@ export const ContentPageScalarFieldEnum = {
   eyebrow: 'eyebrow',
   intro: 'intro',
   sections: 'sections',
+  heroImage: 'heroImage',
+  videoUrl: 'videoUrl',
+  inMenu: 'inMenu',
   status: 'status',
   publishedAt: 'publishedAt',
   createdAt: 'createdAt',
@@ -2280,7 +2283,9 @@ export const ContentPageOrderByRelevanceFieldEnum = {
   slug: 'slug',
   title: 'title',
   eyebrow: 'eyebrow',
-  intro: 'intro'
+  intro: 'intro',
+  heroImage: 'heroImage',
+  videoUrl: 'videoUrl'
 } as const
 
 export type ContentPageOrderByRelevanceFieldEnum = (typeof ContentPageOrderByRelevanceFieldEnum)[keyof typeof ContentPageOrderByRelevanceFieldEnum]

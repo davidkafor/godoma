@@ -164,6 +164,12 @@ async function main() {
         sortOrder: i,
       },
     })
+    if (m.photo) {
+      await prisma.staffProfile.updateMany({
+        where: { seedKey: `board-${i + 1}`, photo: null },
+        data: { photo: m.photo },
+      })
+    }
   }
   for (const [i, m] of leadership.entries()) {
     await prisma.staffProfile.upsert({

@@ -1,11 +1,11 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { Pencil, Search } from 'lucide-react'
+import { Pencil, Plus, Search } from 'lucide-react'
 import { prisma } from '@/lib/prisma'
 import { requireSession } from '@/lib/auth/session'
 import { EmptyState, PageHeader } from '@/components/admin/page-header'
 import { StatusBadge } from '@/components/admin/status-badge'
-import { btnGhost, btnSecondary, inputClass } from '@/components/admin/styles'
+import { btnGhost, btnPrimary, btnSecondary, inputClass } from '@/components/admin/styles'
 
 export const metadata: Metadata = { title: 'Pages' }
 
@@ -20,7 +20,16 @@ export default async function PagesList({ searchParams }: { searchParams: Promis
 
   return (
     <>
-      <PageHeader title="Pages" description="Edit the text of informational pages such as About, Governance, Admissions and Contact." />
+      <PageHeader
+        title="Pages"
+        description="Create new pages and edit the text, image and video of existing ones."
+        actions={
+          <Link href="/admin/pages/new" className={btnPrimary}>
+            <Plus className="size-4" aria-hidden="true" />
+            New page
+          </Link>
+        }
+      />
       <form method="get" role="search" aria-label="Search pages" className="mb-4 flex gap-2">
         <div className="relative min-w-0 flex-1">
           <label htmlFor="q" className="sr-only">

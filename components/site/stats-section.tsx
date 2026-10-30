@@ -1,14 +1,25 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
-import { BookOpen, Building2, CalendarCheck, Users } from 'lucide-react'
+import { BookOpen, Building2, CalendarCheck, Hash, Users } from 'lucide-react'
+import type { HomeStat } from '@/lib/home-defaults'
 
-const buildStats = (totalCourses: number, departmentCount: number) => [
-  { icon: BookOpen, value: totalCourses, suffix: '', label: 'Courses Offered', noAnimate: false },
-  { icon: Building2, value: departmentCount, suffix: '', label: 'Academic Departments', noAnimate: false },
-  { icon: Users, value: 3, suffix: '', label: 'Training Levels', noAnimate: false },
-  { icon: CalendarCheck, value: 2016, suffix: '', label: 'Year Established', noAnimate: true },
-]
+const iconFor = (stat: HomeStat) => {
+  if (stat.source === 'courses') return BookOpen
+  if (stat.source === 'departments') return Building2
+  if (/year|since|established/i.test(stat.label)) return CalendarCheck
+  if (/level|trainee|student/i.test(stat.label)) return Users
+  return Hash
+}
+
+const buildStats = (stats: HomeStat[], totalCourses: number, departmentCount: number) =>
+  stats.map((stat) => ({
+    icon: iconFor(stat),
+    value: stat.source === 'courses' ? totalCourses : stat.source === 'departments' ? departmentCount : stat.value,
+    suffix: '',
+    label: stat.label,
+    noAnimate: /year/i.test(stat.label) && stat.value > 1000,
+  }))
 
 function Counter({ value, suffix, animate }: { value: number; suffix: string; animate: boolean }) {
   const ref = useRef<HTMLSpanElement>(null)
@@ -50,11 +61,12 @@ function Counter({ value, suffix, animate }: { value: number; suffix: string; an
   )
 }
 
-export function StatsSection({ totalCourses, departmentCount }: { totalCourses: number; departmentCount: number }) {
-  const stats = buildStats(totalCourses, departmentCount)
+export function StatsSection({ stats: configured, totalCourses, departmentCount }: { stats: HomeStat[]; totalCourses: number; departmentCount: number }) {
+  const stats = buildStats(configured, totalCourses, departmentCount)
+  if (!stats.length) return null
   return (
     <section aria-label="Godoma TTI in numbers" className="bg-primary py-14 text-primary-foreground">
-      <ul className="mx-auto grid max-w-7xl grid-cols-2 gap-8 px-4 lg:grid-cols-4">
+      <ul className="mx-auto grid max-w-7xl grid-cols-2 gap-8 px-4 lg:grid-cols-[repeat(auto-fit,minmax(14rem,1fr))]">
         {stats.map(({ icon: Icon, value, suffix, label, noAnimate }) => (
           <li key={label} className="flex flex-col items-center text-center sm:flex-row sm:text-left">
             <span className="flex size-16 shrink-0 items-center justify-center rounded-full border-2 border-accent text-accent">
