@@ -14,7 +14,7 @@ export function DepartmentsSection({ departments }: { departments: Department[] 
           id="departments-heading"
           eyebrow="Professional Training Courses"
           title="Academic Departments"
-          description="Our competency-based programmes are assessed and certified through TVET CDACC at Levels 4, 5 and 6, alongside 6-month short courses."
+          description="Our competency-based programmes are assessed and certified through TVET CDACC at Levels 4, 5 and 6, alongside 3-month short courses."
         />
 
         <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
