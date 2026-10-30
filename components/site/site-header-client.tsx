@@ -62,7 +62,7 @@ export function SiteHeaderClient({ extraPages = [] }: { extraPages?: { slug: str
   }, [])
 
   return (
-    <header className="sticky top-0 z-50 overflow-x-clip border-t border-primary/10 bg-[#fff4d7] shadow-[0_8px_30px_rgba(14,42,71,0.08)]">
+    <header className="relative overflow-x-clip border-t border-primary/10 bg-[#fff4d7] shadow-[0_8px_30px_rgba(14,42,71,0.08)]">
       <div className="mx-auto flex max-w-[90rem] items-center gap-4 px-4 py-1 lg:px-8">
         <span className="text-sm font-bold uppercase tracking-wide text-primary lg:hidden">Menu</span>
 
