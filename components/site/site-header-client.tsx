@@ -82,7 +82,7 @@ export function SiteHeaderClient({ extraPages = [] }: { extraPages?: { slug: str
                       aria-expanded={openMenu === group.label}
                       aria-haspopup="true"
                       onClick={() => setOpenMenu((m) => (m === group.label ? null : group.label))}
-                      className="flex h-10 items-center gap-1 whitespace-nowrap rounded-md px-1 text-sm font-semibold xl:text-base text-foreground transition-colors hover:text-primary"
+                      className="flex h-9 items-center gap-1 whitespace-nowrap rounded-md px-1 text-sm font-semibold xl:text-base text-foreground transition-colors hover:text-primary"
                     >
                       {group.label}
                       <ChevronDown
@@ -118,7 +118,7 @@ export function SiteHeaderClient({ extraPages = [] }: { extraPages?: { slug: str
                 ) : (
                   <a
                     href={group.href}
-                    className="flex h-10 items-center whitespace-nowrap rounded-md px-1.5 text-sm font-semibold xl:px-2 xl:text-base text-foreground transition-colors hover:text-primary"
+                    className="flex h-9 items-center whitespace-nowrap rounded-md px-1.5 text-sm font-semibold xl:px-2 xl:text-base text-foreground transition-colors hover:text-primary"
                   >
                     {group.label}
                   </a>
