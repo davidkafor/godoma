@@ -73,7 +73,11 @@ Then press **Restart** on the Node.js App page.
 
 ### Building in GitHub Codespaces (Node 24 default, server on Node 20)
 
-Codespaces installs Node 24 by default, but the server runs Node 20. Build with the same major version the server runs, otherwise the build can use syntax or APIs that Node 20 does not have, and native packages are compiled for the wrong runtime. The repository includes an `.nvmrc` set to `20`, so in the Codespace terminal:
+Codespaces installs Node 24 by default, but the server runs Node 20. Build with the same major version the server runs, otherwise the build can use syntax or APIs that Node 20 does not have, and native packages are compiled for the wrong runtime.
+
+Codespaces ignores `.nvmrc`; it only reads `.devcontainer/devcontainer.json`. The repository includes one that uses a Node 20 image and runs `pnpm install --frozen-lockfile` automatically. An existing Codespace keeps its old image, so after this file is on your branch, open the Command Palette (Ctrl/Cmd+Shift+P) and run **Codespaces: Rebuild Container** (or create a fresh Codespace). Then confirm with `node --version`, which must print v20.x.
+
+If you cannot rebuild, the repository also includes an `.nvmrc` set to `20`, so in the Codespace terminal:
 
 ```bash
 nvm install        # reads .nvmrc and installs Node 20
