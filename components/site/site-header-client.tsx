@@ -1,7 +1,6 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
-import Image from 'next/image'
 import { BookOpen, BriefcaseBusiness, CalendarDays, ChevronDown, ClipboardCheck, FileText, GraduationCap, Home, Landmark, Menu, Users, X } from 'lucide-react'
 import { navigation as baseNavigation, type NavGroup, type NavItem } from '@/lib/site-data'
 import { Button } from '@/components/ui/button'
@@ -63,21 +62,12 @@ export function SiteHeaderClient({ extraPages = [] }: { extraPages?: { slug: str
   }, [])
 
   return (
-    <header className="sticky top-0 z-50 overflow-x-clip border-b border-primary/10 bg-white shadow-[0_8px_30px_rgba(14,42,71,0.08)] backdrop-blur supports-[backdrop-filter]:bg-white/95">
-      <div className="mx-auto flex max-w-[90rem] items-center gap-4 px-4 py-3 lg:px-8">
-        <a href="/" className="shrink-0" aria-label="Godoma Technical Training Institute home">
-          <Image
-            src="/images/godoma-main-logo.webp"
-            alt="Godoma Technical Training Institute with the Kenya coat of arms and institute crest"
-            width={707}
-            height={200}
-            priority
-            className="h-auto w-[15rem] max-w-[35vw] sm:w-[18rem]"
-          />
-        </a>
+    <header className="sticky top-0 z-50 overflow-x-clip border-t border-primary/10 bg-[#fff4d7] shadow-[0_8px_30px_rgba(14,42,71,0.08)]">
+      <div className="mx-auto flex max-w-[90rem] items-center gap-4 px-4 py-1 lg:px-8">
+        <span className="text-sm font-bold uppercase tracking-wide text-primary lg:hidden">Menu</span>
 
         <nav ref={navRef} aria-label="Main" className="hidden min-w-0 flex-1 lg:block">
-          <ul className="flex flex-wrap items-center justify-end gap-x-0.5 gap-y-1">
+          <ul className="flex flex-wrap items-center justify-center gap-x-1 gap-y-1">
             {navigation.map((group, groupIndex) => (
               <li
                 key={group.label}
@@ -154,7 +144,7 @@ export function SiteHeaderClient({ extraPages = [] }: { extraPages?: { slug: str
       </div>
 
       {mobileOpen && (
-        <nav id="mobile-nav" aria-label="Mobile" className="max-h-[70vh] overflow-y-auto border-t border-primary/10 bg-card shadow-lg lg:hidden">
+        <nav id="mobile-nav" aria-label="Mobile" className="max-h-[70vh] overflow-y-auto border-t border-primary/10 bg-card text-foreground shadow-lg lg:hidden">
           <ul className="mx-auto max-w-7xl px-4 py-2">
             {navigation.map((group) => (
               <li key={group.label} className="border-b last:border-0">
