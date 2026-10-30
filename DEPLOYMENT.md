@@ -50,7 +50,7 @@ In **Setup Node.js App > Create Application**:
 - Application URL: your domain
 - Application startup file: `server.js`
 
-Add the environment variables from section 2, save, then use **Run NPM Install** (this also runs `prisma generate` through `postinstall`).
+Add the environment variables from section 2 and save. Do **not** press **Run NPM Install**: this project is pinned to `pnpm@12.3.4` (`packageManager` in `package.json`) with a version 9 `pnpm-lock.yaml`, and npm would ignore that lockfile and resolve its own dependency versions. Install with pnpm instead, as shown in section 5 (this also runs `prisma generate` through `postinstall`).
 
 ## 5. Build, migrate and seed
 
@@ -58,11 +58,16 @@ Open the terminal command shown at the top of the Node.js App page to enter the 
 
 ```bash
 cd ~/godoma-app
-npm install
-npm run build          # builds .next; if the plan runs out of memory, build locally and upload .next
-npm run db:migrate     # applies version-controlled migrations (prisma migrate deploy)
-npm run db:seed        # imports the existing website content; safe to re-run, no duplicates
+corepack enable                  # makes the pnpm version pinned in package.json available
+# If corepack is missing or not permitted on the host: npm install -g pnpm@12.3.4 --prefix ~/.local
+pnpm --version                   # must print 12.3.4
+pnpm install --frozen-lockfile   # installs exactly what pnpm-lock.yaml records; fails instead of drifting
+pnpm run build                   # builds .next; if the plan runs out of memory, build locally and upload .next
+pnpm run db:migrate              # applies version-controlled migrations (prisma migrate deploy)
+pnpm run db:seed                 # imports the existing website content; safe to re-run, no duplicates
 ```
+
+Never run plain `npm install` here: it would create a `package-lock.json` and may install different dependency versions from the ones the lockfile was tested with. The `--frozen-lockfile` flag also makes a lockfile mismatch an error, which is what you want on a server.
 
 Then press **Restart** on the Node.js App page.
 
@@ -71,10 +76,10 @@ Then press **Restart** on the Node.js App page.
 There is no public sign-up and no default password. Run once on the server:
 
 ```bash
-npm run admin:create
+pnpm run admin:create
 ```
 
-It prompts for name, email and password (the password is not echoed or stored in shell history) and refuses to run if a super administrator already exists. Further administrators are added in **Admin > Administrators**. To recover access: `npm run admin:reset-password`.
+It prompts for name, email and password (the password is not echoed or stored in shell history) and refuses to run if a super administrator already exists. Further administrators are added in **Admin > Administrators**. To recover access: `pnpm run admin:reset-password`.
 
 ## 7. HTTPS
 
@@ -98,9 +103,9 @@ Steps:
 
 1. In DirectAdmin create (or pick) the mailbox, and note the SMTP host, port and password in the HostAfrica email settings.
 2. Add the SMTP variables from section 2 in **Setup Node.js App**.
-3. Apply the new migration: `npm run db:migrate` (adds `Application`, `ContactMessage` and `RateLimitHit` tables; no existing data is touched and it is safe to re-run).
-4. `npm install && npm run build`, then **Restart**.
-5. Test the connection (sends nothing): `npm run smtp:test`. To send one real test email to `APPLICATION_RECIPIENT`: `npm run smtp:test -- --send`.
+3. Apply the new migration: `pnpm run db:migrate` (adds `Application`, `ContactMessage` and `RateLimitHit` tables; no existing data is touched and it is safe to re-run).
+4. `pnpm install --frozen-lockfile && pnpm run build`, then **Restart**.
+5. Test the connection (sends nothing): `pnpm run smtp:test`. To send one real test email to `APPLICATION_RECIPIENT`: `pnpm run smtp:test -- --send`.
 6. Submit the live contact form and the application form once, check Gmail (inbox and Spam), and confirm the record shows `Sent` in the admin.
 
 Troubleshooting (the admin record shows a safe reason in "Last error"; details go to the Node.js app log, never to visitors):
@@ -118,7 +123,7 @@ Spam and abuse protection: hidden honeypot field, minimum fill time, per-IP and 
 
 ## 9. Updating the site later
 
-Content changes are made in `/admin` and appear immediately; no deployment is needed. For code changes: upload the new code, `npm install`, `npm run build`, `npm run db:migrate`, then restart the app.
+Content changes are made in `/admin` and appear immediately; no deployment is needed. For code changes: upload the new code (including `pnpm-lock.yaml`), then run `pnpm install --frozen-lockfile`, `pnpm run build`, `pnpm run db:migrate`, and restart the app.
 
 ## 10. Backups
 
