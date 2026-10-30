@@ -140,5 +140,3 @@ export async function resetHome(): Promise<void> {
   revalidatePath('/', 'layout')
   revalidatePath('/admin/homepage')
 }
-
-export { defaultHome }
