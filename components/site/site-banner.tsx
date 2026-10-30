@@ -10,7 +10,7 @@ export function SiteBanner() {
           width={435}
           height={428}
           priority
-          className="h-12 w-auto shrink-0 sm:h-20 lg:h-24"
+          className="h-16 w-auto shrink-0 sm:h-24 lg:h-32"
         />
         <p className="text-balance text-center text-lg font-black uppercase leading-[1.05] tracking-tight text-[#2d358f] sm:text-3xl lg:text-5xl">
           Godoma Technical
@@ -23,7 +23,7 @@ export function SiteBanner() {
           width={578}
           height={480}
           priority
-          className="h-12 w-auto shrink-0 sm:h-20 lg:h-24"
+          className="h-16 w-auto shrink-0 sm:h-24 lg:h-32"
         />
       </div>
     </div>
