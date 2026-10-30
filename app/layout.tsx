@@ -55,6 +55,11 @@ export const metadata: Metadata = {
   },
 }
 
+// Pages read admin-edited content from the database on every request. Prerendered copies were being
+// served stale (or frozen with fallback content from build time) after admin saves, especially when
+// the host runs more than one Node process, so revalidatePath could not reach every cache.
+export const dynamic = 'force-dynamic'
+
 export const viewport: Viewport = {
   colorScheme: 'light',
   themeColor: '#1D3F8B',
