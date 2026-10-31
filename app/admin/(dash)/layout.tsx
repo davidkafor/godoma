@@ -41,7 +41,10 @@ export default async function DashboardLayout({ children }: { children: React.Re
     })
   }
   const settings: NavGroup['items'] = []
-  if (can(role, 'settings:write')) settings.push({ href: '/admin/settings', label: 'Contact & social links' })
+  if (can(role, 'settings:write')) {
+    settings.push({ href: '/admin/settings', label: 'Contact & social links' })
+    settings.push({ href: '/admin/email', label: 'Email delivery' })
+  }
   if (can(role, 'users:manage')) settings.push({ href: '/admin/users', label: 'Administrators' })
   if (can(role, 'audit:read')) settings.push({ href: '/admin/activity', label: 'Activity log' })
   settings.push({ href: '/admin/account', label: 'My account' })
