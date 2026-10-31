@@ -1,19 +1,13 @@
 import { Analytics } from '@vercel/analytics/next'
-import { Plus_Jakarta_Sans, Source_Sans_3 } from 'next/font/google'
+import { Inter } from 'next/font/google'
 import type { Metadata, Viewport } from 'next'
 import { CookieConsent } from '@/components/site/cookie-consent'
 import './globals.css'
 
-const bodyFont = Source_Sans_3({
+const inter = Inter({
   subsets: ['latin'],
   display: 'swap',
-  variable: '--font-body',
-})
-
-const headingFont = Plus_Jakarta_Sans({
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-heading',
+  variable: '--font-inter',
 })
 
 export const metadata: Metadata = {
@@ -77,7 +71,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`${bodyFont.variable} ${headingFont.variable} bg-background`}>
+    <html lang="en" className={`${inter.variable} bg-background`}>
       <body className="font-sans antialiased">
         {children}
         <CookieConsent />
