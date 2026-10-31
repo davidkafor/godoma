@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import { Download, Globe, Mail, MapPin } from 'lucide-react'
+import { CharterAudio } from '@/components/site/charter-audio'
 import { SiteFooter } from '@/components/site/site-footer'
 import { SiteHeader } from '@/components/site/site-header'
 import { TopBar } from '@/components/site/top-bar'
@@ -213,6 +214,7 @@ export default function ServiceCharterPage() {
 
         <section className="bg-background py-14">
           <div className="mx-auto grid max-w-7xl gap-12 px-4 lg:px-8">
+            <CharterAudio />
             <CharterTable data={english} />
             <CharterTable data={kiswahili} />
 
