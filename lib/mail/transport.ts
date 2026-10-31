@@ -1,5 +1,5 @@
 import nodemailer, { type Transporter } from 'nodemailer'
-import { readMailConfig, recipientFor, type MailKind } from './config'
+import { addressOf, readMailConfig, recipientFor, type MailKind } from './config'
 
 export type MailOutcome = { ok: true; messageId: string } | { ok: false; error: string }
 
@@ -47,6 +47,15 @@ export type OutgoingMail = {
   html: string
   replyTo?: { name: string; address: string }
   reference: string
+  /** Overrides the recipient taken from the environment (comma separated for several addresses). */
+  to?: string
+  /** Display name shown to the recipient; the sending address itself never changes. */
+  fromName?: string
+}
+
+function senderFor(configFrom: string, fromName?: string) {
+  const name = (fromName ?? '').replace(/[\r\n"<>\\]/g, ' ').replace(/\s+/g, ' ').trim()
+  return name ? `"${name}" <${addressOf(configFrom)}>` : configFrom
 }
 
 /**
@@ -56,12 +65,12 @@ export type OutgoingMail = {
 export async function sendNotification(mail: OutgoingMail): Promise<MailOutcome> {
   const settings = readMailConfig()
   if (!settings.ok) return { ok: false, error: `Email is not configured on the server (${settings.problems.join(', ')}).` }
-  const to = recipientFor(mail.kind)
+  const to = mail.to || recipientFor(mail.kind)
   if (!to) return { ok: false, error: `No valid recipient is configured (${mail.kind === 'application' ? 'APPLICATION_RECIPIENT' : 'CONTACT_RECIPIENT'}).` }
 
   try {
     const info = await transporterFor(settings.config).sendMail({
-      from: settings.config.from,
+      from: senderFor(settings.config.from, mail.fromName),
       to,
       replyTo: mail.replyTo,
       subject: mail.subject,

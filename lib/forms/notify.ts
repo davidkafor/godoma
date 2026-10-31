@@ -2,6 +2,7 @@ import 'server-only'
 import { prisma } from '@/lib/prisma'
 import { sendNotification } from '@/lib/mail/transport'
 import { applicationMail, contactMail } from '@/lib/mail/templates'
+import { getEmailSettings, notificationsEnabled, recipientsFor } from '@/lib/mail/settings'
 
 export type NotifyKind = 'application' | 'contact'
 export type NotifyResult = 'sent' | 'failed' | 'skipped'
@@ -29,12 +30,16 @@ const claimData = () => ({ emailStatus: 'PENDING' as const, emailAttemptedAt: ne
  */
 export async function deliverNotification(kind: NotifyKind, id: string): Promise<NotifyResult> {
   try {
+    const settings = await getEmailSettings()
+    if (!notificationsEnabled(settings, kind)) return 'skipped'
+    const delivery = { to: recipientsFor(settings, kind), fromName: settings.fromName }
+
     if (kind === 'application') {
       const claimed = await prisma.application.updateMany({ where: claimWhere(id), data: claimData() })
       if (claimed.count === 0) return 'skipped'
       const record = await prisma.application.findUnique({ where: { id } })
       if (!record) return 'skipped'
-      const outcome = await sendNotification(applicationMail(record))
+      const outcome = await sendNotification({ ...applicationMail(record), ...delivery })
       await prisma.application.update({
         where: { id },
         data: outcome.ok ? { emailStatus: 'SENT', emailSentAt: new Date(), emailError: null } : { emailStatus: 'FAILED', emailError: outcome.error.slice(0, 250) },
@@ -45,7 +50,7 @@ export async function deliverNotification(kind: NotifyKind, id: string): Promise
     if (claimed.count === 0) return 'skipped'
     const record = await prisma.contactMessage.findUnique({ where: { id } })
     if (!record) return 'skipped'
-    const outcome = await sendNotification(contactMail(record))
+    const outcome = await sendNotification({ ...contactMail(record), ...delivery })
     await prisma.contactMessage.update({
       where: { id },
       data: outcome.ok ? { emailStatus: 'SENT', emailSentAt: new Date(), emailError: null } : { emailStatus: 'FAILED', emailError: outcome.error.slice(0, 250) },
